@@ -2,17 +2,17 @@
     <div class="col-12">
       <div class="card mb-4">
         <div class="card-header pb-0">
-          <h6>Authors table</h6>
+          <h6>Alumnos</h6>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
               </thead>
@@ -21,27 +21,31 @@
                   <td>
                     <div class="d-flex px-2 py-1">
                       <div>
-                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
+                      <div>
+                        <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
+                      </div>
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">John Michael</h6>
-                        <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                        <h6 class="mb-0 text-sm">Fernando de Jesus Contreras Vega</h6>
+                        <p class="text-xs text-secondary mb-0"></p>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">Manager</p>
-                    <p class="text-xs text-secondary mb-0">Organization</p>
+                    <p class="mb-0 text-sm">Piano</p>
+
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-success">Online</span>
+                    <span class="badge badge-sm bg-gradient-secondary">Por vencer</span>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                      Generar Recibo
+                    </a>
                   </td>
-                  <td class="align-middle">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Edit
+                  <td class="align-middle text-center">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                      Ver pagos
                     </a>
                   </td>
                 </tr>
@@ -49,142 +53,118 @@
                   <td>
                     <div class="d-flex px-2 py-1">
                       <div>
-                        <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3">
+                      <div>
+                        <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
+                      </div>
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                        <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>
+                        <h6 class="mb-0 text-sm">Luis Fernando Vazquez Ceballos</h6>
+                        <p class="text-xs text-secondary mb-0"></p>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">Programator</p>
-                    <p class="text-xs text-secondary mb-0">Developer</p>
+                    <p class="mb-0 text-sm">Bateria</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                    <span class="badge badge-sm bg-gradient-secondary">Por vencer</span>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                      Generar Recibo
+                    </a>
                   </td>
-                  <td class="align-middle">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Edit
+                  <td class="align-middle text-center ">
+                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                      Ver pagos
                     </a>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3">
+                    <div>
+                        <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Laurent Perrier</h6>
-                        <p class="text-xs text-secondary mb-0">laurent@creative-tim.com</p>
+                        <h6 class="mb-0 text-sm">Carlos Hernández Carballo</h6>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">Executive</p>
-                    <p class="text-xs text-secondary mb-0">Projects</p>
+                    <p class="mb-0 text-sm">Piano</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-success">Online</span>
+                    <span class="badge badge-sm bg-gradient-success">Pagado</span>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                      Generar Recibo
+                    </a>
                   </td>
-                  <td class="align-middle">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Edit
+                  <td class="align-middle text-center ">
+                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                      Ver pagos
                     </a>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3">
+                    <div>
+                        <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Michael Levi</h6>
-                        <p class="text-xs text-secondary mb-0">michael@creative-tim.com</p>
+                        <h6 class="mb-0 text-sm">Miguel Garcia Pereda</h6>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">Programator</p>
-                    <p class="text-xs text-secondary mb-0">Developer</p>
+                    <p class="mb-0 text-sm">Bajo Eléctrico</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-success">Online</span>
+                    <span class="badge badge-sm bg-gradient-success">Pagado</span>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                      Generar Recibo
+                    </a>
                   </td>
-                  <td class="align-middle">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Edit
+                  <td class="align-middle text-center ">
+                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                      Ver pagos
                     </a>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
+                    <div>
+                        <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Richard Gran</h6>
-                        <p class="text-xs text-secondary mb-0">richard@creative-tim.com</p>
+                        <h6 class="mb-0 text-sm">Richard López Fernández</h6>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">Manager</p>
-                    <p class="text-xs text-secondary mb-0">Executive</p>
+                    <p class="mb-0 text-sm">Violín</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                    <span class="badge badge-sm bg-gradient-secondary">Pendiente</span>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                      Generar Recibo
+                    </a>
                   </td>
-                  <td class="align-middle">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Edit
+                  <td class="align-middle text-center ">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                      Ver pagos
                     </a>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Miriam Eric</h6>
-                        <p class="text-xs text-secondary mb-0">miriam@creative-tim.com</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="text-xs font-weight-bold mb-0">Programtor</p>
-                    <p class="text-xs text-secondary mb-0">Developer</p>
-                  </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                  </td>
-                  <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Edit
-                    </a>
-                  </td>
-                </tr>
+                
               </tbody>
             </table>
           </div>

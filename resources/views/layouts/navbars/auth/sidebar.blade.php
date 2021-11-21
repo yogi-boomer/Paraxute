@@ -114,7 +114,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Alumnos Aceptados</span>
+                    <span class="nav-link-text ms-1">Alumnos</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -142,7 +142,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Prueba</span>
+                    <span class="nav-link-text ms-1">Recibos</span>
                 </a>
             </li>
 
