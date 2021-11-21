@@ -50,8 +50,6 @@
                                     <option>Guitarra</option>
                                 </select>
                             </div>
-                           
-                            
                         </div>
                         <div class="col-md-6">
                             <div class= "form-group">
@@ -62,8 +60,6 @@
                                     <option>3-Más días</option>
                                 </select>
                             </div>
-
-                           
                         </div>
                         <div class="container"> 
                                 <div class="row">
@@ -83,14 +79,14 @@
                                             </div>
                                     </div>
 
-                                    <div class="col">
-                                         <label for="user-email" class="form-control-label">{{ __('Apellido Materno.') }}</label>
-                                            <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                                <input class="form-control" type="email"
+                                <div class="col">
+                                    <label for="user-email" class="form-control-label">{{ __('Apellido Materno.') }}</label>
+                                        <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                            <input class="form-control" type="email"
                                                  placeholder="Apellido" id="user-email">
-                                            </div>
-                                    </div>
+                                        </div>
                                 </div>
+                        </div>
                     </div>
                     
                     <div class="row">
@@ -126,25 +122,21 @@
                                             <option>Puebla</option><option></option>
                                         </select>
                             </div>
-
                             <div class="col">
                                  <label for="about">{{ 'Ciudad' }}</label>
                                     <input type="text" class="form-control" placeholder="Ciudad" id="name">
                             </div>
-
                             <div class="col">
                                 <label for="about">{{ 'Municipio' }}</label>
                                 <input class="form-control" type="text"
                                         placeholder="Municipio" id="name">
                             </div>
-
-                     </div>
-                     </div>
+                        </div>
+                    </div>
                    
                    
                     
-                    </div>
-                    </div>
+                   
                     <div class="container">
                         <div class="row">
                             <div class="col">
