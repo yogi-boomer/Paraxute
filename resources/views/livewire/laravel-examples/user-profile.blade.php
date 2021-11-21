@@ -64,9 +64,6 @@
                             </div>
 
                            
-                           
-                           
-
                         </div>
                         <div class="container"> 
                                 <div class="row">
@@ -141,8 +138,8 @@
                                         placeholder="Municipio" id="name">
                             </div>
 
-                    </div>
-                    </div>
+                     </div>
+                     </div>
                    
                    
                     
