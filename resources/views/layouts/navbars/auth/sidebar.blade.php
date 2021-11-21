@@ -142,7 +142,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Billing</span>
+                    <span class="nav-link-text ms-1">Prueba</span>
                 </a>
             </li>
 
