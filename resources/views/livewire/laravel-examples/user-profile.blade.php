@@ -51,52 +51,59 @@
                                 </select>
                             </div>
                            
-                            <div class="form-group">
-                                <label for="user-name" class="form-control-label">{{ __('Nombre') }}</label>
-                                <div class="@error('user.name')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.name" class="form-control" type="text" placeholder="Nombre"
-                                        id="user-name">
-                                </div>
-                                @error('user.name') <div class="text-danger">{{ $message }}</div> @enderror
-                            </div>
+                            
                         </div>
                         <div class="col-md-6">
                             <div class= "form-group">
-                                <label for="selectedProgram">Selecciona un programa.</label>
+                                <label for="selectedProgram">Selecciona un formato.</label>
                                 <select name="programa" id="programaSeleccionado" class="form-control">
                                     <option>1-2 Días</option>
                                     <option>2-3 Días</option>
                                     <option>3-Más días</option>
                                 </select>
                             </div>
-                            <div class="column">
-                            <div class="form-group">
-                                <label for="user-email" class="form-control-label">{{ __('Apellidos') }}</label>
-                                <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.email" class="form-control" type="email"
-                                        placeholder="Apellido" id="user-email">
-                                </div>
-                                @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
-                                <label for="user-email" class="form-control-label">{{ __('Apellidos') }}</label>
-                                <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" placeholder="Apellido" id="user-email" >
-                                </div>
-                            </div>
-                                
-                            </div>
+
+                           
+                           
                            
 
                         </div>
+                        <div class="container"> 
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="user-email" class="form-control-label">{{ __('Nombre.') }}</label>
+                                            <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                                <input class="form-control" type="email"
+                                                 placeholder="Apellido" id="user-email">
+                                            </div>
+                                    </div>
+
+                                    <div class="col">
+                                         <label for="user-email" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
+                                            <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                                <input class="form-control" type="email"
+                                                 placeholder="Apellido" id="user-email">
+                                            </div>
+                                    </div>
+
+                                    <div class="col">
+                                         <label for="user-email" class="form-control-label">{{ __('Apellido Materno.') }}</label>
+                                            <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                                <input class="form-control" type="email"
+                                                 placeholder="Apellido" id="user-email">
+                                            </div>
+                                    </div>
+                                </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="user.phone" class="form-control-label">{{ __('Programa') }}</label>
                                 <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.phone" class="form-control" type="tel"
+                                    <input  class="form-control" type="tel"
                                         placeholder="Nombre del programa" id="phone">
                                 </div>
-                                @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -110,14 +117,78 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="about">{{ 'Ubicación' }}</label>
-                        <div class="@error('user.about')border border-danger rounded-3 @enderror">
-                        <input class="form-control" type="text"
-                                        placeholder="Calle, Municipio, Colonia" id="name">
-                        </div>
-                        @error('user.about') <div class="text-danger">{{ $message }}</div> @enderror
+                    <div class="container">
+                         <label for="about">{{ 'Ubicación' }}</label>
+                         <div class="row">
+                            <div class="col">
+                            
+                                 <label for="about">{{ 'Estado' }}</label>
+                                      <select class="form-control"  name="Estados" id="estados">
+                                            <option>Veracruz</option>
+                                            <option>CDMX</option>
+                                            <option>Puebla</option><option></option>
+                                        </select>
+                            </div>
+
+                            <div class="col">
+                                 <label for="about">{{ 'Ciudad' }}</label>
+                                    <input type="text" class="form-control" placeholder="Ciudad" id="name">
+                            </div>
+
+                            <div class="col">
+                                <label for="about">{{ 'Municipio' }}</label>
+                                <input class="form-control" type="text"
+                                        placeholder="Municipio" id="name">
+                            </div>
+
                     </div>
+                    </div>
+                   
+                   
+                    
+                    </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label for="example-date-input" class="form-control-label">fecha de nacimiento</label>
+                                    <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                            </div>
+                            <div class="col">
+                                <label for="example-date-input" class="form-control-label">Genero</label>
+                                    <select name="Genero" id="genero" class="form-control">
+                                            <option>Hombre</option>
+                                            <option>Mujer</option>
+                                            <option>Otro</option>
+                                    </select>
+                            </div>
+                            <div class="col">
+                            <label for="example-date-input" class="form-control-label">Especifique.</label>
+                                    <input class="form-control" type="text" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label for="example-date-input" class="form-control-label">Ultimo grado escolar</label>
+                                    <select name="Genero" id="genero" class="form-control">
+                                            <option>Kinder</option>
+                                            <option>Primaria</option>
+                                            <option>Secundaria</option>
+                                            <option>Preparatoria</option>
+                                            <option>Universidad</option>
+                                    </select>
+                            </div>
+                            <div class="col">
+                            <label for="example-date-input" class="form-control-label">Nombre de la escuela.</label>
+                                    <input class="form-control" type="text" >
+                            </div>
+                        </div>
+                    </div>
+                    
+                     
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Siguiente' }}</button>
                     </div>
