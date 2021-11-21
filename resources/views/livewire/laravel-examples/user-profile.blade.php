@@ -5,7 +5,7 @@
             <span class="mask bg-gradient-primary opacity-6"></span>
         </div>
         <div class="card card-body blur shadow-blur mx-4 mt-n6">
-            <a style="font-weight= bold">Nuevo estudiante 1</a>
+            <a style="font-weight= bold">Nuevo estudiante</a>
         </div>
     </div>
 
@@ -40,6 +40,17 @@
                 <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
                     <div class="row">
                         <div class="col-md-6">
+                            <div class= "form-group">
+                                <label for="selectedProgram">Selecciona un programa.</label>
+                                <select name="programa" id="programaSeleccionado" class="form-control">
+                                    <option>Clase muestra</option>
+                                    <option>Piano</option>
+                                    <option>Bateria</option>
+                                    <option>Violin</option>
+                                    <option>Guitarra</option>
+                                </select>
+                            </div>
+                           
                             <div class="form-group">
                                 <label for="user-name" class="form-control-label">{{ __('Nombre') }}</label>
                                 <div class="@error('user.name')border border-danger rounded-3 @enderror">
@@ -50,6 +61,15 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <div class= "form-group">
+                                <label for="selectedProgram">Selecciona un programa.</label>
+                                <select name="programa" id="programaSeleccionado" class="form-control">
+                                    <option>1-2 Días</option>
+                                    <option>2-3 Días</option>
+                                    <option>3-Más días</option>
+                                </select>
+                            </div>
+                            <div class="column">
                             <div class="form-group">
                                 <label for="user-email" class="form-control-label">{{ __('Apellidos') }}</label>
                                 <div class="@error('user.email')border border-danger rounded-3 @enderror">
@@ -57,7 +77,15 @@
                                         placeholder="Apellido" id="user-email">
                                 </div>
                                 @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
+                                <label for="user-email" class="form-control-label">{{ __('Apellidos') }}</label>
+                                <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" placeholder="Apellido" id="user-email" >
+                                </div>
                             </div>
+                                
+                            </div>
+                           
+
                         </div>
                     </div>
                     <div class="row">
