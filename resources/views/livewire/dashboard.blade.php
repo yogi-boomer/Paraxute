@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
                   <div class="bg-gradient-primary border-radius-lg h-100">
-                    <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none">
+              
                     <div class="position-relative d-flex align-items-center justify-content-center h-100">
                       <img class="w-100 position-relative z-index-2 pt-4" src="/assets/img/illustrations/logo.png">
                     </div>
@@ -30,8 +30,8 @@
             <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/paraxute.jpg');">
               <span class="mask bg-gradient-dark"></span>
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                <h5 class="text-white font-weight-bolder mb-4 pt-2">Únete a Nosotros</h5>
-                <p class="text-white">"El ritmo es uno de los elementos más primarios de la música: está presente desde la vida fetal, ya que sentimos el ritmo maternal a través del pulso, la respiración, los latidos cardiacos, etc.; se experimenta por los ya conocidos latidos del corazón de la madre, por el mecimiento materno y por el habla y la música humanas.</p>
+                <h5 class="text-white font-weight-bolder mb-4 pt-2"></h5>
+              
                 
               </div>
             </div>
