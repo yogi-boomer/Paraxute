@@ -39,9 +39,9 @@
                                     href="{{ route('forgot-password') }}"
                                     class="text-info text-gradient font-weight-bold">{{ __('Aquí') }}</a></small>
                                     <p class="mb-4 text-sm mx-auto">
-                                {{ __(' Don\'t have an account?') }}
+                                {{ __('¿Aún no tienes cuenta?') }}
                                 <a href="{{ route('sign-up') }}"
-                                    class="text-info text-gradient font-weight-bold">{{ __('Sign up') }}</a>
+                                    class="text-info text-gradient font-weight-bold">{{ __('Registrate') }}</a>
                             </p>
                         </div>
                     </div>
