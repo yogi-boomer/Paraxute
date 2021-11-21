@@ -17,12 +17,12 @@
                                     </button>
                                 </div>
                             @endif
-                            <h4 class="mb-0">{{ __('Forgot your password? Enter your email here') }}</h4>
+                            <h4 class="mb-0">{{ __('¿Olvidaste tu contraseña? escribe tu correo aquí') }}</h4>
                         </div>
                         <div class="card-body">
                             <form wire:submit.prevent="recoverPassword" action="#" method="POST" role="form text-left">
                                 <div>
-                                    <label for="email">{{ __('Email') }}</label>
+                                    <label for="email">{{ __('Correo') }}</label>
                                     <div class="@error('email')border border-danger rounded-3 @enderror">
                                         <input wire:model="email" id="email" type="email" class="form-control"
                                             placeholder="Email" aria-label="Email" aria-describedby="email-addon">
@@ -31,8 +31,7 @@
                                 </div>
                                 <div class="text-center">
                                     <button type="submit"
-                                        class="btn bg-gradient-info w-100 mt-4 mb-0">{{ __('Recover your
-                                    password') }}</button>
+                                        class="btn bg-gradient-info w-100 mt-4 mb-0">{{ __('Recupera tu contraseña') }}</button>
                                 </div>
                             </form>
                             @if ($showSuccesNotification)
