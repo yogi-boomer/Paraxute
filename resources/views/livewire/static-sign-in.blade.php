@@ -12,12 +12,12 @@
                             <form role="form text-left">
                                 <label>Email</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email"
+                                    <input type="email" class="form-control" placeholder="Correo" aria-label="Email"
                                         aria-describedby="email-addon">
                                 </div>
-                                <label>Password</label>
+                                <label>Contraseña</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Password"
+                                    <input type="email" class="form-control" placeholder="Contraseña"
                                         aria-label="Password" aria-describedby="password-addon">
                                 </div>
                                 <div class="form-check form-switch">

@@ -39,7 +39,6 @@
                     <span class="nav-link-text ms-1">Inicio</span>
                 </a>
             </li>
-
             <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Administración</h6>
             </li>
@@ -85,7 +84,6 @@
                     <span class="nav-link-text ms-1">Usuarios</span>
                 </a>
             </li>
-
             <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Alumnos</h6>
             </li>
@@ -145,11 +143,6 @@
                     <span class="nav-link-text ms-1">Recibos</span>
                 </a>
             </li>
-
-
-
-
-
         </ul>
     </div>
     <div class="sidenav-footer mx-3 mt-3 pt-3">

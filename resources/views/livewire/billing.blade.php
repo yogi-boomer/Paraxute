@@ -27,9 +27,9 @@
                                 </div>
                                 <div class="ms-auto">
                                     <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a>
+                                            class="far fa-trash-alt me-2"></i>Eliminar</a>
                                     <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a>
                                     <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
                                             class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
                                 </div>
@@ -46,9 +46,9 @@
                                 </div>
                                 <div class="ms-auto">
                                     <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a>
+                                            class="far fa-trash-alt me-2"></i>Eliminar</a>
                                     <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a>
                                     <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
                                             class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
                                 </div>
@@ -65,9 +65,9 @@
                                 </div>
                                 <div class="ms-auto">
                                     <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a>
+                                            class="far fa-trash-alt me-2"></i>Eliminar</a>
                                     <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a>
                                     <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
                                             class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
                                 </div>
@@ -84,9 +84,9 @@
                                 </div>
                                 <div class="ms-auto">
                                     <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a>
+                                            class="far fa-trash-alt me-2"></i>Eliminar</a>
                                     <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a>
                                     <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
                                             class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
                                 </div>

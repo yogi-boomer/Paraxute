@@ -1,3 +1,5 @@
+<link href="../resources/css/app.css" rel="stylesheet" type="text/css">
+
 <div class="row">
     <div class="col-12">
       <div class="card mb-4">
@@ -6,8 +8,8 @@
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0">
-              <thead>
+            <table class="table table-hover align-items-center mb-0">
+              <thead style="position: sticky; top: 0">  {{-- agregado de sticky  --}}
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
@@ -180,8 +182,8 @@
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0">
-              <thead>
+            <table class="table table-hover align-items-center mb-0">
+              <thead style="position: sticky; top: 0">
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
@@ -238,8 +240,8 @@
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0">
-              <thead>
+            <table class="table table-hover align-items-center mb-0">
+              <thead style="position: sticky; top: 0">
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
@@ -323,8 +325,8 @@
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0">
-              <thead>
+            <table class="table table-hover align-items-center mb-0">
+              <thead style="position: sticky; top: 0">
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
