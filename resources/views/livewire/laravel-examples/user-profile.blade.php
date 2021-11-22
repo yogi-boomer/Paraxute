@@ -1,6 +1,6 @@
 <div>
     <div class="container-fluid">
-        <div class="page-header min-height-150 border-radius-xl mt-4"
+        <div class="page-header min-height-250 border-radius-xl mt-4"
             style="background-image: url('../assets/img/curved-images/logoregistro.png'); background-position-y: 95%;">
             <span class="mask bg-gradient-primary opacity-1"></span>
         </div>
