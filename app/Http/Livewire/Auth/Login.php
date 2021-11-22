@@ -31,7 +31,8 @@ class Login extends Component
             return redirect()->intended('/dashboard');        
         }
         else{
-            return $this->addError('email', trans('auth.failed')); 
+            return $this->addError('email','Email erroneo' ); 
+            return $this->addError('password','Cotraseña erronea' );
         }
     }
 

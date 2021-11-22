@@ -4,9 +4,7 @@
             style="background-image: url('../assets/img/curved-images/logoregistro.png'); background-position-y: 95%;">
             <span class="mask bg-gradient-primary opacity-1"></span>
         </div>
-        <div class="card card-body blur shadow-blur mx-4 mt-n6">
-            <a style="font-weight= bold">Nuevo estudiante</a>
-        </div>
+
     </div>
 
     <div class="container-fluid py-4">
@@ -67,7 +65,7 @@
                                         <label for="user-email" class="form-control-label">{{ __('Nombre.') }}</label>
                                             <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="email"
-                                                 placeholder="Apellido" id="user-email">
+                                                 placeholder="Nombre" id="user-email">
                                             </div>
                                     </div>
 
@@ -75,7 +73,7 @@
                                          <label for="user-email" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
                                             <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="email"
-                                                 placeholder="Apellido" id="user-email">
+                                                 placeholder="Apellido paterno" id="user-email">
                                             </div>
                                     </div>
 
@@ -83,7 +81,7 @@
                                     <label for="user-email" class="form-control-label">{{ __('Apellido Materno.') }}</label>
                                         <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                             <input class="form-control" type="email"
-                                                 placeholder="Apellido" id="user-email">
+                                                 placeholder="Apellido materno" id="user-email">
                                         </div>
                                 </div>
                         </div>
