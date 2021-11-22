@@ -1,6 +1,6 @@
 <section class="h-100-vh mb-8">
     <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
-        style="background-image: url('../assets/img/curved-images/curved14.jpg');">
+        style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container">
             <div class="row justify-content-center">
@@ -16,7 +16,7 @@
                 <div class="card z-index-0">
                     <div class="card-body">
                         <form role="form text-left">
-                            <h3><center>Ingresa los datos del nuevo usuario.</center></h3>
+                            <h3><center>Ingresa los datos del nuevo usuario</center></h3>
                             <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Nombre" aria-label="Name"
                                     >
@@ -34,7 +34,7 @@
                                     aria-describedby="password-addon">
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                                <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Crear Cuenta</button>
                             </div>
                         </form>
                     </div>
