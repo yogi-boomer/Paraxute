@@ -65,7 +65,7 @@
                                         <label for="user-email" class="form-control-label">{{ __('Nombre.') }}</label>
                                             <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="email"
-                                                 placeholder="Apellido" id="user-email">
+                                                 placeholder="Nombre" id="user-email">
                                             </div>
                                     </div>
 
@@ -73,7 +73,7 @@
                                          <label for="user-email" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
                                             <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="email"
-                                                 placeholder="Apellido" id="user-email">
+                                                 placeholder="Apellido paterno" id="user-email">
                                             </div>
                                     </div>
 
@@ -81,7 +81,7 @@
                                     <label for="user-email" class="form-control-label">{{ __('Apellido Materno.') }}</label>
                                         <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                             <input class="form-control" type="email"
-                                                 placeholder="Apellido" id="user-email">
+                                                 placeholder="Apellido materno" id="user-email">
                                         </div>
                                 </div>
                         </div>
