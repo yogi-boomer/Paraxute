@@ -1,59 +1,29 @@
-<div>
-    <div class="container-fluid">
-        <div class="page-header min-height-150 border-radius-xl mt-4"
-            style="background-image: url('../assets/img/curved-images/logoregistro.png'); background-position-y: 95%;">
-            <span class="mask bg-gradient-primary opacity-1"></span>
-        </div>
-        <div class="card card-body blur shadow-blur mx-4 mt-n6">
-            <a style="font-weight= bold">Nuevo estudiante</a>
-        </div>
-    </div>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Información del estudiante') }}</h6>
+                <h3 class="mb-0">{{ __('Información Medica') }}</h3>
+                <h4 for="selectedProgram">Marcar si o no segun corresponda.</h4>
             </div>
             <div class="card-body pt-4 p-3">
-
-                @if ($showDemoNotification)
-                    <div wire:model="showDemoNotification" class="mt-3  alert alert-primary alert-dismissible fade show"
-                        role="alert">
-                        <span class="alert-text text-white">
-                            {{ __('You are in a demo version, you can\'t update the profile.') }}</span>
-                        <button wire:click="$set('showDemoNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                        </button>
-                    </div>
-                @endif
-
-                @if ($showSuccesNotification)
-                    <div wire:model="showSuccesNotification"
-                        class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
-                        <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
-                        <span
-                            class="alert-text text-white">{{ __('Datos guardados correctamente!') }}</span>
-                        <button wire:click="$set('showSuccesNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                        </button>
-                    </div>
-                @endif
-
                 <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
                     <div class="row">
                         <div class="col-md-6">
                             <div class= "form-group">
-                                <label for="selectedProgram">Selecciona un programa.</label>
-                                <select name="programa" id="programaSeleccionado" class="form-control">
-                                    <option>Clase muestra</option>
-                                    <option>Piano</option>
-                                    <option>Bateria</option>
-                                    <option>Violin</option>
-                                    <option>Guitarra</option>
-                                </select>
+                                <label for="selectedProgram">Tipo de sangre.</label>
+                                <input class="form-control" type="email"
+                                                 placeholder="Tipo de sangre" id="user-email">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class= "form-group">
-                                <label for="selectedProgram">Selecciona un formato.</label>
+                                <label for="selectedProgram">¿Es alérgico a alguna sustancia en particular?</label>
                                 <select name="programa" id="programaSeleccionado" class="form-control">
                                     <option>1-2 Días</option>
                                     <option>2-3 Días</option>
@@ -180,8 +150,8 @@
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>
