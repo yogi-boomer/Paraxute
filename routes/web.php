@@ -19,6 +19,10 @@ use App\Http\Livewire\LaravelExamples\UserMedicCard;
 
 use Illuminate\Http\Request;
 
+//Rol
+use App\Http\Controllers\RolController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +42,11 @@ Route::get('/login', Login::class)->name('login');
 Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-password');
  
 Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::resource('roles', RolController::class);
+    Route::resource('usuarios', UsuarioController::class);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');

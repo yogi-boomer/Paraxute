@@ -22,12 +22,17 @@
                                     >
                             </div>
                             <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Usuario" aria-label="Email"
+                                <input type="email" class="form-control" placeholder="Correo" aria-label="Email"
                                     aria-describedby="email-addon">
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Puesto" aria-label="Name"
-                                    >
+                                <select class="form-select" aria-label="role">
+                                    <option selected>Rol</option>
+                                    <option value="1">PARAXUTEADMIN</option>
+                                    <option value="2">PARAXUTERECEP</option>
+                                    <option value="3">PARAXUTEGEREN</option>
+                                    <option value="3">PARAXUTEDIR</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <input type="password" class="form-control" placeholder="Contraseña" aria-label="Password"
