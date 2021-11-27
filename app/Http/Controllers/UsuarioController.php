@@ -125,6 +125,6 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('');
+        return redirect()->route('laravel-examples.user-management');
     }
 }

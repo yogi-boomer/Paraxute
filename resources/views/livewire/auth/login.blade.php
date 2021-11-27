@@ -38,11 +38,6 @@
                             <small class="text-muted">{{ __('¿Olvidaste tu contraseña?') }} <a
                                     href="{{ route('forgot-password') }}"
                                     class="text-info text-gradient font-weight-bold">{{ __('Aquí') }}</a></small>
-                                    <p class="mb-4 text-sm mx-auto">
-                                {{ __('¿Aún no tienes cuenta?') }}
-                                <a href="{{ route('sign-up') }}"
-                                    class="text-info text-gradient font-weight-bold">{{ __('Regístrate') }}</a>
-                            </p>
                         </div>
                     </div>
                 </div>

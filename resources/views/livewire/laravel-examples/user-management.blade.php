@@ -50,6 +50,23 @@
                                             <h6 class="mb-0 text-sm text-center">{{$usuario->email}}</h6>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div>
+                                         @if(!empty($usuario->getRoleNames()))
+                                            @foreach($usuario->getRoleNames() as $roleName)
+                                            <h5><span class="badge badge dark">{{$roleName}}</span></h5>
+                                            @endforeach
+                                        @endif
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center">
+                                        <a class="btn btn-info" href="{{ route('usuarios.edit', $usuario->id) }}">Editar</a>                                    
+                                        {!! Form::open(['method'=> 'DELETE', 'route'=> ['usuarios.destroy', $usuario->id], 'style'=>'display:inline']) !!}
+                                            {!! Form::submit('Borrar', ['class'=> 'btn btn-danger']) !!}
+                                        {!! Form::close() !!}
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach   
                             </tbody>
