@@ -27,7 +27,7 @@ class UserManagement extends Component
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        return view('', compact('roles'));
+        return view('livewire.static-sign-up', compact('roles'));
     }
      /**
      * Store a newly created resource in storage.

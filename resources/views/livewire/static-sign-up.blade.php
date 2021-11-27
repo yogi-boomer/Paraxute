@@ -15,7 +15,7 @@
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card z-index-0">
                     <div class="card-body">
-                        <form role="form text-left">
+                        <form role="form text-left" wire:submit.prevent="register" action="#" method="POST">
                             <h3><center>Ingresa los datos del nuevo usuario</center></h3>
                             <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Nombre" aria-label="Name"
@@ -39,7 +39,7 @@
                                     aria-describedby="password-addon">
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Crear Cuenta</button>
+                                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Crear Cuenta</button>
                             </div>
                         </form>
                     </div>
