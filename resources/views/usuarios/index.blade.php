@@ -39,7 +39,7 @@
                                     <td>{{$usuario->name}}</td>
                                     <td>{{$usuario->email}}</td>
                                 </tr>
-                            @endforeach                              
+                            @endforeach   
                             </tbody>
                         </table>
                     </div>

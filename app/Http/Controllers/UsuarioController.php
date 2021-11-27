@@ -22,7 +22,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = User::all();
-        return view('\laravel-user-management', compact('usuarios'));
+        return view('usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -33,7 +33,7 @@ class UsuarioController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        return view('\static-sign-up', compact('roles'));
+        return view('', compact('roles'));
     }
 
     /**
