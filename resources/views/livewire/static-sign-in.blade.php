@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                                    <label class="form-check-label" for="rememberMe">Recuerdame</label>
+                                    <label class="form-check-label" for="rememberMe">Recuérdame</label>
                                 </div>
                                 <div class="text-center">
                                     <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Registrarse</button>

@@ -11,9 +11,9 @@
             <table class="table table-hover align-items-center mb-0">
               <thead style="position: sticky; top: 0">  {{-- agregado de sticky  --}}
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -41,12 +41,12 @@
                     <span class="badge badge-sm bg-gradient-danger">Vencido</span>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -72,12 +72,12 @@
                     <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -100,12 +100,12 @@
                     <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
                   </td>
                   <td class="align-middle text-center">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -128,12 +128,12 @@
                     <span class="badge badge-sm bg-gradient-success">Pagado</span>
                   </td>
                   <td class="align-middle text-center">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -156,20 +156,36 @@
                     <span class="badge badge-sm bg-gradient-success">Pagado</span>
                   </td>
                   <td class="align-middle text-center">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
                 </tr>
-                
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="card-footer">
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
@@ -185,9 +201,9 @@
             <table class="table table-hover align-items-center mb-0">
               <thead style="position: sticky; top: 0">
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -214,12 +230,12 @@
                     <span class="badge badge-sm bg-gradient-danger">Vencido</span>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -227,6 +243,23 @@
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="card-footer">
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
@@ -243,9 +276,9 @@
             <table class="table table-hover align-items-center mb-0">
               <thead style="position: sticky; top: 0">
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -272,12 +305,12 @@
                     <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -300,12 +333,12 @@
                     <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
                   </td>
                   <td class="align-middle text-center">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -313,6 +346,23 @@
               </tbody>
             </table>
           </div>
+      </div>
+      <div class="card-footer">
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Siguiente</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
     </div>
@@ -328,9 +378,9 @@
             <table class="table table-hover align-items-center mb-0">
               <thead style="position: sticky; top: 0">
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Alumno</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -354,12 +404,12 @@
                     <span class="badge badge-sm bg-gradient-success">Pagado</span>
                   </td>
                   <td class="align-middle text-center">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="#!" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -382,12 +432,12 @@
                     <span class="badge badge-sm bg-gradient-success">Pagado</span>
                   </td>
                   <td class="align-middle text-center">
-                  <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Generar recibo">
+                  <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
                   <td class="align-middle text-center ">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver pagos
                     </a>
                   </td>
@@ -395,6 +445,23 @@
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="card-footer">
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>

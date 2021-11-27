@@ -43,8 +43,8 @@
                                 <select name="programa" id="programaSeleccionado" class="form-control">
                                     <option>Clase muestra</option>
                                     <option>Piano</option>
-                                    <option>Bateria</option>
-                                    <option>Violin</option>
+                                    <option>Batería</option>
+                                    <option>Violín</option>
                                     <option>Guitarra</option>
                                 </select>
                             </div>
@@ -53,9 +53,10 @@
                             <div class= "form-group">
                                 <label for="selectedProgram">Selecciona un formato.</label>
                                 <select name="programa" id="programaSeleccionado" class="form-control">
-                                    <option>1-2 Días</option>
-                                    <option>2-3 Días</option>
-                                    <option>3-Más días</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>+4</option>
                                 </select>
                             </div>
                         </div>
@@ -73,7 +74,7 @@
                                          <label for="user-email" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
                                             <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="email"
-                                                 placeholder="Apellido paterno" id="user-email">
+                                                 placeholder="Apellido Paterno" id="user-email">
                                             </div>
                                     </div>
 
@@ -81,7 +82,7 @@
                                     <label for="user-email" class="form-control-label">{{ __('Apellido Materno.') }}</label>
                                         <div class="@error('user.email')border border-danger rounded-3 @enderror">
                                             <input class="form-control" type="email"
-                                                 placeholder="Apellido materno" id="user-email">
+                                                 placeholder="Apellido Materno" id="user-email">
                                         </div>
                                 </div>
                         </div>
@@ -115,9 +116,38 @@
                             
                                  <label for="about">{{ 'Estado' }}</label>
                                       <select class="form-control"  name="Estados" id="estados">
+                                            <option>Aguascalientes</option>
+                                            <option>Baja California</option>
+                                            <option>Baja California Sur</option>
+                                            <option>Campeche</option>
+                                            <option>Chiapas</option>
+                                            <option>Chihuahua</option>
+                                            <option>Ciudad de México</option>
+                                            <option>Coahuila</option>
+                                            <option>Colima</option>
+                                            <option>Durango</option>
+                                            <option>Estado de México</option>
+                                            <option>Guanajuato</option>
+                                            <option>Guerrero</option>
+                                            <option>Hidalgo</option>
+                                            <option>Jalisco</option>
+                                            <option>Michoacán</option>
+                                            <option>Morelos</option>
+                                            <option>Nayarit</option>
+                                            <option>Nuevo León</option>
+                                            <option>Oaxaca</option>
+                                            <option>Puebla</option>
+                                            <option>Querétaro</option>
+                                            <option>Quintana Roo</option>
+                                            <option>San Luis Potosí</option>
+                                            <option>Sinaloa</option>
+                                            <option>Sonora</option>
+                                            <option>Tabasco</option>
+                                            <option>Tamaluipas</option>
+                                            <option>Tlaxcala</option>
                                             <option>Veracruz</option>
-                                            <option>CDMX</option>
-                                            <option>Puebla</option><option></option>
+                                            <option>Yucatán</option>
+                                            <option>Zacatecas</option>
                                         </select>
                             </div>
                             <div class="col">
@@ -135,11 +165,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <label for="example-date-input" class="form-control-label">fecha de nacimiento</label>
+                                <label for="example-date-input" class="form-control-label">Fecha de nacimiento.</label>
                                     <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
                             </div>
                             <div class="col">
-                                <label for="example-date-input" class="form-control-label">Genero</label>
+                                <label for="example-date-input" class="form-control-label">Género.</label>
                                     <select name="Genero" id="genero" class="form-control">
                                             <option>Hombre</option>
                                             <option>Mujer</option>
@@ -158,11 +188,14 @@
                             <div class="col">
                                 <label for="example-date-input" class="form-control-label">Ultimo grado escolar</label>
                                     <select name="Genero" id="genero" class="form-control">
-                                            <option>Kinder</option>
+                                            <option>Preescolar</option>
                                             <option>Primaria</option>
                                             <option>Secundaria</option>
                                             <option>Preparatoria</option>
                                             <option>Universidad</option>
+                                            <option>Maestría</option>
+                                            <option>Doctorado</option>
+                                            <option>Ninguno</option>
                                     </select>
                             </div>
                             <div class="col">

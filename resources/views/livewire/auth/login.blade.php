@@ -41,7 +41,7 @@
                                     <p class="mb-4 text-sm mx-auto">
                                 {{ __('¿Aún no tienes cuenta?') }}
                                 <a href="{{ route('sign-up') }}"
-                                    class="text-info text-gradient font-weight-bold">{{ __('Registrate') }}</a>
+                                    class="text-info text-gradient font-weight-bold">{{ __('Regístrate') }}</a>
                             </p>
                         </div>
                     </div>

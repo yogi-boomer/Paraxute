@@ -18,7 +18,7 @@
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>shop </title>
+                            <title>Inicio</title>
                             <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="Rounded-Icons" transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF"
                                     fill-rule="nonzero">
@@ -49,7 +49,7 @@
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>customer-support</title>
+                            <title>Registrar-Alumno</title>
                             <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="Rounded-Icons" transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF"
                                     fill-rule="nonzero">
@@ -94,7 +94,7 @@
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>office</title>
+                            <title>Alumnos</title>
                             <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="Rounded-Icons" transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF"
                                     fill-rule="nonzero">
@@ -122,7 +122,7 @@
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>credit-card</title>
+                            <title>Recibos</title>
                             <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="Rounded-Icons" transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF"
                                     fill-rule="nonzero">
@@ -150,15 +150,10 @@
             <div class="full-background" style="background-image: url('../assets/img/curved-images/yipistudiosjpg')">
             </div>
             <div class="card-body text-left p-3 w-100">
-                <div
-                    class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-                    <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true"
-                        id="sidenavCardIcon"></i>
-                </div>
                 <div class="docs-info">
-                    <h6 class="text-white up mb-0">Necesitas ayuda?</h6>
+                    <h6 class="text-center text-white up mb-2">¿Necesitas ayuda?</h6>
                     <a href="https://twitter.com/StudiosYipi" target="_blank"
-                        class="btn btn-white btn-sm w-100 mb-0">Contactanos</a>
+                        class="btn btn-white btn-sm w-100 mb-0">Contáctanos</a>
                 </div>
             </div>
         </div>
