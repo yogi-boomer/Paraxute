@@ -18,14 +18,14 @@
                         <form wire:submit.prevent="register" action="#" method="POST" role="form text-left">
                               <div class="mb-3">
                                   <div class="@error('name') border border-danger rounded-3  @enderror">
-                                      <input wire:model="name" type="text" class="form-control" placeholder="Name"
+                                      <input wire:model="name" type="text" class="form-control" placeholder="Nombre"
                                           aria-label="Name" aria-describedby="email-addon">
                                   </div>
                                   @error('name') <div class="text-danger">{{ $message }}</div> @enderror
                               </div>
                               <div class="mb-3">
                                   <div class="@error('email') border border-danger rounded-3 @enderror">
-                                      <input wire:model="email" type="email" class="form-control" placeholder="Email"
+                                      <input wire:model="email" type="email" class="form-control" placeholder="Correo"
                                           aria-label="Email" aria-describedby="email-addon">
                                   </div>
                                   @error('email') <div class="text-danger">{{ $message }}</div> @enderror
@@ -33,28 +33,13 @@
                               <div class="mb-3">
                                   <div class="@error('password') border border-danger rounded-3 @enderror">
                                       <input wire:model="password" type="password" class="form-control"
-                                          placeholder="Password" aria-label="Password"
+                                          placeholder="Contraseña" aria-label="Password"
                                           aria-describedby="password-addon">
                                   </div>
                                   @error('password') <div class="text-danger">{{ $message }}</div> @enderror
-                              </div>
-                              <div class="form-check form-check-info text-left">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                      checked>
-                                  <label class="form-check-label" for="flexCheckDefault">
-                                      {{ __('I agree the') }} <a href="javascript:;"
-                                          class="text-dark font-weight-bolder">{{ __('Terms
-                                          and
-                                          Conditions') }}</a>
-                                  </label>
-                              </div>
                               <div class="text-center">
-                                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Registrar Usuario</button>
                               </div>
-                              <p class="text-sm mt-3 mb-0">{{ __('Already have an account? ') }}<a
-                                      href="{{ route('login') }}"
-                                      class="text-dark font-weight-bolder">{{ __('Sign in') }}</a>
-                              </p>
                           </form>
                     </div>
                 </div>
