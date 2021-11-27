@@ -22,10 +22,10 @@ class RolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function render()
     {
         $roles = Role::all();
-        return view('', compact('roles'));
+        return view('livewire.static-sign-up', compact('roles'));
     }
 
     /**

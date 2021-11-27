@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class StaticSignUp extends Component
 {
@@ -15,6 +17,7 @@ class StaticSignUp extends Component
         'email' => 'required|email:rfc,dns|unique:users',
         'password' => 'required|min:6'
     ];
+
     public function register() {
         $this->validate();
         $user = User::create([
@@ -22,9 +25,6 @@ class StaticSignUp extends Component
             'email' => $this->email,
             'password' => Hash::make($this->password)
         ]);
-
-       
-
         return redirect('/laravel-user-management');
     }
     public function render()

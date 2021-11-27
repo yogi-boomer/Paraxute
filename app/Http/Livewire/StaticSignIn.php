@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Http\Livewire\User;
 
 class StaticSignIn extends Component
 {
@@ -27,7 +28,7 @@ class StaticSignIn extends Component
     public function create()
     {
         $permission = Permission::get('');
-        return view('', compact('permission'));
+        return view('livewire.laravel-examples.user-management', compact('permission'));
     }
 
     /**
