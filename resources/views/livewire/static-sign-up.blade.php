@@ -15,7 +15,7 @@
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card z-index-0">
                     <div class="card-body">
-                        <form role="form text-left" wire:submit.prevent="register" action="#" method="POST">
+                        <form role="form text-left" wire:submit.prevent="register" method="PUT">
                             <h3><center>Ingresa los datos del nuevo usuario</center></h3>
                             <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Nombre" aria-label="Name"

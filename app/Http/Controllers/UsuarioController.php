@@ -32,7 +32,7 @@ class UsuarioController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        return view('', compact('roles'));
+        return view('livewire.static-sign-up', compact('roles'));
     }
 
     /**

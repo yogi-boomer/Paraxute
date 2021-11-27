@@ -36,7 +36,7 @@ class RolController extends Controller
     public function create()
     {
         $permission = Permission::get('');
-        return view('', compact('permission'));
+        return view('livewire.static-sign-up', compact('permission'));
     }
 
     /**

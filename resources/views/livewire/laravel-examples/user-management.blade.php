@@ -7,7 +7,7 @@
                         <div>
                             <h5 class="mb-0">Usuarios en Paraxute</h5>
                         </div>
-                        <a href="{{ route('roles.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Nuevo Usuario</a>
+                        <a href="{{ route('usuarios.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Nuevo Usuario</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
