@@ -14,7 +14,7 @@ use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
-use App\Http\Livewire\Usuarios\Index;
+use App\Http\Livewire\LaravelExamples\UserManagement;
 use App\Http\Livewire\LaravelExamples\UserMedicCard;
 
 use Illuminate\Http\Request;
@@ -57,5 +57,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-medicCard', UserMedicCard::class)->name('user-medicCard');
+    Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 });
 
