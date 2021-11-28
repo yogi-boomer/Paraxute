@@ -8,8 +8,8 @@
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h3 class="mb-0">{{ __('Información Medica') }}</h3>
-                <h4 for="selectedProgram">Marcar si o no segun corresponda.</h4>
+                <h3 class="mb-0">{{ __('Información Médica') }}</h3>
+                <h4 for="selectedProgram">Marcar sí o no según corresponda.</h4>
             </div>
             <div class="card-body pt-4 p-3">
                 <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
@@ -114,7 +114,7 @@
 
                                     <div class="col-6">
                                         <br>
-                                            <input type="text" class="form-control" placeholder ="sustancia en particular">
+                                            <input type="text" class="form-control" placeholder ="Sustancia en particular">
                             
                                         <br>
                                         <hr>
@@ -124,7 +124,7 @@
                                         <br>
                                         <hr>
                                         <br>
-                                                <input type="text" class="form-control" placeholder ="Enfermedad cronica">
+                                                <input type="text" class="form-control" placeholder ="Enfermedad crónica">
                                        
                                         <br>
                                         <hr>
@@ -139,7 +139,7 @@
                                         <br>
                                         <hr>
                                         <br>
-                                                <input type="text" class="form-control" placeholder ="Transtorno Psicológico">
+                                                <input type="text" class="form-control" placeholder ="Transtorno psicológico">
                                
                                         <br>
                                         <hr>

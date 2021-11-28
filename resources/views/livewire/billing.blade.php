@@ -16,7 +16,7 @@
                         <ul class="list-group">
                             <li class="list-group-item border-2 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                                 <div class="d-flex flex-column">
-                                    <h6 class="mb-3 text-sm">Fernando de Jesus Contreras Vega</h6>
+                                    <h6 class="mb-3 text-sm">Fernando de JesÚs Contreras Vega</h6>
                                     <span class="mb-2 text-xs">Programa: <span
                                             class="text-dark font-weight-bold ms-2">Piano</span></span>
                                     <span class="mb-2 text-xs">Formato: <span
@@ -37,7 +37,7 @@
                                 <div class="d-flex flex-column">
                                     <h6 class="mb-3 text-sm">Hugo Braian Bonilla Rodriguez</h6>
                                     <span class="mb-2 text-xs">Programa: <span
-                                            class="text-dark font-weight-bold ms-2">Bateria</span></span>
+                                            class="text-dark font-weight-bold ms-2">BaterÍa</span></span>
                                     <span class="mb-2 text-xs">Formato: <span
                                             class="text-dark ms-2 font-weight-bold">2 Horas</span></span>
                                     <span class="text-xs">No. Folio: <span
@@ -75,7 +75,7 @@
                                 <div class="d-flex flex-column">
                                     <h6 class="mb-3 text-sm">Luis Fernando Vazquez Ceballos</h6>
                                     <span class="mb-2 text-xs">Programa: <span
-                                            class="text-dark font-weight-bold ms-2">Bateria</span></span>
+                                            class="text-dark font-weight-bold ms-2">BaterÍa</span></span>
                                     <span class="mb-2 text-xs">Formato: <span
                                             class="text-dark ms-2 font-weight-bold">3 Horas</span></span>
                                     <span class="text-xs">No. Folio: <span

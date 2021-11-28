@@ -15,10 +15,10 @@
             <div class="card-body pt-4 p-3">
 
                 @if ($showDemoNotification)
-                    <div wire:model="showDemoNotification" class="mt-3  alert alert-primary alert-dismissible fade show"
+                    <div wire:model="showDemoNotification" class="mt-3 alert alert-primary alert-dismissible fade show"
                         role="alert">
                         <span class="alert-text text-white">
-                            {{ __('You are in a demo version, you can\'t update the profile.') }}</span>
+                            {{ __('Estás en una versión beta, no puedes actualizar perfil.') }}</span>
                         <button wire:click="$set('showDemoNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                         </button>
                     </div>
@@ -29,7 +29,7 @@
                         class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
                         <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
                         <span
-                            class="alert-text text-white">{{ __('Datos guardados correctamente!') }}</span>
+                            class="alert-text text-white">{{ __('¡Datos guardados correctamente!') }}</span>
                         <button wire:click="$set('showSuccesNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                         </button>
                     </div>
@@ -64,7 +64,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="user-email" class="form-control-label">{{ __('Nombre.') }}</label>
-                                            <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                            <div class="@error('user.email') border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="email"
                                                  placeholder="Nombre" id="user-email">
                                             </div>
@@ -72,7 +72,7 @@
 
                                     <div class="col">
                                          <label for="user-email" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
-                                            <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                            <div class="@error('user.email') border border-danger rounded-3 @enderror">
                                                 <input class="form-control" type="email"
                                                  placeholder="Apellido Paterno" id="user-email">
                                             </div>
@@ -80,7 +80,7 @@
 
                                 <div class="col">
                                     <label for="user-email" class="form-control-label">{{ __('Apellido Materno.') }}</label>
-                                        <div class="@error('user.email')border border-danger rounded-3 @enderror">
+                                        <div class="@error('user.email') border border-danger rounded-3 @enderror">
                                             <input class="form-control" type="email"
                                                  placeholder="Apellido Materno" id="user-email">
                                         </div>
@@ -92,7 +92,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="user.phone" class="form-control-label">{{ __('Programa') }}</label>
-                                <div class="@error('user.phone')border border-danger rounded-3 @enderror">
+                                <div class="@error('user.phone') border border-danger rounded-3 @enderror">
                                     <input  class="form-control" type="tel"
                                         placeholder="Nombre del programa" id="phone">
                                 </div>
@@ -110,11 +110,11 @@
                         </div>
                     </div>
                     <div class="container">
-                         <label for="about">{{ 'Ubicación' }}</label>
+                         <label for="about">{{'Ubicación'}}</label>
                          <div class="row">
                             <div class="col">
                             
-                                 <label for="about">{{ 'Estado' }}</label>
+                                 <label for="about">{{'Estado'}}</label>
                                       <select class="form-control"  name="Estados" id="estados">
                                             <option>Aguascalientes</option>
                                             <option>Baja California</option>
@@ -151,11 +151,11 @@
                                         </select>
                             </div>
                             <div class="col">
-                                 <label for="about">{{ 'Ciudad' }}</label>
+                                 <label for="about">{{'Ciudad'}}</label>
                                     <input type="text" class="form-control" placeholder="Ciudad" id="name">
                             </div>
                             <div class="col">
-                                <label for="about">{{ 'Municipio' }}</label>
+                                <label for="about">{{'Municipio'}}</label>
                                 <input class="form-control" type="text"
                                         placeholder="Municipio" id="name">
                             </div>
@@ -186,7 +186,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <label for="example-date-input" class="form-control-label">Ultimo grado escolar</label>
+                                <label for="example-date-input" class="form-control-label">Último grado escolar</label>
                                     <select name="Genero" id="genero" class="form-control">
                                             <option>Preescolar</option>
                                             <option>Primaria</option>

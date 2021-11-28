@@ -9,13 +9,13 @@
                   <div class="d-flex flex-column h-100">
                     <p class="mb-1 pt-2 text-bold">Bienvenido</p>
                     <h5 class="font-weight-bolder">Paraxute</h5>
-                    <p class="mb-5">"En Paraxute ofrecemos una preparación musical sólida, un lugar ideal para iniciar, continuar y reforzar una educación musical profesional tanto para quien ya posee conocimientos musicales como para quien busca una primera experiencia musical educativa."</p>
-                  
+                    <p class="mb-5">
+                      "En Paraxute ofrecemos una preparación musical sólida, un lugar ideal para iniciar, continuar y reforzar una educación musical profesional tanto para quien ya posee conocimientos musicales como para quien busca una primera experiencia musical educativa."
+                    </p>
                   </div>
                 </div>
                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
                   <div class="bg-gradient-primary border-radius-lg h-100">
-              
                     <div class="position-relative d-flex align-items-center justify-content-center h-100">
                       <img class="w-100 position-relative z-index-2 pt-4" src="/assets/img/illustrations/logo.png">
                     </div>
@@ -31,16 +31,11 @@
               <span class="mask bg-gradient-dark"></span>
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2"></h5>
-              
-                
               </div>
             </div>
           </div>
         </div>
-      </div>
- 
-      
-        
+      </div>       
   </main>
 
   <!--   Core JS Files   -->
@@ -86,7 +81,7 @@
               padding: 0,
               fontSize: 14,
               lineHeight: 3,
-              fontColor: "#fff",
+              fontColor: "#ffffff",
               fontStyle: 'normal',
               fontFamily: "Open Sans",
             },
@@ -128,7 +123,7 @@
             tension: 0.4,
             borderWidth: 0,
             pointRadius: 0,
-            borderColor: "#fbcf33",
+            borderColor: "#FBCF33",
             borderWidth: 3,
             backgroundColor: gradientStroke1,
             data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
@@ -140,7 +135,7 @@
             tension: 0.4,
             borderWidth: 0,
             pointRadius: 0,
-            borderColor: "#f53939",
+            borderColor: "#F53939",
             borderWidth: 3,
             backgroundColor: gradientStroke2,
             data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
@@ -165,8 +160,8 @@
             gridLines: {
               borderDash: [2],
               borderDashOffset: [2],
-              color: '#dee2e6',
-              zeroLineColor: '#dee2e6',
+              color: '#DEE2E6',
+              zeroLineColor: '#DEE2E6',
               zeroLineWidth: 1,
               zeroLineBorderDash: [2],
               drawBorder: false,
@@ -177,7 +172,7 @@
               beginAtZero: true,
               padding: 10,
               fontSize: 11,
-              fontColor: '#adb5bd',
+              fontColor: '#ADB5BD',
               lineHeight: 3,
               fontStyle: 'normal',
               fontFamily: "Open Sans",
@@ -191,7 +186,7 @@
             ticks: {
               padding: 10,
               fontSize: 11,
-              fontColor: '#adb5bd',
+              fontColor: '#ADB5BD',
               lineHeight: 3,
               fontStyle: 'normal',
               fontFamily: "Open Sans",
