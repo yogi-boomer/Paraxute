@@ -43,10 +43,10 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required', 
             'email'=> 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
+            'password' => 'required',
             'roles' => 'required'
         ]);
 
@@ -78,13 +78,11 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-       $user = User::find($id);
-       $roles = Role::pluck('name', 'name')->all();
-       $userRole = $user->roles->pluck('name', 'name')->all();
-
-       return view('usuarios.editar',compact('user', 'roles', 'userRole'));
+        $user = User::find($id);
+        $roles = Role::pluck('name','name')->all();
+        $userRole = $user->roles->pluck('name','name')->all();
+        return view('usuarios.editar',compact('user','roles','userRole'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -97,7 +95,7 @@ class UsuarioController extends Controller
         $this->validate($request, [
             'name' => 'required', 
             'email'=> 'required|email|unique:users,email'.$id,
-            'password' => 'same:confirm-password',
+            'password' => 'required',
             'roles' => 'required'
         ]);
 

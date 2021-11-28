@@ -73,49 +73,38 @@
         <div class="row mt-lg-n10 mt-md-n11 mt-n10">
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card z-index-0">
-                    <div class="card-body">
-                              @if ($errors->any())
-                              <div class="aler alert-dark alert-dismissible fade show" role="alert">
-                              <strong>¡Revise los campos!</strong>
-                                @foreach ($errors->all() as $error)
-                                    <span class="badge badge-danger">{{$error}}</span>
-                                @endforeach
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                              @endif     
-                              {!! Form::open(array('route' =>'usuarios.store', 'method' =>'POST')) !!}
-                              <div class="row">
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Nombre</label>
+                    <div class="card-body">  
+                        {!! Form::open(array('route' =>'usuarios.store', 'method' =>'POST')) !!}
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Nombre</label>
+                                        {!! Form::text('name', null, array('class' =>'form-control')) !!}
+                                    </div>
+                                </div>                             
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                          <label for="email">Correo</label>
                                           {!! Form::text('email', null, array('class' =>'form-control')) !!}
-                                      </div>
-                                  </div>                             
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Correo</label>
-                                          {!! Form::text('password', null, array('class' =>'form-control')) !!}
-                                      </div>
-                                  </div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Contraseña</label>
-                                          {!! Form::text('name', null, array('class' =>'form-control')) !!}
-                                      </div>
-                                  </div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Rol</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                          <label for="password">Contraseña</label>
+                                          {!! Form::password('password', array('class' =>'form-control')) !!}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                          <label for="">Rol</label>
                                           {!! Form::select('roles[]', $roles,[], array('class' => 'form-control')) !!}
-                                      </div>
-                                  </div>
+                                    </div>
+                                </div>
                               </div>                                
                               <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Registrar Usuario</button>
                               </div>
-                              {!! Form::close() !!}
+                              {!! Form::close() !!}                   
                     </div>
                 </div>
             </div>

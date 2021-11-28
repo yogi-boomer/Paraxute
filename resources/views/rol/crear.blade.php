@@ -57,6 +57,7 @@
     @endguest
 
 </x-layouts.base>
+
 <section class="h-100-vh mb-8">
     <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
         style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
@@ -64,7 +65,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5 text-center mx-auto">
-                    <h1 class="text-white mb-2 mt-5">Editar Usuarios</h1>
+                    <h1 class="text-white mb-2 mt-5">Crear roles</h1>
                 </div>
             </div>
         </div>
@@ -74,49 +75,46 @@
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card z-index-0">
                     <div class="card-body">
-                              @if ($errors->any())
-                              <div class="aler alert-dark alert-dismissible fade show" role="alert">
-                              <strong>¡Revise los campos!</strong>
-                                @foreach ($errors->all() as $error)
-                                    <span class="badge badge-danger">{{$error}}</span>
+{{--                         <form role="form text-left" wire:submit.prevent="register" action="#" method="POST">
+ --}}          
+                         
+                        @if ($errors->any())                                                
+                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                        <strong>¡Revise los campos!</strong>                        
+                            @foreach ($errors->all() as $error)                                    
+                                <span class="badge badge-danger">{{ $error }}</span>
+                            @endforeach                        
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                    @endif
+
+
+                    {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label for="">Nombre del Rol:</label>                                    
+                                {!! Form::text('name', null, array('class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label for="">Permisos para este Rol:</label>
+                                <br/>
+                                @foreach($permission as $value)
+                                    <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                                    {{ $value->name }}</label>
+                                <br/>
                                 @endforeach
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                              @endif     
-                              {!! Form::model($user, ['method' => 'PUT','route' =>['usuarios.update', $user->id]]) !!}
-                              <div class="row">
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Nombre</label>
-                                          {!! Form::text('email', null, array('class' =>'form-control')) !!}
-                                      </div>
-                                  </div>                             
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Correo</label>
-                                          {!! Form::text('password', null, array('class' =>'form-control')) !!}
-                                      </div>
-                                  </div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Contraseña</label>
-                                          {!! Form::text('name', null, array('class' =>'form-control')) !!}
-                                      </div>
-                                  </div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <div class="form-group">
-                                          <label for="name">Rol</label>
-                                          {!! Form::select('roles[]', $roles,[], array('class' => 'form-control')) !!}
-                                      </div>
-                                  </div>
-                              </div>                                
-                              <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Registrar Usuario</button>
-                              </div>
-                              {!! Form::close() !!}
+                            </div>
+                        </div>        
                     </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    {!! Form::close() !!}
+{{--                         </form>
+ --}}                    </div>
                 </div>
             </div>
         </div>

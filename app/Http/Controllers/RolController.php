@@ -25,7 +25,7 @@ class RolController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view('livewire.static-sign-up', compact('roles'));
+        return view('usuarios.index', compact('roles'));
     }
 
     /**
@@ -36,7 +36,7 @@ class RolController extends Controller
     public function create()
     {
         $permission = Permission::get();
-        return view('livewire.static-sign-up', compact('permission'));
+        return view('rol.crear', compact('permission'));
     }
 
     /**
@@ -51,7 +51,7 @@ class RolController extends Controller
         $role = Role::create(['name'=> $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('');
+        return redirect()->route('usuarios.index');
     }
 
     /**
