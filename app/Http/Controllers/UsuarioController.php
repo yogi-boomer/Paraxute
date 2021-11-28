@@ -21,7 +21,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = User::all();
-        return view('livewire.laravel-examples.user-management', compact('usuarios'));
+        return view('usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -32,7 +32,7 @@ class UsuarioController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        return view('livewire.static-sign-up', compact('roles'));
+        return view('usuarios.crear', compact('roles'));
     }
 
     /**
@@ -125,6 +125,6 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('laravel-examples.user-management');
+        return redirect()->route('usuarios.index');
     }
 }

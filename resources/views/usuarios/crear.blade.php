@@ -1,3 +1,4 @@
+
 <section class="h-100-vh mb-8">
     <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
         style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
