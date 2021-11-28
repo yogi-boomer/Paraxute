@@ -113,7 +113,7 @@
                                   </div>
                               </div>                                
                               <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Registrar Usuario</button>
+                                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Guardar Cambios</button>
                               </div>
                               {!! Form::close() !!}
                     </div>
