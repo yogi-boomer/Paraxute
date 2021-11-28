@@ -56,7 +56,7 @@ class UsuarioController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('');
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -82,7 +82,7 @@ class UsuarioController extends Controller
        $roles = Role::pluck('name', 'name')->all();
        $userRole = $user->roles->pluck('name', 'name')->all();
 
-       return view('',compact('user', 'roles', 'userRole'));
+       return view('usuarios.editar',compact('user', 'roles', 'userRole'));
     }
 
     /**
@@ -113,7 +113,7 @@ class UsuarioController extends Controller
         DB::table('model_has_roles')->where('model_id', $id)->delete();
 
         $user->assignRole($request->input('roles'));
-        return redirect()->route('');
+        return redirect()->route('usuarios.index');
     }
 
     /**
