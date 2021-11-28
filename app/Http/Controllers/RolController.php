@@ -79,7 +79,7 @@ class RolController extends Controller
             ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
             ->all();
 
-        return view('', compact('role', 'permission', 'rolePermissions'));
+        return view('rol.editar', compact('role', 'permission', 'rolePermissions'));
 
     }
 
@@ -98,7 +98,7 @@ class RolController extends Controller
         $role->save();
 
         $role->syncPermissions($request->input('permission'));
-        return view('');
+        return view('usuarios.index');
     }
 
     /**
@@ -110,6 +110,6 @@ class RolController extends Controller
     public function destroy($id)
     {
         DB::table('roles')->where('id', $id)->delete();
-        return redirect()->route('');
+        return redirect()->route('usuarios.index');
     }
 }

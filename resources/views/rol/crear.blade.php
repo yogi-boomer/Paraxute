@@ -77,20 +77,6 @@
                     <div class="card-body">
 {{--                         <form role="form text-left" wire:submit.prevent="register" action="#" method="POST">
  --}}          
-                         
-                        @if ($errors->any())                                                
-                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
-                        <strong>¡Revise los campos!</strong>                        
-                            @foreach ($errors->all() as $error)                                    
-                                <span class="badge badge-danger">{{ $error }}</span>
-                            @endforeach                        
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                    @endif
-
-
                     {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
