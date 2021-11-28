@@ -10,22 +10,21 @@
                                 <div wire:model="showDemoNotification"
                                     class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
                                     <span
-                                        class="alert-text text-white">{{ __(' You are in a demo version, you can\'t update the
-                                        profile.') }}</span>
+                                        class="alert-text text-white">{{ __('Estás en una versión beta, no puedes actualizar perfil.') }}</span>
                                     <button wire:click="$set('showDemoNotification', false)" type="button"
                                         class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                     </button>
                                 </div>
                             @endif
-                            <h4 class="mb-0">{{ __('¿Olvidaste tu contraseña? escribe tu correo aquí') }}</h4>
+                            <h4 class="mb-0">{{ __('¿Olvidaste tu contraseña? Escribe tu correo electrónico aquí') }}</h4>
                         </div>
                         <div class="card-body">
                             <form wire:submit.prevent="recoverPassword" action="#" method="POST" role="form text-left">
                                 <div>
-                                    <label for="email">{{ __('Correo') }}</label>
+                                    <label for="email">{{ __('Correo electrónico') }}</label>
                                     <div class="@error('email')border border-danger rounded-3 @enderror">
                                         <input wire:model="email" id="email" type="email" class="form-control"
-                                            placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                            placeholder="Correo electrónico" aria-label="Email" aria-describedby="email-addon">
                                     </div>
                                     @error('email') <div class="text-danger">{{ $message }}</div> @enderror
                                 </div>
@@ -39,8 +38,8 @@
                                     class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
                                     <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
                                     <span
-                                        class="alert-text text-white">{{ __(' An email for resetting your password has been
-                                        sent!') }}</span>
+                                        class="alert-text text-white">{{ __(' Se ha enviado un correo electrónico para restablecer su contraseña
+                                        ¡Enviado!') }}</span>
                                     <button wire:click="$set('showSuccesNotification', false)" type="button"
                                         class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                     </button>
@@ -51,9 +50,8 @@
                                 <div wire:model="showFailureNotification"
                                     class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
                                     <span class="alert-text text-white">
-                                        {{ __('You are not registered as a user. Please sign
-                                        up') }}
-                                        <a class="text-info" href="{{ route('sign-up') }}">here</a></span>
+                                        {{ __('No estás registrado como usuario. Por favor regístrate') }}
+                                        <a class="text-info" href="{{ route('sign-up') }}">Aquí</a></span>
                                     <button wire:click="$set('showFailureNotification', false)" type="button"
                                         class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                     </button>

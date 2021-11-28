@@ -13,7 +13,7 @@
                 <tr>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estado</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -28,7 +28,7 @@
                       </div>
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Fernando de Jesus Contreras Vega</h6>
+                        <h6 class="mb-0 text-sm">Fernando de Jesús Contreras Vega</h6>
                         <p class="text-xs text-secondary mb-0"></p>
                       </div>
                     </div>
@@ -47,7 +47,7 @@
                   </td>
                   <td class="align-middle text-center">
                     <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>
@@ -66,10 +66,10 @@
                     </div>
                   </td>
                   <td>
-                    <p class="mb-0 text-sm">Bateria</p>
+                    <p class="mb-0 text-sm">Batería</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
+                    <span class="badge badge-sm bg-gradient-warning">Por Vencer</span>
                   </td>
                   <td class="align-middle text-center">
                     <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
@@ -78,7 +78,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>
@@ -97,7 +97,7 @@
                     <p class="mb-0 text-sm">Piano</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
+                    <span class="badge badge-sm bg-gradient-warning">Por Vencer</span>
                   </td>
                   <td class="align-middle text-center">
                   <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
@@ -106,7 +106,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>
@@ -134,7 +134,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>
@@ -162,7 +162,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>
@@ -203,7 +203,7 @@
                 <tr>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estado</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -217,7 +217,7 @@
                         <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Fernando de Jesus Contreras Vega</h6>
+                        <h6 class="mb-0 text-sm">Fernando de Jesús Contreras Vega</h6>
                         <p class="text-xs text-secondary mb-0"></p>
                       </div>
                     </div>
@@ -236,7 +236,7 @@
                   </td>
                   <td class="align-middle text-center">
                     <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>              
@@ -278,7 +278,7 @@
                 <tr>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estado</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -299,10 +299,10 @@
                     </div>
                   </td>
                   <td>
-                    <p class="mb-0 text-sm">Bateria</p>
+                    <p class="mb-0 text-sm">Batería</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
+                    <span class="badge badge-sm bg-gradient-warning">Por Vencer</span>
                   </td>
                   <td class="align-middle text-center">
                     <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
@@ -311,7 +311,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>
@@ -330,7 +330,7 @@
                     <p class="mb-0 text-sm">Piano</p>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <span class="badge badge-sm bg-gradient-warning">Por vencer</span>
+                    <span class="badge badge-sm bg-gradient-warning">Por Vencer</span>
                   </td>
                   <td class="align-middle text-center">
                   <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
@@ -339,7 +339,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>              
@@ -380,7 +380,7 @@
                 <tr>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nombre del Alumno</th>
                   <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Programa</th>
-                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estatus</th>
+                  <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Estado</th>
                   <th class="text-secondary opacity-7"></th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -410,7 +410,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="#!" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>
@@ -438,7 +438,7 @@
                   </td>
                   <td class="align-middle text-center ">
                     <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
-                      Ver pagos
+                      Ver Pagos
                     </a>
                   </td>
                 </tr>             

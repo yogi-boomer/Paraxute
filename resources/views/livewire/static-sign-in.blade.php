@@ -6,13 +6,13 @@
                     <div class="card card-plain mt-8">
                         <div class="card-header pb-0 text-left bg-transparent">
                             <h3 class="font-weight-bolder text-info text-gradient">Bienvenido de regreso</h3>
-                            <p class="mb-0">Ingresa tu correo y contraseña para registrarse</p>
+                            <p class="mb-0">Ingresa tu correo electrónico y contraseña para registrarse</p>
                         </div>
                         <div class="card-body">
                             <form role="form text-left">
-                                <label>Email</label>
+                                <label>Correo electrónico</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Correo" aria-label="Email"
+                                    <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Email"
                                         aria-describedby="email-addon">
                                 </div>
                                 <label>Contraseña</label>
