@@ -96,7 +96,7 @@
                               </div>
                               <div class="mb-3">
                                   <div class="@error('email') border border-danger rounded-3 @enderror">
-                                      <input wire:model="email" type="email" class="form-control" placeholder="Correo"
+                                      <input wire:model="email" type="email" class="form-control" placeholder="Correo electrónico"
                                           aria-label="Email" aria-describedby="email-addon">
                                   </div>
                                   @error('email') <div class="text-danger">{{ $message }}</div> @enderror
