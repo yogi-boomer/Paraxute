@@ -1,11 +1,10 @@
-<<<<<<< HEAD
+
 <link rel="stylesheet" href= "/css/app.css" >
 
 
 
 <section class="h-100-vh mb-8">
     <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
-=======
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +17,7 @@
 </head>
 <body>
 <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
->>>>>>> 6219907badb981bc3839f21b5312d1f2d32180aa
-        style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
+ style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container">
             <div class="row justify-content-center">
