@@ -34,11 +34,6 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                            <small class="text-muted">{{ __('¿Olvidaste tu contraseña?') }} <a
-                                    href="{{ route('forgot-password') }}"
-                                    class="text-info text-gradient font-weight-bold">{{ __('Aquí') }}</a></small>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
