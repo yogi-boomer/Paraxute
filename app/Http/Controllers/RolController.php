@@ -100,7 +100,7 @@ class RolController extends Controller
         $role->save();
 
         $role->syncPermissions($request->input('permission'));
-        return view('usuarios.index');
+        return redirect()->route('roles.index');
     }
 
     /**
