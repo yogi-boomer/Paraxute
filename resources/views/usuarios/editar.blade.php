@@ -1,24 +1,15 @@
-<<<<<<< HEAD
 <link rel="stylesheet" href= "/css/app.css" >
-
-
-
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Editar Usuarios</title>
+  </head>
+  <body>
+  </body>
+</html>
 <section class="h-100-vh mb-8">
     <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
-=======
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Edicion de usuarios</title>
-</head>
-<body>
-<div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
->>>>>>> 6219907badb981bc3839f21b5312d1f2d32180aa
         style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container">
@@ -73,7 +64,7 @@
                                   </div>
                               </div>                                
                               <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Guardar Cambios</button>
+                                  <button type="submit" class="p-3 mb-2 bg-primary text-white w-100 my-4 mb-2">Guardar Cambios</button>
                               </div>
                               {!! Form::close() !!}
                     </div>
@@ -81,7 +72,4 @@
             </div>
         </div>
     </div>
-</div>
-</body>
-</html>
-
+</section>
