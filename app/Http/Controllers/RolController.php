@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class RolController extends Controller
 {
     function __construct(){
-        $this->middleware('permission:ver-usuario|crear-usuario|editar-usuario|eliminar-usuario', ['only' =>['index']]);
+        $this->middleware('permission:ver-usuario|crear-usuario|editar-usuario|eliminar-usuario|ver-alumno|ver-usuarios|ver-pagos|registrar-alumno', ['only' =>['index']]);
         $this->middleware('permission:crear-usuario', ['only' =>['create','store']]);
         $this->middleware('permission:editar-usuario', ['only' =>['edit','update']]);
         $this->middleware('permission:eliminar-usuario', ['only' =>['destroy']]);
