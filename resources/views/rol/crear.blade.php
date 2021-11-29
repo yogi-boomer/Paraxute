@@ -74,9 +74,7 @@
         <div class="row mt-lg-n10 mt-md-n11 mt-n10">
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card z-index-0">
-                    <div class="card-body">
-{{--                         <form role="form text-left" wire:submit.prevent="register" action="#" method="POST">
- --}}          
+                    <div class="card-body">  
                     {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -99,8 +97,6 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     {!! Form::close() !!}
-{{--                         </form>
- --}}                    </div>
                 </div>
             </div>
         </div>
