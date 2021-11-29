@@ -58,7 +58,6 @@
 
 </x-layouts.base>
 
-
 <div class="row">
         <div class="col-12">
             <div class="card mb-4">
@@ -69,7 +68,7 @@
                         </div>
                         <div>
                         @can('crear-rol')
-                        <a href="{{ route('roles.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Crear Rol</a>
+                        <a href="{{ route('roles.index') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Ver Roles</a>
                         @endcan
                         @csrf
                         @can('crear-usuario')
@@ -143,7 +142,7 @@
                                     </td>
                                 </tr>
                             @endforeach   
-                            </tbody>
+                            </tbody>               
                         </table>
                     </div>
                 </div>
