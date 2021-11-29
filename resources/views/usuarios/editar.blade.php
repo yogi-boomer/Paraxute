@@ -1,64 +1,15 @@
-<x-layouts.base>
-    {{-- If the user is authenticated --}}
-    @auth()
-        {{-- If the user is authenticated on the static sign up or the sign up page --}}
-        @if (in_array(request()->route()->getName(),['static-sign-up', 'sign-up'],))
-            @include('layouts.navbars.guest.sign-up')
 
-            @include('layouts.footers.guest.with-socials')
-            {{-- If the user is authenticated on the static sign in or the login page --}}
-        @elseif (in_array(request()->route()->getName(),['sign-in', 'login'],))
-            @include('layouts.navbars.guest.login')
-
-            @include('layouts.footers.guest.description')
-        @elseif (in_array(request()->route()->getName(),['profile', 'my-profile'],))
-            @include('layouts.navbars.auth.sidebar')
-            <div class="main-content position-relative bg-gray-100">
-                @include('layouts.navbars.auth.nav-profile')
-                <div>
-
-                    @include('layouts.footers.auth.footer')
-                </div>
-            </div>
-            @include('components.plugins.fixed-plugin')
-        @else
-            @include('layouts.navbars.auth.sidebar')
-            @include('layouts.navbars.auth.nav')
-            @include('components.plugins.fixed-plugin')
-
-            <main>
-                <div class="container-fluid">
-                    <div class="row">
-                        @include('layouts.footers.auth.footer')
-                    </div>
-                </div>
-            </main>
-        @endif
-    @endauth
-
-    {{-- If the user is not authenticated (if the user is a guest) --}}
-    @guest
-        {{-- If the user is on the login page --}}
-        @if (!auth()->check() && in_array(request()->route()->getName(),['login'],))
-            @include('layouts.navbars.guest.login')
-
-            <div class="mt-5">
-                @include('layouts.footers.guest.with-socials')
-            </div>
-
-            {{-- If the user is on the sign up page --}}
-        @elseif (!auth()->check() && in_array(request()->route()->getName(),['sign-up'],))
-            <div>
-                @include('layouts.navbars.guest.sign-up')
-
-                @include('layouts.footers.guest.with-socials')
-            </div>
-        @endif
-    @endguest
-
-</x-layouts.base>
-<section class="h-100-vh mb-8">
-    <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>Edicion de usuarios</title>
+</head>
+<body>
+<div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
         style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container">
@@ -121,4 +72,7 @@
             </div>
         </div>
     </div>
-</section>
+</div>
+</body>
+</html>
+
