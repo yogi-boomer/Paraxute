@@ -57,7 +57,6 @@
     @endguest
 
 </x-layouts.base>
-
 <section class="h-100-vh mb-8">
     <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
         style="background-image: url('../assets/img/curved-images/paraxuteregistro.png');">
@@ -65,38 +64,53 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5 text-center mx-auto">
-                    <h1 class="text-white mb-2 mt-5">Crear roles</h1>
+                    <h1 class="text-white mb-2 mt-5">Roles</h1>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row mt-lg-n10 mt-md-n11 mt-n10">
-            <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+            <div class="col-xl-8 col-lg-5 col-md-7 mx-auto">
                 <div class="card z-index-0">
                     <div class="card-body">  
-                    {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <label for="">Nombre del Rol:</label>                                    
-                                {!! Form::text('name', null, array('class' => 'form-control')) !!}
-                            </div>
+                    @can('crear-rol')
+                    <a href="{{ route('roles.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Nuevo Rol</a>
+                    @endcan
+                    <table class="table table-hover align-items-center mb-0">
+                            <thead style="position: sticky; top: 0">
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 style=">
+                                        Rol
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                        Acciones
+                                    </th>
+                    <tbody>
+                    @foreach ($roles as $role)
+                    <tr>
+                    <td class="ps-4">
+                        <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm ">{{ $role->name }}</h6>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <label for="">Permisos para este Rol:</label>
-                                <br/>
-                                @foreach($permission as $value)
-                                    <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                                    {{ $value->name }}</label>
-                                <br/>
-                                @endforeach
+                    </td>                     
+                        <td> 
+                            <div class="text-center">
+                            @can('editar-rol')
+                                <a class="btn btn-info" href="{{ route('roles.edit', $role->id) }}">Editar</a> 
+                            @endcan   
+                            @csrf 
+                            @can('eliminar-rol')
+                            {!! Form::open(['method'=> 'DELETE', 'route'=> ['roles.destroy', $role->id], 'style'=>'display:inline']) !!}
+                                {!! Form::submit('Borrar', ['class'=> 'btn btn-danger']) !!}
+                            {!! Form::close() !!}
+                            @endcan
                             </div>
-                        </div>        
+                        </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
                     </div>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

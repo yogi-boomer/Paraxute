@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\DB;
 class RolController extends Controller
 {
     function __construct(){
-        $this->middleware('permission:ver-usuario | crear-usuario | editar-usuario | eliminar-usuario', ['only' =>['index']]);
+        $this->middleware('permission:ver-usuario|crear-usuario|editar-usuario|eliminar-usuario|ver-alumno|ver-usuarios|ver-pagos|registrar-alumno|ver-rol|crear-rol|eliminar-rol', ['only' =>['index']]);
         $this->middleware('permission:crear-usuario', ['only' =>['create','store']]);
         $this->middleware('permission:editar-usuario', ['only' =>['edit','update']]);
         $this->middleware('permission:eliminar-usuario', ['only' =>['destroy']]);
-
+        $this->middleware('permission:crear-rol', ['only' =>['create','store']]);
+        $this->middleware('permission:editar-rol', ['only' =>['edit','update']]);
+        $this->middleware('permission:eliminar-rol', ['only' =>['destroy']]);
     }
     /**
      * Display a listing of the resource.
@@ -25,7 +27,7 @@ class RolController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view('usuarios.index', compact('roles'));
+        return view('rol.index', compact('roles'));
     }
 
     /**
@@ -51,7 +53,7 @@ class RolController extends Controller
         $role = Role::create(['name'=> $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('usuarios.index');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -98,7 +100,7 @@ class RolController extends Controller
         $role->save();
 
         $role->syncPermissions($request->input('permission'));
-        return view('usuarios.index');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -110,6 +112,6 @@ class RolController extends Controller
     public function destroy($id)
     {
         DB::table('roles')->where('id', $id)->delete();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('roles.index');
     }
 }

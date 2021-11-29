@@ -58,7 +58,6 @@
 
 </x-layouts.base>
 
-
 <div class="row">
         <div class="col-12">
             <div class="card mb-4">
@@ -68,8 +67,13 @@
                             <h5 class="mb-0">Usuarios en Paraxute</h5>
                         </div>
                         <div>
-                        <a href="{{ route('roles.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Crear Rol</a>
+                        @can('crear-rol')
+                        <a href="{{ route('roles.index') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Ver Roles</a>
+                        @endcan
+                        @csrf
+                        @can('crear-usuario')
                         <a href="{{ route('usuarios.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Nuevo Usuario</a>
+                        @endcan
                         </div>
                     </div>
                 </div>
@@ -124,15 +128,21 @@
                                     </td>
                                     <td>
                                         <div class="text-center">
-                                        <a class="btn btn-info" href="{{ route('usuarios.edit', $usuario->id) }}">Editar</a>                                    
+                                        @can ('editar-usuario')
+                                        <a class="btn btn-info" href="{{ route('usuarios.edit', $usuario->id) }}">Editar</a>                
+                                        @endcan    
+                                        @csrf      
+                                        @can('eliminar-usuario')     
                                         {!! Form::open(['method'=> 'DELETE', 'route'=> ['usuarios.destroy', $usuario->id], 'style'=>'display:inline']) !!}
                                             {!! Form::submit('Borrar', ['class'=> 'btn btn-danger']) !!}
+                                        @endcan
                                         {!! Form::close() !!}
+                                        
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach   
-                            </tbody>
+                            </tbody>               
                         </table>
                     </div>
                 </div>
