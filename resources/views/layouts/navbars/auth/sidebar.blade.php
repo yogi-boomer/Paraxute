@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}"
+                <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : 'dashboard' }}"
                     href="{{ route('dashboard') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -44,7 +44,7 @@
             </li>
             <li class="nav-item">
             @can('registrar-alumno')
-                <a class="nav-link {{ Route::currentRouteName() == 'user-profile' ? 'active' : '' }}"
+                <a class="nav-link {{ Route::currentRouteName() == 'user-profile' ? 'active' : '' }} "
                     href="{{ route('user-profile') }}">   
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -78,12 +78,12 @@
             @can('ver-usuarios')
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'usuarios.index' ? 'active' : '' }}"
+                <a class="nav-link {{ Route::currentRouteName() == 'usuarios.index' ? 'active' : '' }} {{ Route::currentRouteName() == 'usuarios.create' ? 'active' : '' }} {{ Route::currentRouteName() == 'usuarios.edit' ? 'active' : '' }} {{ Route::currentRouteName() == 'roles.index' ? 'active' : '' }} {{ Route::currentRouteName() == 'roles.edit' ? 'active' : '' }} {{ Route::currentRouteName() == 'roles.create' ? 'active' : '' }}"
                     href="{{ route('usuarios.index') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['usuarios.index']) ? 'text-white' : 'text-dark' }}"></i>
+                        {{ in_array(request()->route()->getName(),['usuarios.index','usuarios.create','usuarios.edit','roles.index','roles.edit','roles.create']) ? 'text-white' : 'text-dark' }}"></i>
                     </div>
                     <span class="nav-link-text ms-1">Usuarios</span>
                 </a>
