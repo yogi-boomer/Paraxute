@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AlumnoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +47,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('usuarios', UsuarioController::class);
 });
 
+Route::get('recibos/pdf', [App\Http\Controllers\AlumnoController::class, 'pdf'] )->name('recibos.pdf');
+
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/billing', Billing::class)->name('billing');
@@ -54,4 +57,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-medicCard', UserMedicCard::class)->name('user-medicCard');
 });
+
+
 
