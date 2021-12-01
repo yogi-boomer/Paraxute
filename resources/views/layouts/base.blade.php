@@ -2,8 +2,36 @@
 <html lang="es-MX">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta  name="keywords" content="Música, Escuela, Arte, Paraxute, Educación, Conocimientos musicales, Musical educativo"/>
+    <meta  name="description" content="Escuela de educación musical profesional" />
+    
+
+    {{-- Plantilla obtenida de Creative Tim --}}
+    {{-- Agradecimiento por la contibrucción a Creative Tim --}}
+    <meta  name="twitter:card" content="product" />
+    <meta  name="twitter:site" content="@creativetim" />
+    <meta  name="twitter:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
+    <meta  name="twitter:description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
+    <meta  name="twitter:creator" content="@creativetim" />
+    <meta  name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/492/original/opt_sd_laravel_thumbnail.jpg" />
+    <meta  property="fb:app_id" content="655968634437471" />
+    <meta  property="og:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
+    <meta  property="og:type" content="article" />
+    <meta  property="og:url" content="https://www.creative-tim.com/live/vue-argon-dashboard-laravel" />
+    <meta  property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/492/original/opt_sd_laravel_thumbnail.jpg" />
+    <meta  property="og:description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
+    <meta  property="og:site_name" content="Creative Tim" />
+
+    {{-- Fin de agradecimientos--}}
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+
     <!-- Metas -->
     @if(env('PARAXUTE'))
         <script>

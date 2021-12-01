@@ -1,1 +1,2 @@
-Elaborado por YIPI Studios
+Elaborado por: YIPI Studios
+Plantilla obtenida de: Creative Tim
