@@ -14,6 +14,8 @@ class UserProfile extends Component
     public $showDemoNotification = false;
     
     // ID's de los input del formulario
+
+    //step one
     public $selectedProgram;
     public $selectedFormat;
     public $dateRegister;
@@ -29,6 +31,7 @@ class UserProfile extends Component
     public $ultGrado;
     public $nombreEscuela;
 
+    //step two
     public $tipoSangre;
     public $alergia;
     public $proVisual;
@@ -38,6 +41,35 @@ class UserProfile extends Component
     public $transPsic;
     public $medicamentos;
     public $conducta;
+
+    //step three
+    public $parentesco;
+    public $dateNacimiento2;
+    public $estadoCivil;
+    public $nombre2;
+    public $apellidoP2;
+    public $apellidoM2;
+    public $ultGrado2;
+    public $nombreEscuela2;
+    public $estados2;
+    public $ciudad2;
+    public $municipio2;
+    public $telefono;
+    public $celular;
+    public $email;
+    public $nombreTrabajo;
+    public $telefonoEmpresa;
+
+    //step four
+    public $parentesco3;
+    public $nombre4;
+    public $apellidoP4;
+    public $apellidoM4;
+    public $estados4;
+    public $ciudad4;
+    public $municipio4;
+    public $telefono3;
+    public $celular3;
 
     // variables de conteo
     public $totalSteps = 4;
@@ -94,18 +126,18 @@ class UserProfile extends Component
             $this->validate([
                 'selectedProgram'=>'required',
                 'selectedFormat'=>'required',
-                'dateRegister'=>'required',
-                'nombre'=>'required|string',
-                'apellidoP'=>'required|string',
-                'apellidoM'=>'required|string',
+                'dateRegister'=>'required|date',
+                'nombre'=>'required|string|max:25|min:3',
+                'apellidoP'=>'required|string|max:20|min:3',
+                'apellidoM'=>'required|string|max:20|min:3',
                 'estados'=>'required',
-                'ciudad'=>'required',
-                'municipio'=>'required',
-                'dateNacimiento'=>'required',
+                'ciudad'=>'required|string|max:25|min:3',
+                'municipio'=>'required|string|max:20|min:3',
+                'dateNacimiento'=>'required|date',
                 'genero'=>'required',
-                'generoOtro'=>'',
+                'generoOtro'=>' ',
                 'ultGrado'=>'required',
-                'nombreEscuela'=>'string|max:40|min:3'
+                'nombreEscuela'=>'string|max:50|min:3'
             ]);
         }
         elseif($this->currentStep == 2){
@@ -119,6 +151,41 @@ class UserProfile extends Component
                 'transPsic'=>'required',
                 'medicamentos'=>'required',
                 'conducta'=>'required'
+            ]);
+        }
+
+        elseif($this->currentStep == 3){
+            $this->validate([
+                'parentesco'=>'required|string|max:20|min:3',
+                'dateNacimiento2'=>'required|date',
+                'estadoCivil'=>'required',
+                'nombre2'=>'required|string|max:25|min:3',
+                'apellidoP2'=>'required|string|max:20|min:3',
+                'apellidoM2'=>'required|string|max:20|min:3',
+                'ultGrado2'=>'required',
+                'nombreEscuela2'=>'required|max:50|min:3',
+                'estados2'=>'required',
+                'ciudad2'=>'required|string|max:25|min:3',
+                'municipio2'=>'required|string|max:20|min:3',
+                'telefono'=>'required|min:11|numeric',
+                'celular'=>'required|min:11|numeric',
+                'email'=>'required|email|unique:users|max:50|min:3',
+                'nombreTrabajo'=>'required|max:50|min:3',
+                'telefonoEmpresa'=>'required|min:11|numeric'
+            ]);
+        }
+
+        elseif($this->currentStep == 4){
+            $this->validate([
+                'parentesco3'=>'required|string|max:20|min:3',
+                'nombre4'=>'required|string|max:25|min:3',
+                'apellidoP4'=>'required|string|max:20|min:3',
+                'apellidoM4'=>'required|string|max:20|min:3',
+                'estados4'=>'required',
+                'ciudad4'=>'required|string|max:25|min:3',
+                'municipio4'=>'required|string|max:20|min:3',
+                'telefono3'=>'required|min:11|numeric',
+                'celular3'=>'required|min:11|numeric'
             ]);
         }
     }

@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5 text-center mx-auto">
-                    <h1 class="text-black mb-2 mt-5">Editar Usuarios</h1>
+                    <h1 class="text-black mb-2 mt-5">Editar usuarios</h1>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                                   </div>                             
                                   <div class="col-xs-12 col-sm-12 col-md-12">
                                       <div class="form-group">
-                                          <label for="name">Correo</label>
+                                          <label for="name">Correo electrónico</label>
                                           {!! Form::text('email', null, array('class' =>'form-control')) !!}
                                       </div>
                                   </div>

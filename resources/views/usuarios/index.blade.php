@@ -68,11 +68,15 @@
                         </div>
                         <div>
                         @can('crear-rol')
-                        <a href="{{ route('roles.index') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Ver Roles</a>
+                        <a href="{{ route('roles.index') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button"> 
+                            <i class="fas fa-plus"></i>
+                            Ver Roles</a>
                         @endcan
                         @csrf
                         @can('crear-usuario')
-                        <a href="{{ route('usuarios.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Nuevo Usuario</a>
+                        <a href="{{ route('usuarios.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">
+                            <i class="fas fa-plus"></i>
+                            Nuevo Usuario</a>
                         @endcan
                         </div>
                     </div>
@@ -134,7 +138,7 @@
                                         @csrf      
                                         @can('eliminar-usuario')     
                                         {!! Form::open(['method'=> 'DELETE', 'route'=> ['usuarios.destroy', $usuario->id], 'style'=>'display:inline']) !!}
-                                            {!! Form::submit('Borrar', ['class'=> 'btn btn-danger']) !!}
+                                            {!! Form::submit('Eliminar', ['class'=> 'btn btn-danger']) !!}
                                         @endcan
                                         {!! Form::close() !!}
                                         

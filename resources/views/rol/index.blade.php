@@ -75,7 +75,9 @@
                 <div class="card z-index-0">
                     <div class="card-body">  
                     @can('crear-rol')
-                    <a href="{{ route('roles.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Nuevo Rol</a>
+                    <a href="{{ route('roles.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">
+                        <i class="fas fa-plus"></i>
+                        Nuevo Rol</a>
                     @endcan
                     <table class="table table-hover align-items-center mb-0">
                             <thead style="position: sticky; top: 0">
