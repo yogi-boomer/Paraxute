@@ -104,9 +104,10 @@ class AlumnoController extends Controller
     }
 
     public function increaseStep() {
-        $this->resetErrorBag();
+     
         $this->validateData();
         $this->currentStep++;
+        
         if($this->currentStep > $this->totalSteps){
             $this->currentStep = $this->totalSteps;
         }
@@ -115,6 +116,7 @@ class AlumnoController extends Controller
     public function decreaseStep() {
         $this->resetErrorBag();
         $this->currentStep--;
+        
         if($this->currentStep < 1){
             $this->currentStep = 1;
         }
@@ -204,11 +206,11 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $this->totalSteps = 4;
-        $this->currentStep = 1;
-        $this->showSuccesNotification  = false;
-        $this->showDemoNotification = false;
-        return view('livewire.laravel-examples.user-profile', compact('totalSteps', 'currentStep', 'showSuccesNotification', 'showDemoNotification'));
+        $totalStep=$this->totalSteps;
+        $currentStep=$this->currentStep;
+        $showSuccesNotification=$this->showSuccesNotification;
+        $showDemoNotification=$this->showDemoNotification;
+        return view('livewire.laravel-examples.user-profile', compact('totalStep', 'currentStep', 'showSuccesNotification', 'showDemoNotification'));
     }
 
     /**
