@@ -4,11 +4,13 @@ namespace App\Http\Livewire\LaravelExamples;
 use App\Models\User;
 
 use Livewire\Component;
+use App\Http\Controllers\AlumnoController;
 use Livewire\WithFileUploads; //Agregado
 
 class UserProfile extends Component
 {
-    public User $user;
+
+    use WithFileUploads;
     public $showSuccesNotification  = false;
 
     public $showDemoNotification = false;

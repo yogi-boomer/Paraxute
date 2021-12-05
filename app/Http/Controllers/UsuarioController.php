@@ -10,6 +10,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
+use App\Http\Livewire\LaravelExamples\UserProfile;
 
 class UsuarioController extends Controller
 {
