@@ -13,7 +13,6 @@ use App\Http\Livewire\Tables;
 
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
-use App\Http\Livewire\LaravelExamples\UserMedicCard;
 
 use Illuminate\Http\Request;
 //Rol
@@ -45,6 +44,7 @@ Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')-
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('roles', RolController::class);
     Route::resource('usuarios', UsuarioController::class);
+    Route::resource('alumnos', AlumnoController::class);
 });
 
 Route::get('recibos/pdf', [App\Http\Controllers\AlumnoController::class, 'pdf'] )->name('recibos.pdf');
@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
-    Route::get('/laravel-user-medicCard', UserMedicCard::class)->name('user-medicCard');
+
 });
 
 
