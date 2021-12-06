@@ -39,8 +39,8 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class= "form-group">
-                                    <label for="selectedProgram">Selecciona un programa.</label>
-                                    <select name="selectedProgram" id="selectedProgram" class="form-control" wire:model="selectedProgram" required>
+                                    <label for="id_programa_">Selecciona un programa.</label>
+                                    <select name="id_programa_" id="id_programa_" class="form-control" wire:model="id_programa_" required>
                                         <option value="" selected>Escoge programa</option>
                                         <option value="Batería">Batería</option>
                                         <option value="Bajo Eléctrico">Bajo Eléctrico</option>
@@ -54,7 +54,7 @@
                                         <option value="Piano">Piano</option>
                                         <option value="Violín">Violín</option>
                                     </select>
-                                    <span class="text-danger">@error('selectedProgram'){{ $message }}@enderror</span>
+                                    <span class="text-danger">@error('id_programa_'){{ $message }}@enderror</span>
                                 </div>
                             </div>
 

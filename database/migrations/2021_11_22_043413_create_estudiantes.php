@@ -14,8 +14,6 @@ class CreateEstudiantes extends Migration
     public function up()
     {
       
-
-
         Schema::create('ficha_medica', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_sangre');
@@ -45,7 +43,7 @@ class CreateEstudiantes extends Migration
             $table->string('ciudad');
        
         });
-        Schema::create('tutor', function (Blueprint $table) {
+        Schema::create('tutor1', function (Blueprint $table) {
             $table->id();
             $table->string('parentesco');
             $table->string('nombre');
@@ -59,20 +57,34 @@ class CreateEstudiantes extends Migration
             $table->foreignId('id_domicilio_')->contrained('domicilios');
 
         });
+        Schema::create('tutor2', function (Blueprint $table) {
+            $table->id();
+            $table->string('parentesco');
+            $table->string('nombre');
+            $table->string('aprellido_p');
+            $table->string('apellido_m');
+            $table->string('fecha_nac');
+            $table->string('ultimo_grado');
+            $table->string('estado_civil');
+            $table->string('nom_trabajo');
+            $table->foreignId('id_contacto_')->contrained('contacto');
+            $table->foreignId('id_domicilio_')->contrained('domicilios');
 
+        });
       
         Schema::create('formato', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_formato');
-            $table->string('costo_formato');
-         
+            $table->string('tipo_formato');  
         });
+
+
         Schema::create('programa', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_programa');
             $table->string('codigo_Prog');
-            $table->foreignId('id_formato_')->contrained('formato');
-       
+            $table->string('num_sesiones_mes');
+            $table->string('costo_mensual');
+            $table->foreignId('id_formato_')->contrained('formato');                
         });
 
         
@@ -89,12 +101,10 @@ class CreateEstudiantes extends Migration
             $table->foreignId('id_programa_')->constrained('programa');
             $table->foreignId('id_ficha_medica_')->constrained('ficha_medica');
             $table->foreignId('id_domicilios_')->constrained('domicilios');
-            $table->foreignId('id_tutor1_')->constrained('tutor');
-            $table->foreignId('id_tutor2_')->constrained('tutor'); */
-
-        
-
+            $table->foreignId('id_tutor1_')->constrained('tutor1');
+            $table->foreignId('id_tutor2_')->constrained('tutor2'); 
         });
+
         Schema::create('concepto', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_concepto');
@@ -131,7 +141,8 @@ class CreateEstudiantes extends Migration
 
         Schema::dropIfExists('ficha_medica');
         Schema::dropIfExists('domicilios');
-        Schema::dropIfExists('tutor');
+        Schema::dropIfExists('tutor1');
+        Schema::dropIfExists('tutor2');
     
     }
 }

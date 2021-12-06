@@ -17,7 +17,7 @@ class UserProfile extends Component
     // ID's de los input del formulario
 
     //step one
-    public $selectedProgram;
+    public $id_programa_;
     public $selectedFormat;
     public $dateRegister;
     public $nombre;
@@ -30,9 +30,10 @@ class UserProfile extends Component
     public $sexo;
     public $generoOtro;
     public $ultimo_Grado;
-    public $escuela_Proc;//
+    public $escuela_Proc;
 
     //step two
+    public $id_ficha_medica_;
     public $tipoSangre;
     public $alergia;
     public $proVisual;
@@ -125,7 +126,7 @@ class UserProfile extends Component
     public function validateData(){
         if($this->currentStep == 1){
             $this->validate([
-                'selectedProgram'=>'required',
+                'id_programa_'=>'required',
                 'selectedFormat'=>'required',
                 'dateRegister'=>'required|date',
                 'nombre'=>'required|string|max:25|min:3',
@@ -200,7 +201,12 @@ class UserProfile extends Component
             "fecha_Nac"=>$this->fecha_Nac,
             "sexo"=>$this->sexo,
             "escuela_Proc"=>$this->escuela_Proc,
-            "ultimo_Grado"=>$this->ultimo_Grado
+            "ultimo_Grado"=>$this->ultimo_Grado,
+            "id_programa_"=>$this->id_programa_,
+            "id_ficha_medica_"=>$this->id_ficha_medica_,
+            "id_domicilios_"=>$this->id_domicilios_,
+            "id_tutor1_"=>$this->id_tutor1_,
+            "id_tutor2_"=>$this->id_tutor2_
         );
 
         Estudiante::insert($values);
