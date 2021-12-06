@@ -135,11 +135,7 @@ class UserProfile extends Component
                 'ciudad'=>'required|string|max:25|min:3',
                 'municipio'=>'required|string|max:20|min:3',
                 'fecha_Nac'=>'required|date',
-<<<<<<< HEAD
                 'sexo'=>'required',
-=======
-                'genero'=>'required',
->>>>>>> 5507dd3c271c63727323e4034df8087a0aa1d1f6
                 'generoOtro'=>' ',
                 'ultimo_Grado'=>'required',
                 'escuela_Proc'=>'string|max:50|min:3'
