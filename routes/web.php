@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('recibos', ReciboRiController::class);
 });
 
-Route::get('recibos/pdf', [App\Http\Controllers\AlumnoController::class, 'pdf'] )->name('recibos.pdf');
+Route::get('recibosAlum/pdf', [App\Http\Controllers\AlumnoController::class, 'pdf'] )->name('recibosAlum.pdf');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
