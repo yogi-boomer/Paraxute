@@ -85,12 +85,12 @@ class CreateEstudiantes extends Migration
             $table->string('escuela_Proc');
             $table->string('ultimo_Grado');
             $table->timestamp('fecha_Nac');
-            $table->integer('num_Tutores');
+ /*          $table->integer('num_Tutores'); */
             $table->foreignId('id_programa_')->constrained('programa');
             $table->foreignId('id_ficha_medica_')->constrained('ficha_medica');
             $table->foreignId('id_domicilios_')->constrained('domicilios');
             $table->foreignId('id_tutor1_')->constrained('tutor');
-            $table->foreignId('id_tutor2_')->constrained('tutor');
+            $table->foreignId('id_tutor2_')->constrained('tutor'); */
 
         
 
