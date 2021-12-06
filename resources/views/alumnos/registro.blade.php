@@ -1,3 +1,62 @@
+<x-layouts.base>
+
+{{-- If the user is authenticated --}}
+@auth()
+    {{-- If the user is authenticated on the static sign up or the sign up page --}}
+    @if (in_array(request()->route()->getName(),['static-sign-up', 'sign-up'],))
+        @include('layouts.navbars.guest.sign-up')
+
+        @include('layouts.footers.guest.with-socials')
+        {{-- If the user is authenticated on the static sign in or the login page --}}
+    @elseif (in_array(request()->route()->getName(),['sign-in', 'login'],))
+        @include('layouts.navbars.guest.login')
+
+        @include('layouts.footers.guest.description')
+    @elseif (in_array(request()->route()->getName(),['profile', 'my-profile'],))
+        @include('layouts.navbars.auth.sidebar')
+        <div class="main-content position-relative bg-gray-100">
+            @include('layouts.navbars.auth.nav-profile')
+            <div>
+                @include('layouts.footers.auth.footer')
+            </div>
+        </div>
+        @include('components.plugins.fixed-plugin')
+    @else
+        @include('layouts.navbars.auth.sidebar')
+        @include('layouts.navbars.auth.nav')
+        @include('components.plugins.fixed-plugin')
+
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @include('layouts.footers.auth.footer')
+                </div>
+            </div>
+        </main>
+    @endif
+@endauth
+
+{{-- If the user is not authenticated (if the user is a guest) --}}
+@guest
+    {{-- If the user is on the login page --}}
+    @if (!auth()->check() && in_array(request()->route()->getName(),['login'],))
+        @include('layouts.navbars.guest.login')
+
+        <div class="mt-5">
+            @include('layouts.footers.guest.with-socials')
+        </div>
+
+        {{-- If the user is on the sign up page --}}
+    @elseif (!auth()->check() && in_array(request()->route()->getName(),['sign-up'],))
+        <div>
+            @include('layouts.navbars.guest.sign-up')
+
+            @include('layouts.footers.guest.with-socials')
+        </div>
+    @endif
+@endguest
+
+</x-layouts.base>
 <div>
     <div class="container-fluid">
         <div class="page-header min-height-250 border-radius-xl mt-4"
@@ -87,15 +146,15 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="apellido_P" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
-                                <input class="form-control" type="text" size="20" placeholder="Apellido Paterno" id="apellido_P" wire:model="apellido_P" required>
-                                <span class="text-danger">@error('apellido_P'){{ $message }}@enderror</span>
+                                <label for="apellidoP" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
+                                <input class="form-control" type="text" size="20" placeholder="Apellido Paterno" id="apellidoP" wire:model="apellidoP" required>
+                                <span class="text-danger">@error('apellidoP'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
-                                <label for="apellido_M" class="form-control-label">{{ __('Apellido Materno.') }}</label>
-                                <input class="form-control" type="text" size="20" placeholder="Apellido Materno" id="apellido_M" wire:model="apellido_M" required>
-                                <span class="text-danger">@error('apellido_M'){{ $message }}@enderror</span>
+                                <label for="apellidoM" class="form-control-label">{{ __('Apellido Materno.') }}</label>
+                                <input class="form-control" type="text" size="20" placeholder="Apellido Materno" id="apellidoM" wire:model="apellidoM" required>
+                                <span class="text-danger">@error('apellidoM'){{ $message }}@enderror</span>
                             </div>
                         </div>
 
@@ -628,8 +687,8 @@
         </div>
         @endif
 
-        {{-- STEP 4 --}}
         @if ($currentStep == 4)
+        {{-- STEP 4 --}}
         <div class="step-four">
             <div class="container-fluid py-4">
                 <div class="card">
@@ -764,6 +823,7 @@
         @endif
 
 
+        {{-- BOTONES --}}
         <div class="container-fluid">
             <div class="action-buttons d-grid gap-2 d-sm-flex justify-content-sm-end mt-1">
                 @if ($currentStep == 1)
@@ -779,7 +839,7 @@
                 @endif
 
                 @if ($currentStep == 4)
-                    <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
+                    <button type="button" class="btn btn-sm mb-0 btn-success">Enviar</button>
                 @endif      
             </div>
         </div>  

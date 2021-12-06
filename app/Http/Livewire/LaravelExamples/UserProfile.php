@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Livewire\LaravelExamples;
-use App\Models\User;
 
+use App\Models\Estudiante;
 use Livewire\Component;
-use App\Http\Controllers\AlumnoController;
 use Livewire\WithFileUploads; //Agregado
 
 class UserProfile extends Component
@@ -22,8 +21,8 @@ class UserProfile extends Component
     public $selectedFormat;
     public $dateRegister;
     public $nombre;
-    public $apellidoP;
-    public $apellidoM;
+    public $apellido_P;
+    public $apellido_M;
     public $estados;
     public $ciudad;
     public $municipio;
@@ -130,8 +129,8 @@ class UserProfile extends Component
                 'selectedFormat'=>'required',
                 'dateRegister'=>'required|date',
                 'nombre'=>'required|string|max:25|min:3',
-                'apellidoP'=>'required|string|max:20|min:3',
-                'apellidoM'=>'required|string|max:20|min:3',
+                'apellido_P'=>'required|string|max:20|min:3',
+                'apellido_M'=>'required|string|max:20|min:3',
                 'estados'=>'required',
                 'ciudad'=>'required|string|max:25|min:3',
                 'municipio'=>'required|string|max:20|min:3',
@@ -176,8 +175,11 @@ class UserProfile extends Component
                 'telefonoEmpresa'=>'required|min:11|numeric'
             ]);
         }
+    }
 
-        elseif($this->currentStep == 4){
+    public function register(){
+        $this->resetErrorBag();
+        if($this->currentStep == 4){
             $this->validate([
                 'parentesco3'=>'required|string|max:20|min:3',
                 'nombre4'=>'required|string|max:25|min:3',
@@ -190,14 +192,21 @@ class UserProfile extends Component
                 'celular3'=>'required|min:11|numeric'
             ]);
         }
-    }
 
-    public function register() {
-        $this->resetErrorBag();
-        if($this->currentStep == 4){
-            /* $this->validate({
-                
-            }); */
-        }
+        $values = array(
+            "nombre"=>$this->nombre,
+            "apellido_P"=>$this->apellido_P,
+            "apellido_M"=>$this->apellido_M,
+            "estados"=>$this->estados,
+            "ciudad"=>$this->ciudad,
+            "municipio"=>$this->municipio,
+            "fecha_Nac"=>$this->fecha_Nac,
+            "genero"=>$this->sexo,
+            "nombreEscuela"=>$this->escuela_Proc
+        );
+
+        Estudiante::insert($values);
+        $data = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' '];
+        return redirect()->route('components.tables.table', $data);
     }
 }
