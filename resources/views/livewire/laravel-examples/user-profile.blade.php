@@ -161,9 +161,9 @@
                                 <label for="about">Datos generales del estudiante</label>
                             </div>
                             <div class="col-md-4">
-                                <label for="dateNacimiento" class="form-control-label">Fecha de nacimiento.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="dateNacimiento" wire:model="dateNacimiento" required>
-                                <span class="text-danger">@error('dateNacimiento'){{ $message }}@enderror</span>
+                                <label for="fecha_Nac" class="form-control-label">Fecha de nacimiento.</label>
+                                <input class="form-control" type="date" value="2021-01-01" id="fecha_Nac" wire:model="fecha_Nac" required>
+                                <span class="text-danger">@error('fecha_Nac'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
@@ -188,8 +188,8 @@
     
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="ultGrado" class="form-control-label">Último grado escolar.</label>
-                                <select name="ultGrado" id="ultGrado" class="form-control" wire:model="ultGrado" required>
+                                <label for="ultimo_Grado" class="form-control-label">Último grado escolar.</label>
+                                <select name="ultimo_Grado" id="ultimo_Grado" class="form-control" wire:model="ultimo_Grado" required>
                                     <option value="" selected>Escoge tu último grado escolar</option>
                                     <option value="Preescolar">Preescolar</option>
                                     <option value="Primaria">Primaria</option>
@@ -200,13 +200,13 @@
                                     <option value="Doctorado">Doctorado</option>
                                     <option value="Ninguno">Ninguno</option>
                                 </select>
-                                <span class="text-danger">@error('ultGrado'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('ultimo_Grado'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="nombreEscuela" class="form-control-label">Nombre de la escuela.</label>
-                                <input class="form-control" id="nombreEscuela" type="text" size="50" wire:model="nombreEscuela" required>
-                                <span class="text-danger">@error('nombreEscuela'){{ $message }}@enderror</span>
+                                <label for="escuela_Proc" class="form-control-label">Nombre de la escuela.</label>
+                                <input class="form-control" id="escuela_Proc" type="text" size="50" wire:model="escuela_Proc" required>
+                                <span class="text-danger">@error('escuela_Proc'){{ $message }}@enderror</span>
                             </div>
                         </div>
 

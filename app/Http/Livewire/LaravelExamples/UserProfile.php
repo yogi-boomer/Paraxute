@@ -26,11 +26,11 @@ class UserProfile extends Component
     public $estados;
     public $ciudad;
     public $municipio;
-    public $dateNacimiento;
+    public $fecha_Nac;
     public $genero;
     public $generoOtro;
-    public $ultGrado;
-    public $nombreEscuela;
+    public $ultimo_Grado;
+    public $escuela_Proc;
 
     //step two
     public $tipoSangre;
@@ -134,11 +134,11 @@ class UserProfile extends Component
                 'estados'=>'required',
                 'ciudad'=>'required|string|max:25|min:3',
                 'municipio'=>'required|string|max:20|min:3',
-                'dateNacimiento'=>'required|date',
+                'fecha_Nac'=>'required|date',
                 'genero'=>'required',
                 'generoOtro'=>' ',
-                'ultGrado'=>'required',
-                'nombreEscuela'=>'string|max:50|min:3'
+                'ultimo_Grado'=>'required',
+                'escuela_Proc'=>'string|max:50|min:3'
             ]);
         }
         elseif($this->currentStep == 2){
