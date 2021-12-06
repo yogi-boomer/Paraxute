@@ -26,11 +26,11 @@ class UserProfile extends Component
     public $estados;
     public $ciudad;
     public $municipio;
-    public $dateNacimiento;
-    public $genero;
+    public $fecha_Nac;
+    public $sexo;
     public $generoOtro;
-    public $ultGrado;
-    public $nombreEscuela;
+    public $ultimo_Grado;
+    public $escuela_Proc;//
 
     //step two
     public $tipoSangre;
@@ -134,11 +134,11 @@ class UserProfile extends Component
                 'estados'=>'required',
                 'ciudad'=>'required|string|max:25|min:3',
                 'municipio'=>'required|string|max:20|min:3',
-                'dateNacimiento'=>'required|date',
-                'genero'=>'required',
+                'fecha_Nac'=>'required|date',
+                'sexo'=>'required',
                 'generoOtro'=>' ',
-                'ultGrado'=>'required',
-                'nombreEscuela'=>'string|max:50|min:3'
+                'ultimo_Grado'=>'required',
+                'escuela_Proc'=>'string|max:50|min:3'
             ]);
         }
         elseif($this->currentStep == 2){
@@ -197,16 +197,16 @@ class UserProfile extends Component
             "nombre"=>$this->nombre,
             "apellido_P"=>$this->apellido_P,
             "apellido_M"=>$this->apellido_M,
-            "estados"=>$this->estados,
-            "ciudad"=>$this->ciudad,
-            "municipio"=>$this->municipio,
             "fecha_Nac"=>$this->fecha_Nac,
-            "genero"=>$this->sexo,
-            "nombreEscuela"=>$this->escuela_Proc
+            "sexo"=>$this->sexo,
+            "escuela_Proc"=>$this->escuela_Proc,
+            "ultimo_Grado"=>$this->ultimo_Grado
         );
 
         Estudiante::insert($values);
-        $data = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' '];
-        return redirect()->route('components.tables.table', $data);
+        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado];
+        return redirect()->route('tables', $datas);
+
     }
+
 }
