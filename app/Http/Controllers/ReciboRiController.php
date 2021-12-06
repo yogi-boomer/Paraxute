@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-class reciboRiController extends Controller
+class ReciboRiController extends Controller
 {
     public function index(){
-        return view('recibos.recibo');
+        return view('recibosAlum.recibo');
     }
 }

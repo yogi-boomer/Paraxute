@@ -41,7 +41,7 @@
                     <span class="badge badge-sm bg-gradient-danger">Vencido</span>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="recibo.index" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="recibos.index" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>

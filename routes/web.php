@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('roles', RolController::class);
     Route::resource('usuarios', UsuarioController::class);
     Route::resource('alumnos', AlumnoController::class);
-    Route::resource('recibo', ReciboRiController::class);
+    Route::resource('recibos', ReciboRiController::class);
 });
 
 Route::get('recibos/pdf', [App\Http\Controllers\AlumnoController::class, 'pdf'] )->name('recibos.pdf');
