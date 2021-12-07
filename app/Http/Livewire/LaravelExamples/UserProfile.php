@@ -5,6 +5,8 @@ namespace App\Http\Livewire\LaravelExamples;
 use App\Models\Estudiante;
 use Livewire\Component;
 use Livewire\WithFileUploads; //Agregado
+use Illuminate\Support\Facades\DB;
+use App\Models\ficha_medica;
 
 class UserProfile extends Component
 {
@@ -34,13 +36,13 @@ class UserProfile extends Component
 
     //step two
     public $id_ficha_medica_;
-    public $tipoSangre;
+    public $tipo_sangre;
     public $alergia;
-    public $proVisual;
-    public $enfCronica;
-    public $discCogn;
-    public $defMotriz;
-    public $transPsic;
+    public $problemaVis;
+    public $enfermedad_cron;
+    public $deficiencia_cogn;
+    public $deficiencia_mot;
+    public $transtorno_Psic;
     public $medicamentos;
     public $conducta;
 
@@ -103,6 +105,7 @@ class UserProfile extends Component
     }
     public function render()
     {
+
         return view('livewire.laravel-examples.user-profile');
     }
 
@@ -144,7 +147,7 @@ class UserProfile extends Component
         }
         elseif($this->currentStep == 2){
             $this->validate([
-                'tipoSangre'=>'required',
+                'tipoangre'=>'required',
                 'alergia'=>'required',
                 'proVisual'=>'required',
                 'enfCronica'=>'required',
@@ -193,6 +196,23 @@ class UserProfile extends Component
                 'celular3'=>'required|min:11|numeric'
             ]);
         }
+        $idFicha = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "ficha_medica"');
+        $idDomicilios = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "domicilios"');
+        $idTutor1 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor1"');
+        $idTutor2 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor2"');
+        
+
+        $fichaVal=array(
+            "tipo_sangre"=>$this->tipo_sangre,
+            "alergia"=>$this->alergia,
+            "problemaVis"=>$this->problemaVis,
+            "enfermedad_cron"=>$this->enfermedad_cron,
+            "deficiencia_cogn"=>$this->deficiencia_cogn,
+            "deficiencia_mot"=>$this->deficiencia_mot,
+            "transtorno_Psic"=>$this->transtorno_Psic,
+            "medicamentos"=>$this->medicamentos,
+            "conducta"=>$this->conducta
+        );
 
         $values = array(
             "nombre"=>$this->nombre,
@@ -209,6 +229,7 @@ class UserProfile extends Component
             "id_tutor2_"=>$this->id_tutor2_
         );
 
+        ficha_medicaDB::insert($fichaVals);
         Estudiante::insert($values);
         $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado];
         return redirect()->route('tables', $datas);

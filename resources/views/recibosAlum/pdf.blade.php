@@ -13,7 +13,7 @@
             <div class="row ">
                 <div style="clear:both; position:relative;padding-top: 8em;">
                     <div style="position:absolute; left:50pt; width:192pt;">
-                        <p>Valeria tamal</p>
+                        <p>Luis Fernando Vazquez Ceballos</p>
                     </div>
                     <div style="margin-left:350pt;">
                         <p>Credito</p>
@@ -62,7 +62,7 @@
             <div class="row ">
                 <div style="clear:both; position:relative;padding-top: 20em;">
                     <div style="position:absolute; left:50pt; width:192pt;">
-                        <p>Valeria tamal</p>
+                        <p>Luis Fernando Vazquez Ceballos</p>
                     </div>
                     <div style="margin-left:350pt;">
                         <p>Credito</p>

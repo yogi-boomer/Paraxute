@@ -118,7 +118,6 @@ class CreateEstudiantes extends Migration
             $table->string('total');
             $table->foreignId('id_programa_')->constrained('programa');
             $table->foreignId('id_estudiante_')->constrained('estudiantes');
-
         });
     }
 

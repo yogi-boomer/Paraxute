@@ -10,7 +10,6 @@
 
         {{-- STEP 1 --}}
         @if ($currentStep == 1)
-
         <div class="step-one">
             <div class="container-fluid py-4">
                 <div class="card">
@@ -231,8 +230,8 @@
                     <div class="card-body pt-4 p-3">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="tipoSangre" class="form-control-label">Tipo de Sangre.</label>
-                                <select name="tipoSangre" id="tipoSangre" class="form-control" wire:model="tipoSangre" required>
+                                <label for="tipo_sangre" class="form-control-label">Tipo de Sangre.</label>
+                                <select name="tipo_sangre" id="tipo_sangre" class="form-control" wire:model="tipo_sangre" required>
                                     <option value="" selected>Escoge tu tipo de Sangre</option>
                                     <option value="A+">A+</option>
                                     <option value="A-">A-</option>
@@ -243,7 +242,7 @@
                                     <option value="O+">O+</option>
                                     <option value="O-">O-</option>
                                 </select>
-                                <span class="text-danger">@error('tipoSangre'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('tipo_sangre'){{ $message }}@enderror</span>
                             </div>
                         </div>
                         <hr>
@@ -275,17 +274,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label for="proVisual">
-                                            <input type="radio" name="proVisual" id="option1" autocomplete="off" value="Sí" wire:model="proVisual">Sí
+                                        <label for="problemaVis">
+                                            <input type="radio" name="problemaVis" id="option1" autocomplete="off" value="Sí" wire:model="problemaVis">Sí
                                         </label>
                                         <label>
-                                            <input type="radio" name="proVisual" id="option2" autocomplete="off" value="No" wire:model="proVisual">No
+                                            <input type="radio" name="problemaVis" id="option2" autocomplete="off" value="No" wire:model="problemaVis">No
                                         </label>
-                                        <span class="text-danger">@error('proVisual'){{ $message }}@enderror</span>
+                                        <span class="text-danger">@error('problemaVis'){{ $message }}@enderror</span>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" name="proVisual" class="form-control" placeholder ="Problema visual" wire:model="proVisual">
-                                        <span class="text-danger">@error('proVisual'){{ $message }}@enderror</span>
+                                        <input type="text" name="problemaVis" class="form-control" placeholder ="Problema visual" wire:model="problemaVis">
+                                        <span class="text-danger">@error('problemaVis'){{ $message }}@enderror</span>
                                     </div>
                                 </div>
                             </div>
@@ -299,17 +298,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label for="enfCronica">
-                                            <input type="radio" name="enfCronica" id="option1" autocomplete="off" value="Sí" wire:model="enfCronica"> Sí
+                                        <label for="enfermedad_cron">
+                                            <input type="radio" name="enfermedad_cron" id="option1" autocomplete="off" value="Sí" wire:model="enfermedad_cron"> Sí
                                         </label>
                                         <label>
-                                            <input type="radio" name="enfCronica" id="option2" autocomplete="off" value="No" wire:model="enfCronica"> No
+                                            <input type="radio" name="enfermedad_cron" id="option2" autocomplete="off" value="No" wire:model="enfermedad_cron"> No
                                         </label>
-                                        <span class="text-danger">@error('enfCronica'){{ $message }}@enderror</span>
+                                        <span class="text-danger">@error('enfermedad_cron'){{ $message }}@enderror</span>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" name="enfCronica" class="form-control" placeholder ="Enfermedad crónica" wire:model="enfCronica">
-                                        <span class="text-danger">@error('enfCronica'){{ $message }}@enderror</span>
+                                        <input type="text" name="enfermedad_cron" class="form-control" placeholder ="Enfermedad crónica" wire:model="enfermedad_cron">
+                                        <span class="text-danger">@error('enfermedad_cron'){{ $message }}@enderror</span>
                                     </div>
                                 </div>
                             </div>
@@ -319,17 +318,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label for="discCogn">
-                                            <input type="radio" name="discCogn" id="option1" autocomplete="off" value="Sí" wire:model="discCogn">Sí
+                                        <label for="deficiencia_cogn">
+                                            <input type="radio" name="deficiencia_cogn" id="option1" autocomplete="off" value="Sí" wire:model="deficiencia_cogn">Sí
                                         </label>
                                         <label>
-                                            <input type="radio" name="discCogn" id="option2" autocomplete="off" value="No" wire:model="discCogn">No
+                                            <input type="radio" name="deficiencia_cogn" id="option2" autocomplete="off" value="No" wire:model="deficiencia_cogn">No
                                         </label>
-                                        <span class="text-danger">@error('discCogn'){{ $message }}@enderror</span>
+                                        <span class="text-danger">@error('deficiencia_cogn'){{ $message }}@enderror</span>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" name="discCogn" class="form-control" placeholder ="Discapacidad cognitiva" wire:model="discCogn">
-                                        <span class="text-danger">@error('discCogn'){{ $message }}@enderror</span>
+                                        <input type="text" name="deficiencia_cogn" class="form-control" placeholder ="Discapacidad cognitiva" wire:model="deficiencia_cogn">
+                                        <span class="text-danger">@error('deficiencia_cogn'){{ $message }}@enderror</span>
                                     </div>
                                 </div>
                             </div>
@@ -343,17 +342,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label for="defMotriz">
-                                            <input type="radio" name="defMotriz" id="option1" autocomplete="off" value="Sí" wire:model="defMotriz"> Sí
+                                        <label for="deficiencia_mot">
+                                            <input type="radio" name="deficiencia_mot" id="option1" autocomplete="off" value="Sí" wire:model="deficiencia_mot"> Sí
                                         </label>
                                         <label>
-                                            <input type="radio" name="defMotriz" id="option2" autocomplete="off" value="No" wire:model="defMotriz"> No
+                                            <input type="radio" name="deficiencia_mot" id="option2" autocomplete="off" value="No" wire:model="deficiencia_mot"> No
                                         </label>
-                                        <span class="text-danger">@error('defMotriz'){{ $message }}@enderror</span>
+                                        <span class="text-danger">@error('deficiencia_mot'){{ $message }}@enderror</span>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" name="defMotriz" class="form-control" placeholder ="Deficiencia motriz" wire:model="defMotriz">
-                                        <span class="text-danger">@error('defMotriz'){{ $message }}@enderror</span>
+                                        <input type="text" name="deficiencia_mot" class="form-control" placeholder ="Deficiencia motriz" wire:model="deficiencia_mot">
+                                        <span class="text-danger">@error('deficiencia_mot'){{ $message }}@enderror</span>
                                     </div>
                                 </div>
                             </div>
@@ -363,17 +362,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label for="transPsic">
-                                            <input type="radio" name="transPsic" id="option1" autocomplete="off" value="Sí" wire:model="transPsic">Sí
+                                        <label for="transtorno_Psic">
+                                            <input type="radio" name="transtorno_Psic" id="option1" autocomplete="off" value="Sí" wire:model="transtorno_Psic">Sí
                                         </label>
                                         <label>
-                                            <input type="radio" name="transPsic" id="option2" autocomplete="off" value="No" wire:model="transPsic">No
+                                            <input type="radio" name="transtorno_Psic" id="option2" autocomplete="off" value="No" wire:model="transtorno_Psic">No
                                         </label>
-                                        <span class="text-danger">@error('transPsic'){{ $message }}@enderror</span>
+                                        <span class="text-danger">@error('transtorno_Psic'){{ $message }}@enderror</span>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" name="transPsic" class="form-control" placeholder ="Transtorno psicológico" wire:model="transPsic">
-                                        <span class="text-danger">@error('transPsic'){{ $message }}@enderror</span>
+                                        <input type="text" name="transtorno_Psic" class="form-control" placeholder ="Transtorno psicológico" wire:model="transtorno_Psic">
+                                        <span class="text-danger">@error('transtorno_Psic'){{ $message }}@enderror</span>
                                     </div>
                                 </div>
                             </div>
@@ -416,7 +415,7 @@
                                         <span class="text-danger">@error('conducta'){{ $message }}@enderror</span>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" name="transPsic" class="form-control" placeholder ="Problemas de conducta" wire:model="conducta">
+                                        <input type="text" name="transtorno_Psic" class="form-control" placeholder ="Problemas de conducta" wire:model="conducta">
                                         <span class="text-danger">@error('conducta'){{ $message }}@enderror</span>
                                     </div>
                                 </div>
