@@ -41,7 +41,7 @@
                                     <label for="id_programa_">Selecciona un programa.</label>
                                     <select name="id_programa_" id="id_programa_" class="form-control" wire:model="id_programa_" required>
                                         <option value="" selected>Escoge programa</option>
-                                        <option value="Batería">Batería</option>
+                                        <option value="1">Batería</option>
                                         <option value="Bajo Eléctrico">Bajo Eléctrico</option>
                                         <option value="Clase Muestra">Clase Muestra</option>
                                         <option value="Estimulación Musical">Estimulación Musical</option>
@@ -777,7 +777,7 @@
                     <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
                 @endif
 
-                @if ($currentStep == 4)
+                @if ($currentStep == 1)
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
                 @endif      
             </div>
