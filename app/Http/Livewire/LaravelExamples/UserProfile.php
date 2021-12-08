@@ -6,7 +6,7 @@ use App\Models\Estudiante;
 use Livewire\Component;
 use Livewire\WithFileUploads; //Agregado
 use Illuminate\Support\Facades\DB;
-use App\Models\ficha_medica;
+use App\Models\Ficha_medica;
 
 class UserProfile extends Component
 {
@@ -35,7 +35,7 @@ class UserProfile extends Component
     public $escuela_Proc;
 
     //step two
-    public $id_ficha_medica_;
+/*     public $id_ficha_medica_; */
     public $tipo_sangre;
     public $alergia;
     public $problemaVis;
@@ -147,13 +147,13 @@ class UserProfile extends Component
         }
         elseif($this->currentStep == 2){
             $this->validate([
-                'tipoangre'=>'required',
+                'tipo_sangre'=>'required',
                 'alergia'=>'required',
-                'proVisual'=>'required',
-                'enfCronica'=>'required',
-                'discCogn'=>'required',
-                'defMotriz'=>'required',
-                'transPsic'=>'required',
+                'problemaVis'=>'required',
+                'enfermedad_cron'=>'required',
+                'deficiencia_cogn'=>'required',
+                'deficiencia_mot'=>'required',
+                'transtorno_Psic'=>'required',
                 'medicamentos'=>'required',
                 'conducta'=>'required'
             ]);
@@ -196,13 +196,13 @@ class UserProfile extends Component
                 'celular3'=>'required|min:11|numeric'
             ]);
         }
-        $idFicha = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "ficha_medica"');
-        $idDomicilios = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "domicilios"');
+       $idFicha_medica_ = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "ficha_medica"');
+/*         $idDomicilios = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "domicilios"');
         $idTutor1 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor1"');
-        $idTutor2 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor2"');
+        $idTutor2 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor2"'); */
         
 
-        $fichaVal=array(
+        $fichaVals=array(
             "tipo_sangre"=>$this->tipo_sangre,
             "alergia"=>$this->alergia,
             "problemaVis"=>$this->problemaVis,
@@ -222,17 +222,18 @@ class UserProfile extends Component
             "sexo"=>$this->sexo,
             "escuela_Proc"=>$this->escuela_Proc,
             "ultimo_Grado"=>$this->ultimo_Grado,
-            "id_programa_"=>$this->id_programa_,
-            "id_ficha_medica_"=>$this->id_ficha_medica_,
-            "id_domicilios_"=>$this->id_domicilios_,
+/*             "id_programa_"=>$this->id_programa_, */
+            "id_ficha_medica_"=>$this->idFicha_medica_,
+/*             "id_domicilios_"=>$this->id_domicilios_,
             "id_tutor1_"=>$this->id_tutor1_,
-            "id_tutor2_"=>$this->id_tutor2_
+            "id_tutor2_"=>$this->id_tutor2_ */
         );
 
-        ficha_medicaDB::insert($fichaVals);
         Estudiante::insert($values);
-        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado];
-        return redirect()->route('tables', $datas);
+        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medica_'=>$this->id_ficha_medica_];
+        Ficha_medica::insert($fichaVals);
+        $fichas = ['tipo_sangre'=>$this->tipo_sangre.'alergia'.$this->alergia.'problemaVis'.$this->problemaVis.'enfermedad_cron'.$this->enfermedad_cron.'deficiencia_cogn'.$this->deficiencia_cogn.'deficiencia_mot'.$this->deficiencia_mot.'transtorno_Psic'.$this->transtorno_Psic.'medicamentos'.$this->medicamentos.'conducta'.$this->conducta];
+        return redirect()->route('tables', $datas, $fichas);
 
     }
 
