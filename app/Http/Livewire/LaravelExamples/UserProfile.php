@@ -198,13 +198,13 @@ class UserProfile extends Component
         }
         //cambiar cuando se inserte la ficha medica
     
-       $idFicha_medica_ = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "estudiantes"');
+       $id_ficha_medica_ = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "estudiantes"');
 /*         $idDomicilios = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "domicilios"');
         $idTutor1 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor1"');
         $idTutor2 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor2"'); */
         
-        if($idFicha_medica_[0]->AUTO_INCREMENT == NULL){
-            $idFicha_medica_[0]->AUTO_INCREMENT=1;
+        if($id_ficha_medica_[0]->AUTO_INCREMENT == NULL){
+            $id_ficha_medica_[0]->AUTO_INCREMENT=1;
         }
         $fichaVals=array(
             "tipo_sangre"=>$this->tipo_sangre,
@@ -227,17 +227,16 @@ class UserProfile extends Component
             "escuela_Proc"=>$this->escuela_Proc,
             "ultimo_Grado"=>$this->ultimo_Grado,
 /*             "id_programa_"=>1,
- */            "id_ficha_medica_"=>$idFicha_medica_[0]->AUTO_INCREMENT,
+ */            "id_ficha_medica_"=>$id_ficha_medica_[0]->AUTO_INCREMENT
      /*        "id_domicilios_"=>1,
             "id_tutor1_"=>1,
             "id_tutor2_"=>1 */
         );
-
-        Estudiante::insert($values);
-        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medica_'=>$idFicha_medica_[0]->AUTO_INCREMENT];
         Ficha_medica::insert($fichaVals);
         $fichas = ['tipo_sangre'=>$this->tipo_sangre.'alergia'.$this->alergia.'problemaVis'.$this->problemaVis.'enfermedad_cron'.$this->enfermedad_cron.'deficiencia_cogn'.$this->deficiencia_cogn.'deficiencia_mot'.$this->deficiencia_mot.'transtorno_Psic'.$this->transtorno_Psic.'medicamentos'.$this->medicamentos.'conducta'.$this->conducta];
-        return redirect()->route('tables', $datas, $fichas);
+        Estudiante::insert($values);
+        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medica_'=>$id_ficha_medica_[0]->AUTO_INCREMENT];
+        return redirect()->route('tables', $fichas, $datas);
 
     }
 
