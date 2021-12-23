@@ -39,7 +39,7 @@ class CreateEstudiantes extends Migration
             $table->id();
             $table->string('dir_casa');
             $table->string('estado');
-            $table->string('municipio');
+            $table->string('municipioP');
             $table->string('ciudad');
        
         });
@@ -101,8 +101,9 @@ class CreateEstudiantes extends Migration
 /*             $table->foreignId('id_programa_')->constrained('programa'); */
             $table->foreignId('id_ficha_medica_')->constrained('ficha_medicas');
 /*             $table->foreignId('id_domicilios_')->constrained('domicilios');
-            $table->foreignId('id_tutor1_')->constrained('tutor1');
-            $table->foreignId('id_tutor2_')->constrained('tutor2');  */
+            $table->foreignId('id_tutor1s_')->constrained('tutor1s');
+            $table->foreignId('id_tutor2s_')->constrained('tutor2s');  
+            $table->foreignId('id_referencias_')->constrained('referencias');  */
         });
 
         Schema::create('concepto', function (Blueprint $table) {
@@ -118,6 +119,18 @@ class CreateEstudiantes extends Migration
             $table->string('total');
             $table->foreignId('id_programa_')->constrained('programa');
             $table->foreignId('id_estudiante_')->constrained('estudiantes');
+        });
+        Schema::create('referencias', function (Blueprint $table){
+            $table->id();
+            $table->string('parentesco3');
+            $table->string('nombre4');
+            $table->string('apellidoP4');
+            $table->string('apellidoM4');
+            $table->string('estados4');
+            $table->string('ciudad4');
+            $table->string('municipio4');
+            $table->string('telefono3');
+            $table->string('celular3');
         });
     }
 

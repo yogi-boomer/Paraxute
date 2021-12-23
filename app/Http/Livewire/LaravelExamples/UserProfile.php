@@ -10,6 +10,7 @@ use App\Models\Ficha_medica;
 use App\Models\tutor1;
 use App\Models\domicilios;
 use App\Models\contacto;
+use App\Models\referencias;
 
 class UserProfile extends Component
 {
@@ -178,10 +179,10 @@ class UserProfile extends Component
                 'nombre_escuela'=>'required|max:50|min:3',
                 'estado'=>'required',
                 'ciudadP'=>'required|string|max:25|min:3',
-                'municipiop'=>'required|string|max:20|min:3',
+                'municipioP'=>'required|string|max:20|min:3',
                 'telefono'=>'required|min:11|numeric',
                 'celular'=>'required|min:11|numeric',
-                'correo'=>'required|email|unique:users|max:50|min:3',
+                'correo'=>'required|max:50|min:3',
                 'nom_trabajo'=>'required|max:50|min:3',
                 'tel_trabajo'=>'required|min:11|numeric'
             ]);
@@ -243,7 +244,7 @@ class UserProfile extends Component
         $domTutorArray=array( //datos del domicilio del tutor 1
             "dir_casa"=>$this->dir_casap,
             "estado"=>$this->estado,
-            "municipio"=>$this->municipioP,
+            "municipioP"=>$this->municipioP,
             "ciudad"=>$this->ciudadP,
         );
         domicilios::insert($domTutorArray);//insertar datos del domicilio del tutor 1
@@ -276,6 +277,20 @@ class UserProfile extends Component
 
         );
         tutor1::insert($tutor1Array);
+
+        $idReferencias = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM referencias');
+        $referenciasArray=array( //datos de referencias
+            "parentesco3"=>$this->parentesco3,
+            "nombre4"=>$this->nombre4,
+            "apellidoP4"=>$this->apellidoP4,
+            "apellidoM4"=>$this->apellidoM4,
+            "estados4"=>$this->estados4,
+            "ciudad4"=>$this->ciudad4,
+            "municipio4"=>$this->municipio4,
+            "telefono3"=>$this->telefono3,
+            "celular3"=>$this->celular3,
+        );
+        referencias::insert($referenciasArray);
         
         $fichas = ['tipo_sangre'=>$this->tipo_sangre.'alergia'.$this->alergia.'problemaVis'.$this->problemaVis.'enfermedad_cron'.$this->enfermedad_cron.'deficiencia_cogn'.$this->deficiencia_cogn.'deficiencia_mot'.$this->deficiencia_mot.'transtorno_Psic'.$this->transtorno_Psic.'medicamentos'.$this->medicamentos.'conducta'.$this->conducta];
         $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medica_'=>$id_ficha_medica_[0]->AUTO_INCREMENT];
