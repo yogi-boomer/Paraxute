@@ -786,7 +786,7 @@
                     <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
                 @endif
 
-                @if ($currentStep == 3)
+                @if ($currentStep == 4)
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
                 @endif      
             </div>
