@@ -7,6 +7,9 @@ use Livewire\Component;
 use Livewire\WithFileUploads; //Agregado
 use Illuminate\Support\Facades\DB;
 use App\Models\Ficha_medica;
+use App\Models\tutor1;
+use App\Models\domicilios;
+use App\Models\contacto;
 
 class UserProfile extends Component
 {
@@ -28,6 +31,7 @@ class UserProfile extends Component
     public $estados;
     public $ciudad;
     public $municipio;
+    public $dir_casa;
     public $fecha_Nac;
     public $sexo;
     public $generoOtro;
@@ -48,21 +52,24 @@ class UserProfile extends Component
 
     //step three
     public $parentesco;
-    public $dateNacimiento2;
-    public $estadoCivil;
-    public $nombre2;
-    public $apellidoP2;
-    public $apellidoM2;
-    public $ultGrado2;
-    public $nombreEscuela2;
-    public $estados2;
-    public $ciudad2;
-    public $municipio2;
+    public $fecha_nac;
+    public $nombrep;
+    public $estado_civil;
+    public $apellido_m;
+    public $apellido_p;
+    public $ultimo_grado;
+    public $nombre_escuela;
+    public $nom_trabajo;
+        //Contacto
     public $telefono;
     public $celular;
-    public $email;
-    public $nombreTrabajo;
-    public $telefonoEmpresa;
+    public $correo;
+    public $tel_trabajo;
+        //Domicilio
+    public $dir_casap;
+    public $estado; 
+    public $municipioP;
+    public $ciudadP;
 
     //step four
     public $parentesco3;
@@ -162,21 +169,21 @@ class UserProfile extends Component
         elseif($this->currentStep == 3){
             $this->validate([
                 'parentesco'=>'required|string|max:20|min:3',
-                'dateNacimiento2'=>'required|date',
-                'estadoCivil'=>'required',
-                'nombre2'=>'required|string|max:25|min:3',
-                'apellidoP2'=>'required|string|max:20|min:3',
-                'apellidoM2'=>'required|string|max:20|min:3',
-                'ultGrado2'=>'required',
-                'nombreEscuela2'=>'required|max:50|min:3',
-                'estados2'=>'required',
-                'ciudad2'=>'required|string|max:25|min:3',
-                'municipio2'=>'required|string|max:20|min:3',
+                'fecha_nac'=>'required|date',
+                'estado_civil'=>'required',
+                'nombrep'=>'required|string|max:25|min:3',
+                'apellido_p'=>'required|string|max:20|min:3',
+                'apellido_m'=>'required|string|max:20|min:3',
+                'ultimo_grado'=>'required',
+                'nombre_escuela'=>'required|max:50|min:3',
+                'estado'=>'required',
+                'ciudadP'=>'required|string|max:25|min:3',
+                'municipiop'=>'required|string|max:20|min:3',
                 'telefono'=>'required|min:11|numeric',
                 'celular'=>'required|min:11|numeric',
-                'email'=>'required|email|unique:users|max:50|min:3',
-                'nombreTrabajo'=>'required|max:50|min:3',
-                'telefonoEmpresa'=>'required|min:11|numeric'
+                'correo'=>'required|email|unique:users|max:50|min:3',
+                'nom_trabajo'=>'required|max:50|min:3',
+                'tel_trabajo'=>'required|min:11|numeric'
             ]);
         }
     }
@@ -197,26 +204,23 @@ class UserProfile extends Component
             ]);
         }
         //cambiar cuando se inserte la ficha medica
-    
-       $id_ficha_medica_ = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "estudiantes"');
-/*         $idDomicilios = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "domicilios"');
-        $idTutor1 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor1"');
-        $idTutor2 = DB::select('SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "paraxute" AND TABLE_NAME = "tutor2"'); */
-        
-        if($id_ficha_medica_[0]->AUTO_INCREMENT == NULL){
-            $id_ficha_medica_[0]->AUTO_INCREMENT=1;
-        }
+      
         $fichaVals=array(
             "tipo_sangre"=>$this->tipo_sangre,
             "alergia"=>$this->alergia,
             "problemaVis"=>$this->problemaVis,
             "enfermedad_cron"=>$this->enfermedad_cron,
-            "deficiencia_cogn"=>$this->deficiencia_cogn,
+            "discapacidad_cogn"=>$this->deficiencia_cogn,
             "deficiencia_mot"=>$this->deficiencia_mot,
             "transtorno_Psic"=>$this->transtorno_Psic,
             "medicamentos"=>$this->medicamentos,
             "conducta"=>$this->conducta
         );
+        Ficha_medica::insert($fichaVals); //insertar ficha
+
+        $id_ficha_medica_ = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM ficha_medicas');
+
+       
 
         $values = array(
             "nombre"=>$this->nombre,
@@ -232,9 +236,48 @@ class UserProfile extends Component
             "id_tutor1_"=>1,
             "id_tutor2_"=>1 */
         );
-        Ficha_medica::insert($fichaVals);
+        Estudiante::insert($values);//insertar estudiantes
+
+
+
+        $domTutorArray=array( //datos del domicilio del tutor 1
+            "dir_casa"=>$this->dir_casap,
+            "estado"=>$this->estado,
+            "municipio"=>$this->municipioP,
+            "ciudad"=>$this->ciudadP,
+        );
+        domicilios::insert($domTutorArray);//insertar datos del domicilio del tutor 1
+
+
+        $conTutor1Array=array( //datos del contacto del tutor 1
+
+            "telefono"=>$this->telefono,
+            "celular"=>$this->celular,
+            "correo"=>$this->correo,
+            "tel_trabajo"=>$this->tel_trabajo,
+        );
+        contacto::insert($conTutor1Array);//insertar datos del domicilio del tutor 1
+       
+
+        $idDomicilios = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM domicilios');
+        $idTutor1 = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM tutor1s');
+        $idContacto = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM contactos');
+        $tutor1Array=array( //datos del tutor 1 
+            "parentesco"=>$this->parentesco,
+            "nombre"=>$this->nombrep,
+            "apellido_p"=>$this->apellido_p,
+            "apellido_m"=>$this->apellido_m,
+            "fecha_nac"=>$this->fecha_nac,
+            "ultimo_grado"=>$this->ultimo_grado,
+            "estado_civil"=>$this->estado_civil,
+            "nom_trabajo"=>$this->nom_trabajo,
+            "id_contacto_"=>$idContacto[0]->AUTO_INCREMENT,
+            "id_domicilio_"=>$idDomicilios[0]->AUTO_INCREMENT,
+
+        );
+        tutor1::insert($tutor1Array);
+        
         $fichas = ['tipo_sangre'=>$this->tipo_sangre.'alergia'.$this->alergia.'problemaVis'.$this->problemaVis.'enfermedad_cron'.$this->enfermedad_cron.'deficiencia_cogn'.$this->deficiencia_cogn.'deficiencia_mot'.$this->deficiencia_mot.'transtorno_Psic'.$this->transtorno_Psic.'medicamentos'.$this->medicamentos.'conducta'.$this->conducta];
-        Estudiante::insert($values);
         $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medica_'=>$id_ficha_medica_[0]->AUTO_INCREMENT];
         return redirect()->route('tables', $fichas, $datas);
 

@@ -14,7 +14,7 @@ class CreateEstudiantes extends Migration
     public function up()
     {
       
-        Schema::create('ficha_medica', function (Blueprint $table) {
+        Schema::create('ficha_medicas', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_sangre');
             $table->string('alergia');
@@ -27,12 +27,12 @@ class CreateEstudiantes extends Migration
             $table->string('conducta');
        
         });
-        Schema::create('contacto', function (Blueprint $table) {
+        Schema::create('contactos', function (Blueprint $table) {
             $table->id();
-            $table->integer('telefono');
-            $table->integer('celular');
+            $table->bigInteger('telefono');
+            $table->bigInteger('celular');
             $table->string('correo');
-            $table->integer('tel_trabajo');
+            $table->bigInteger('tel_trabajo');
        
         });
         Schema::create('domicilios', function (Blueprint $table) {
@@ -43,31 +43,31 @@ class CreateEstudiantes extends Migration
             $table->string('ciudad');
        
         });
-        Schema::create('tutor1', function (Blueprint $table) {
+        Schema::create('tutor1s', function (Blueprint $table) {
             $table->id();
             $table->string('parentesco');
             $table->string('nombre');
-            $table->string('aprellido_p');
+            $table->string('apellido_p');
             $table->string('apellido_m');
             $table->string('fecha_nac');
             $table->string('ultimo_grado');
             $table->string('estado_civil');
             $table->string('nom_trabajo');
-            $table->foreignId('id_contacto_')->contrained('contacto');
+            $table->foreignId('id_contacto_')->contrained('contactos');
             $table->foreignId('id_domicilio_')->contrained('domicilios');
 
         });
-        Schema::create('tutor2', function (Blueprint $table) {
+        Schema::create('tutor2s', function (Blueprint $table) {
             $table->id();
             $table->string('parentesco');
             $table->string('nombre');
-            $table->string('aprellido_p');
+            $table->string('apellido_p');
             $table->string('apellido_m');
             $table->string('fecha_nac');
             $table->string('ultimo_grado');
             $table->string('estado_civil');
             $table->string('nom_trabajo');
-            $table->foreignId('id_contacto_')->contrained('contacto');
+            $table->foreignId('id_contacto_')->contrained('contactos');
             $table->foreignId('id_domicilio_')->contrained('domicilios');
 
         });
@@ -99,7 +99,7 @@ class CreateEstudiantes extends Migration
             $table->timestamp('fecha_Nac');
  /*          $table->integer('num_Tutores'); */
 /*             $table->foreignId('id_programa_')->constrained('programa'); */
-            $table->foreignId('id_ficha_medica_')->constrained('ficha_medica');
+            $table->foreignId('id_ficha_medica_')->constrained('ficha_medicas');
 /*             $table->foreignId('id_domicilios_')->constrained('domicilios');
             $table->foreignId('id_tutor1_')->constrained('tutor1');
             $table->foreignId('id_tutor2_')->constrained('tutor2');  */
@@ -130,7 +130,7 @@ class CreateEstudiantes extends Migration
     {
         Schema::dropIfExists('recibos'); 
 
-        Schema::dropIfExists('contacto');   
+        Schema::dropIfExists('contactos');   
         Schema::dropIfExists('formato');    
           
         Schema::dropIfExists('concepto');    
@@ -138,10 +138,10 @@ class CreateEstudiantes extends Migration
         Schema::dropIfExists('estudiantes');
         Schema::dropIfExists('programa');    
 
-        Schema::dropIfExists('ficha_medica');
+        Schema::dropIfExists('ficha_medicas');
         Schema::dropIfExists('domicilios');
-        Schema::dropIfExists('tutor1');
-        Schema::dropIfExists('tutor2');
+        Schema::dropIfExists('tutor1s');
+        Schema::dropIfExists('tutor2s');
     
     }
 }

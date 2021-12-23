@@ -154,7 +154,11 @@
                                 <span class="text-danger">@error('municipio'){{ $message }}@enderror</span>
                             </div>
                         </div>
-                       
+                        <div class="col-md-12">
+                            <label for="dir_casa" class="form-control-label">Dirección.</label>
+                            <input class="form-control" id="dir_casa" type="text" size="50" wire:model="dir_casa" required>
+                            <span class="text-danger">@error('dir_casa'){{ $message }}@enderror</span>
+                        </div>
                         <div class="row">
                             <div class="mt-3">
                                 <label for="about">Datos generales del estudiante</label>
@@ -462,13 +466,13 @@
                                 <span class="text-danger">@error('parentesco'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-4">
-                                <label for="dateNacimiento2" class="form-control-label">Fecha de nacimiento.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="dateNacimiento2" wire:model="dateNacimiento2" required>
-                                <span class="text-danger">@error('dateNacimiento2'){{ $message }}@enderror</span>
+                                <label for="fecha_nac" class="form-control-label">Fecha de nacimiento.</label>
+                                <input class="form-control" type="date" value="2021-01-01" id="fecha_nac" wire:model="fecha_nac" required>
+                                <span class="text-danger">@error('fecha_nac'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-4">
-                                <label for="estadoCivil" class="form-control-label">Estado civil.</label>
-                                <select name="estadoCivil" id="estadoCivil" class="form-control" wire:model="estadoCivil" required>
+                                <label for="estado_civil" class="form-control-label">Estado civil.</label>
+                                <select name="estado_civil" id="estado_civil" class="form-control" wire:model="estado_civil" required>
                                     <option value="" selected>Escoge tu estado civil</option>
                                     <option value="Soltero">Soltero</option>
                                     <option value="Casado">Casado</option>
@@ -477,34 +481,34 @@
                                     <option value="Viudo">Viudo</option>
                                     <option value="Concubinato">Concubinato</option>
                                 </select>
-                                <span class="text-danger">@error('estadoCivil'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('estado_civil'){{ $message }}@enderror</span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="nombre2" class="form-control-label">{{ __('Nombre.') }}</label>
-                                <input class="form-control" type="text" size="25" placeholder="Nombre(s)" id="nombre2" wire:model="nombre2" required>
-                                <span class="text-danger">@error('nombre2'){{ $message }}@enderror</span>
+                                <label for="nombrep" class="form-control-label">{{ __('Nombre.') }}</label>
+                                <input class="form-control" type="text" size="25" placeholder="Nombre(s)" id="nombrep" wire:model="nombrep" required>
+                                <span class="text-danger">@error('nombrep'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
-                                <label for="apellidoP2" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
-                                <input class="form-control" type="text" size="20" placeholder="Apellido Paterno" id="apellidoP2" wire:model="apellidoP2" required>
-                                <span class="text-danger">@error('apellidoP2'){{ $message }}@enderror</span>
+                                <label for="apellido_p" class="form-control-label">{{ __('Apellido Paterno.') }}</label>
+                                <input class="form-control" type="text" size="20" placeholder="Apellido Paterno" id="apellido_p" wire:model="apellido_p" required>
+                                <span class="text-danger">@error('apellido_p'){{ $message }}@enderror</span>
                             </div>
 
                            <div class="col-md-4">
-                                <label for="apellidoM2" class="form-control-label">{{ __('Apellido Materno.') }}</label>
-                                <input class="form-control" type="text" size="20" placeholder="Apellido Materno" id="apellidoM2" wire:model="apellidoM2" required>
-                                <span class="text-danger">@error('apellidoM2'){{ $message }}@enderror</span>
+                                <label for="apellido_m" class="form-control-label">{{ __('Apellido Materno.') }}</label>
+                                <input class="form-control" type="text" size="20" placeholder="Apellido Materno" id="apellido_m" wire:model="apellido_m" required>
+                                <span class="text-danger">@error('apellido_m'){{ $message }}@enderror</span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="ultGrado2" class="form-control-label">Último grado escolar.</label>
-                                <select name="ultGrado" id="ultGrado2" class="form-control" wire:model="ultGrado2" required>
+                                <label for="ultimo_grado" class="form-control-label">Último grado escolar.</label>
+                                <select name="ultGrado" id="ultimo_grado" class="form-control" wire:model="ultimo_grado" required>
                                     <option value="" selected>Escoge tu último grado escolar</option>
                                     <option value="Preescolar">Preescolar</option>
                                     <option value="Primaria">Primaria</option>
@@ -515,13 +519,13 @@
                                     <option value="Doctorado">Doctorado</option>
                                     <option value="Ninguno">Ninguno</option>
                                 </select>
-                                <span class="text-danger">@error('ultGrado2'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('ultimo_grado'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="nombreEscuela2" class="form-control-label">Nombre de la escuela.</label>
-                                <input class="form-control" id="nombreEscuela2" type="text" size="50" wire:model="nombreEscuela2" required>
-                                <span class="text-danger">@error('nombreEscuela2'){{ $message }}@enderror</span>
+                                <label for="nombre_escuela" class="form-control-label">Nombre de la escuela.</label>
+                                <input class="form-control" id="nombre_escuela" type="text" size="50" wire:model="nombre_escuela" required>
+                                <span class="text-danger">@error('nombre_escuela'){{ $message }}@enderror</span>
                             </div>
                         </div>
 
@@ -531,7 +535,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="estados">Estado.</label>
-                                <select class="form-control"  name="estados" id="estados2" wire:model="estados2" required>
+                                <select class="form-control"  name="estados" id="estado" wire:model="estado" required>
                                     <option value="" selected>Escoge estado</option>
                                     <option value="Aguascalientes">Aguascalientes</option>
                                     <option value="Baja California">Baja California</option>
@@ -566,20 +570,25 @@
                                     <option value="Yucatán">Yucatán</option>
                                     <option value="Zacatecas">Zacatecas</option>
                                 </select>
-                                <span class="text-danger">@error('estados2'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('estado'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
                                 <label for="estados">Ciudad.</label>
-                                <input class="form-control" type="text" placeholder="Ciudad" id="ciudad2" size="25" wire:model="ciudad2" required>
-                                <span class="text-danger">@error('ciudad2'){{ $message }}@enderror</span>
+                                <input class="form-control" type="text" placeholder="Ciudad" id="ciudadP" size="25" wire:model="ciudadP" required>
+                                <span class="text-danger">@error('ciudadP'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
                                 <label for="estados">Municipio.</label>
-                                <input class="form-control" type="text" placeholder="Municipio" id="municipio2" size="20" wire:model="municipio2" required>
-                                <span class="text-danger">@error('municipio2'){{ $message }}@enderror</span>
+                                <input class="form-control" type="text" placeholder="Municipio" id="municipioP" size="20" wire:model="municipioP" required>
+                                <span class="text-danger">@error('municipioP'){{ $message }}@enderror</span>
                             </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="dir_casap" class="form-control-label">Dirección.</label>
+                            <input class="form-control" id="dir_casap" type="text" size="50" wire:model="dir_casap" required>
+                            <span class="text-danger">@error('dir_casap'){{ $message }}@enderror</span>
                         </div>
 
                         <div class="row">
@@ -600,24 +609,24 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="email" class="form-control-label">{{ __('Correo Electrónico.') }}</label>
-                                <input class="form-control" type="email" size="50" placeholder="Correo Electrónico" id="email" wire:model="email" required>
-                                <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                                <label for="correo" class="form-control-label">{{ __('Correo Electrónico.') }}</label>
+                                <input class="form-control" type="email" size="50" placeholder="Correo Electrónico" id="correo" wire:model="correo" required>
+                                <span class="text-danger">@error('correo'){{ $message }}@enderror</span>
                             </div>
 
                         </div>
                         
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="nombreTrabajo" class="form-control-label">Nombre del lugar donde labora.</label>
-                                <input class="form-control" id="nombreTrabajo" type="text" size="50" wire:model="nombreTrabajo"  placeholder="Nombre del lugar donde labora" required>
-                                <span class="text-danger">@error('nombreTrabajo'){{ $message }}@enderror</span>
+                                <label for="nom_trabajo" class="form-control-label">Nombre del lugar donde labora.</label>
+                                <input class="form-control" id="nom_trabajo" type="text" size="50" wire:model="nom_trabajo"  placeholder="Nombre del lugar donde labora" required>
+                                <span class="text-danger">@error('nom_trabajo'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="telefonoEmpresa" class="form-control-label">{{ __('Telefono de oficina o celular de la empresa.') }}</label>
-                                <input class="form-control" type="tel" size="10" placeholder="Teléfono" id="telefonoEmpresa" wire:model="telefonoEmpresa" required>
-                                <span class="text-danger">@error('telefonoEmpresa'){{ $message }}@enderror</span>
+                                <label for="tel_trabajo" class="form-control-label">{{ __('Telefono de oficina o celular de la empresa.') }}</label>
+                                <input class="form-control" type="tel" size="10" placeholder="Teléfono" id="tel_trabajo" wire:model="tel_trabajo" required>
+                                <span class="text-danger">@error('tel_trabajo'){{ $message }}@enderror</span>
                             </div>
                         </div>
 
@@ -777,7 +786,7 @@
                     <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
                 @endif
 
-                @if ($currentStep == 1)
+                @if ($currentStep == 3)
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
                 @endif      
             </div>

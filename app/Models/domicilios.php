@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class contacto extends Model
+class domicilios extends Model
 {
     use HasFactory;
 
@@ -13,9 +13,9 @@ class contacto extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'telefono',
-        'celular',
-        'correo',
-        'tel_trabajo',
+        'dir_casa',
+        'estado',
+        'municipioP',
+        'ciudadP',
     ];
 }
