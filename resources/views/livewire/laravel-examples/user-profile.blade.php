@@ -769,17 +769,14 @@
                 @endif
 
                 @if ($currentStep == 2 || $currentStep == 3 || $currentStep == 4)
-                @csrf
                     <button type="button" class="btn btn-sm mb-0 btn-danger" wire:click="decreaseStep()">Regresar</button>
                 @endif
-
+                
                 @if ($currentStep == 1 || $currentStep == 2 || $currentStep == 3)
-                @csrf
                     <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
                 @endif
 
                 @if ($currentStep == 4)
-                @csrf
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
                 @endif      
             </div>
