@@ -7,5 +7,6 @@ class ReciboRiController extends Controller
 {
     public function index(){
         return view('recibosAlum.recibo');
+       
     }
 }

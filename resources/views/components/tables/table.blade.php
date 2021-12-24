@@ -218,20 +218,21 @@
                         <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">{{$dato->nombre}} {{$dato->apellido_P}} {{$dato->apellido_M}}</h6>
+                        <h6 id="nombre",class="mb-0 text-sm">{{$dato->nombre}} {{$dato->apellido_P}} {{$dato->apellido_M}}</h6>
                         <p class="text-xs text-secondary mb-0"></p>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <p class="mb-0 text-sm"></p>
+                    <p class="mb-0 text-sm">1</p>
 
                   </td>
                   <td class="align-middle text-center text-sm">
                     <span class="badge badge-sm bg-gradient-danger"></span>
                   </td>
+                  @csrf
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="{{ route('recibos.index',  ['nombre' => $dato->nombre, 'apellidop' =>$dato->apellido_P, 'apellidom' => $dato->apellido_M]) }}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>

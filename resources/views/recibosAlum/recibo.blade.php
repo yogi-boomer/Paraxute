@@ -75,7 +75,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="nombre" class="form-control-label">{{ __('Nombre.') }}</label>
-                                <input class="form-control" type="text" size="25" placeholder="Nombre(s)" id="nombre" wire:model="nombre" required>
+                                <input class="form-control" type="text" size="25" placeholder="Nombre(s)" id="nombre" wire:model="nombre" value='<?php echo $_GET["nombre"]; ?> <?php echo $_GET["apellidop"]; ?> <?php echo $_GET["apellidom"]; ?>' required> 
+                                
                                 <span class="text-danger">@error('nombre'){{ $message }}@enderror</span>
                             </div>
 
@@ -167,7 +168,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="action-buttons d-grid gap-2 d-sm-flex justify-content-sm-end mt-1">
-                        <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Guardar</button>
+                        <a type="button" class="btn btn-sm mb-0 btn-success" href="{{ route('recibosAlum.pdf') }}">Guardar</a>
                         </div>
                     </div>
                 </div>
