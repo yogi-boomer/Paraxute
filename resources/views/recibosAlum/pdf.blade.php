@@ -13,7 +13,7 @@
             <div class="row ">
                 <div style="clear:both; position:relative;padding-top: 8em;">
                     <div style="position:absolute; left:50pt; width:192pt;">
-                        <p>Luis Fernando Vazquez Ceballos</p>
+                        <p><?php echo $_GET["nombre"]; ?> <?php echo $_GET["apellidop"]; ?> <?php echo $_GET["apellidom"]; ?></p>
                     </div>
                     <div style="margin-left:350pt;">
                         <p>Credito</p>
