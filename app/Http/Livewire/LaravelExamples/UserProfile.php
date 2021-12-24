@@ -138,7 +138,6 @@ class UserProfile extends Component
     public function validateData(){
         if($this->currentStep == 1){
             $this->validate([
-                'id_programa_'=>'required',
                 'selectedFormat'=>'required',
                 'dateRegister'=>'required|date',
                 'nombre'=>'required|string|max:25|min:3',
