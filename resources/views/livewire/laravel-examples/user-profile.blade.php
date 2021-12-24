@@ -34,29 +34,18 @@
                                 <button wire:click="$set('showSuccesNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
-
                         <div class="row">
                             <div class="col-md-4">
                                 <div class= "form-group">
-                                    <label for="id_programa_">Selecciona un programa.</label>
-                                    <select name="id_programa_" id="id_programa_" class="form-control" wire:model="id_programa_" required>
-                                        <option value="" selected>Escoge programa</option>
-                                        <option value="1">Batería</option>
-                                        <option value="Bajo Eléctrico">Bajo Eléctrico</option>
-                                        <option value="Clase Muestra">Clase Muestra</option>
-                                        <option value="Estimulación Musical">Estimulación Musical</option>
-                                        <option value="Estimulación Musical Temprana">Estimulación Musical Temprana</option>
-                                        <option value="Guitarra Acústica">Guitarra Acústica</option>
-                                        <option value="Guitarra Eléctrica">Guitarra Eléctrica</option>
-                                        <option value="Iniciación Musical 1">Iniciación Musical 1</option>
-                                        <option value="Iniciación Musical 2">Iniciación Musical 2</option>
-                                        <option value="Piano">Piano</option>
-                                        <option value="Violín">Violín</option>
+                                    <label for="id_progras_">Selecciona un programa.</label>
+                                    <select name="programas" class="form-control">
+                                    @foreach($progras as $progra)
+                                    <option value ="">{{$progra->tipo_programa}}</option>
+                                    @endforeach
                                     </select>
-                                    <span class="text-danger">@error('id_programa_'){{ $message }}@enderror</span>
                                 </div>
                             </div>
-
+                            
                             <div class="col-md-4">
                                 <div class= "form-group">
                                     <label for="selectedFormat">Selecciona un formato.</label>

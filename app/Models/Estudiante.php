@@ -21,10 +21,10 @@ class Estudiante extends Model
         'ultimo_Grado',
         'fecha_Nac',
         /* 'num_Tutores', */
-        'id_programa_',
-        'id_ficha_medica_',
+        'id_programas_',
+        'id_ficha_medicas_',
         'id_domicilios_',
-        'id_tutor1_',
-        'id_tutor2_',
+        'id_tutor1s_',
+        'id_referencias_'
     ];
 }

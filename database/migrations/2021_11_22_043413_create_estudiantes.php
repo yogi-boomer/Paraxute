@@ -78,7 +78,7 @@ class CreateEstudiantes extends Migration
         });
 
 
-        Schema::create('programa', function (Blueprint $table) {
+        Schema::create('programas', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_programa');
             $table->string('codigo_Prog');
@@ -87,39 +87,6 @@ class CreateEstudiantes extends Migration
             $table->foreignId('id_formato_')->contrained('formato');                
         });
 
-        
-        Schema::create('estudiantes', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre');
-            $table->string('apellido_P');
-            $table->string('apellido_M');
-            $table->string('sexo');
-            $table->string('escuela_Proc');
-            $table->string('ultimo_Grado');
-            $table->timestamp('fecha_Nac');
- /*          $table->integer('num_Tutores'); */
-/*             $table->foreignId('id_programa_')->constrained('programa'); */
-            $table->foreignId('id_ficha_medica_')->constrained('ficha_medicas');
-/*             $table->foreignId('id_domicilios_')->constrained('domicilios');
-            $table->foreignId('id_tutor1s_')->constrained('tutor1s');
-            $table->foreignId('id_tutor2s_')->constrained('tutor2s');  
-            $table->foreignId('id_referencias_')->constrained('referencias');  */
-        });
-
-        Schema::create('concepto', function (Blueprint $table) {
-            $table->id();
-            $table->string('tipo_concepto');
-            $table->string('codigo_con');
-         
-        });
-        Schema::create('recibos', function (Blueprint $table) {
-            $table->id();
-            $table->string('fecha');
-            $table->string('forma_pago');
-            $table->string('total');
-            $table->foreignId('id_programa_')->constrained('programa');
-            $table->foreignId('id_estudiante_')->constrained('estudiantes');
-        });
         Schema::create('referencias', function (Blueprint $table){
             $table->id();
             $table->string('parentesco3');
@@ -131,6 +98,38 @@ class CreateEstudiantes extends Migration
             $table->string('municipio4');
             $table->string('telefono3');
             $table->string('celular3');
+        });
+
+        Schema::create('estudiantes', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->string('apellido_P');
+            $table->string('apellido_M');
+            $table->string('sexo');
+            $table->string('escuela_Proc');
+            $table->string('ultimo_Grado');
+            $table->timestamp('fecha_Nac');
+            $table->foreignId('id_programas_')->constrained('programas');
+            $table->foreignId('id_ficha_medicas_')->constrained('ficha_medicas');
+            $table->foreignId('id_domicilios_')->constrained('domicilios');
+            $table->foreignId('id_tutor1s_')->constrained('tutor1s');
+           /*  $table->foreignId('id_tutor2s_')->constrained('tutor2s');  */ 
+            $table->foreignId('id_referencias_')->constrained('referencias');
+        });
+
+        Schema::create('conceptos', function (Blueprint $table) {
+            $table->id();
+            $table->string('tipo_concepto');
+            $table->string('codigo_con');
+         
+        });
+        Schema::create('recibos', function (Blueprint $table) {
+            $table->id();
+            $table->string('fecha');
+            $table->string('forma_pago');
+            $table->string('total');
+            $table->foreignId('id_programas_')->constrained('programas');
+            $table->foreignId('id_estudiante_')->constrained('estudiantes');
         });
     }
 
@@ -147,7 +146,7 @@ class CreateEstudiantes extends Migration
         Schema::dropIfExists('formato');    
           
         Schema::dropIfExists('concepto');    
-
+        
         Schema::dropIfExists('estudiantes');
         Schema::dropIfExists('programa');    
 
@@ -155,6 +154,7 @@ class CreateEstudiantes extends Migration
         Schema::dropIfExists('domicilios');
         Schema::dropIfExists('tutor1s');
         Schema::dropIfExists('tutor2s');
+        Schema::dropIfExists('referencias');
     
     }
 }

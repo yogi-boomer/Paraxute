@@ -11,6 +11,7 @@ use App\Models\tutor1;
 use App\Models\domicilios;
 use App\Models\contacto;
 use App\Models\referencias;
+use App\Models\Programas;
 
 class UserProfile extends Component
 {
@@ -113,8 +114,8 @@ class UserProfile extends Component
     }
     public function render()
     {
-
-        return view('livewire.laravel-examples.user-profile');
+        $progras = programas::all();
+        return view('livewire.laravel-examples.user-profile', compact('progras'));
     }
 
     public function increaseStep() {
@@ -231,11 +232,11 @@ class UserProfile extends Component
             "sexo"=>$this->sexo,
             "escuela_Proc"=>$this->escuela_Proc,
             "ultimo_Grado"=>$this->ultimo_Grado,
-/*             "id_programa_"=>1,
- */            "id_ficha_medica_"=>$id_ficha_medica_[0]->AUTO_INCREMENT
-     /*        "id_domicilios_"=>1,
-            "id_tutor1_"=>1,
-            "id_tutor2_"=>1 */
+            "id_programas_"=>$this->id_programas_,
+            "id_ficha_medicas_"=>$id_ficha_medica_[0]->AUTO_INCREMENT,
+            "id_domicilios_"=>$idDomicilios_[0]->AUTO_INCREMENT,
+            "id_tutor1s_"=>$idTutor1_[0]->AUTO_INCREMENT,
+            "id_referencias_"=>$idReferencias_[0]->AUTO_INCREMENT,
         );
         Estudiante::insert($values);//insertar estudiantes
 
@@ -293,7 +294,7 @@ class UserProfile extends Component
         referencias::insert($referenciasArray);
         
         $fichas = ['tipo_sangre'=>$this->tipo_sangre.'alergia'.$this->alergia.'problemaVis'.$this->problemaVis.'enfermedad_cron'.$this->enfermedad_cron.'deficiencia_cogn'.$this->deficiencia_cogn.'deficiencia_mot'.$this->deficiencia_mot.'transtorno_Psic'.$this->transtorno_Psic.'medicamentos'.$this->medicamentos.'conducta'.$this->conducta];
-        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medica_'=>$id_ficha_medica_[0]->AUTO_INCREMENT];
+        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medicas_'=>$id_ficha_medica_[0]->AUTO_INCREMENT,'id_programas_'=>$id_programas_[0]->AUTO_INCREMENT,'id_domicilios_'=>$idDomicilios_[0]->AUTO_INCREMENT,'id_tutor1s_'=>$idTutor1_[0]->AUTO_INCREMENT,'id_referencias_'=>$idReferencias_[0]->AUTO_INCREMENT];
         return redirect()->route('tables', $fichas, $datas);
 
     }
