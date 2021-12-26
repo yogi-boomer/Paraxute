@@ -114,7 +114,7 @@ class UserProfile extends Component
     }
     public function render()
     {
-        $progras = programas::all();
+        $progras = DB::select('SELECT id,tipo_programa FROM programas');
         return view('livewire.laravel-examples.user-profile', compact('progras'));
     }
 
@@ -220,7 +220,6 @@ class UserProfile extends Component
         Ficha_medica::insert($fichaVals); //insertar ficha
 
         $id_ficha_medica_ = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM ficha_medicas');
-
        
 
         $values = array(
