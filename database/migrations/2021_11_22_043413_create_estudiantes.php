@@ -143,12 +143,12 @@ class CreateEstudiantes extends Migration
         Schema::dropIfExists('recibos'); 
 
         Schema::dropIfExists('contactos');   
-        Schema::dropIfExists('formato');    
+        Schema::dropIfExists('formatos');    
           
         Schema::dropIfExists('concepto');    
         
         Schema::dropIfExists('estudiantes');
-        Schema::dropIfExists('programa');    
+        Schema::dropIfExists('programas');    
 
         Schema::dropIfExists('ficha_medicas');
         Schema::dropIfExists('domicilios');

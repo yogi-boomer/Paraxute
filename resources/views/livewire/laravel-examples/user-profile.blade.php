@@ -37,13 +37,13 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class= "form-group">
-                                    <label for="id_progras_">Selecciona un programa.</label>
-                                    <select name="programas" class="form-control">
+                                    <label for="id_programas">Selecciona un programa.</label>
+                                    <select name="id_programas" class="form-control">
                                     @foreach($progras as $progra)
                                     <option value ="1">{{$progra->tipo_programa}}</option>
                                     @endforeach
                                     </select>
-                                    <span class="text-danger">@error('programas'){{ $message }}@enderror</span>
+                                    <span class="text-danger">@error('id_programas'){{ $message }}@enderror</span>
                                 </div>
                             </div>
                             

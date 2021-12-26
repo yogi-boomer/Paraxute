@@ -24,7 +24,7 @@ class UserProfile extends Component
     // ID's de los input del formulario
 
     //step one
-    public $id_programa_;
+    public $id_programas;
     public $selectedFormat;
     public $dateRegister;
     public $nombre;
@@ -114,7 +114,7 @@ class UserProfile extends Component
     }
     public function render()
     {
-        $progras = programas::all();
+        $progras = Programas::all();
         return view('livewire.laravel-examples.user-profile', compact('progras'));
     }
 
@@ -231,7 +231,7 @@ class UserProfile extends Component
             "sexo"=>$this->sexo,
             "escuela_Proc"=>$this->escuela_Proc,
             "ultimo_Grado"=>$this->ultimo_Grado,
-            "id_programas_"=>$this->id_programas_,
+            "id_programas_"=>$this->idProgramas,
             "id_ficha_medicas_"=>$id_ficha_medica_[0]->AUTO_INCREMENT,
             "id_domicilios_"=>$idDomicilios_[0]->AUTO_INCREMENT,
             "id_tutor1s_"=>$idTutor1_[0]->AUTO_INCREMENT,
@@ -259,7 +259,7 @@ class UserProfile extends Component
         );
         contacto::insert($conTutor1Array);//insertar datos del domicilio del tutor 1
        
-
+        $idProgramas = DB::select('SELECT tipo_programa FROM programas');
         $idDomicilios = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM domicilios');
         $idTutor1 = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM tutor1s');
         $idContacto = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM contactos');
@@ -292,9 +292,9 @@ class UserProfile extends Component
         );
         referencias::insert($referenciasArray);
         
-        $fichas = ['tipo_sangre'=>$this->tipo_sangre.'alergia'.$this->alergia.'problemaVis'.$this->problemaVis.'enfermedad_cron'.$this->enfermedad_cron.'deficiencia_cogn'.$this->deficiencia_cogn.'deficiencia_mot'.$this->deficiencia_mot.'transtorno_Psic'.$this->transtorno_Psic.'medicamentos'.$this->medicamentos.'conducta'.$this->conducta];
-        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' ','fecha_Nac'=>$this->fecha_Nac,'sexo'=>$this->sexo,'escuela_Proc'=>$this->escuela_Proc,'ultimo_Grado'=>$this->ultimo_Grado,'id_ficha_medicas_'=>$id_ficha_medica_[0]->AUTO_INCREMENT,'id_programas_'=>$id_programas_[0]->AUTO_INCREMENT,'id_domicilios_'=>$idDomicilios_[0]->AUTO_INCREMENT,'id_tutor1s_'=>$idTutor1_[0]->AUTO_INCREMENT,'id_referencias_'=>$idReferencias_[0]->AUTO_INCREMENT];
-        return redirect()->route('tables', $fichas, $datas);
+    
+        $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' '];
+        return redirect()->route('tables', $datas);
 
     }
 

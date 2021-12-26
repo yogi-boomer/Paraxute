@@ -21,7 +21,7 @@ class Estudiante extends Model
         'ultimo_Grado',
         'fecha_Nac',
         /* 'num_Tutores', */
-        'id_programas_',
+        'id_programas',
         'id_ficha_medicas_',
         'id_domicilios_',
         'id_tutor1s_',
