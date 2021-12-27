@@ -168,7 +168,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="action-buttons d-grid gap-2 d-sm-flex justify-content-sm-end mt-1">
-                        <a type="button" class="btn btn-sm mb-0 btn-success" href="{{ route('recibos/pdf', <?php echo $_GET["nombre"]; ?>) }}">Guardar</a>
+                        <a type="button" class="btn btn-sm mb-0 btn-success" href="{{ route('recibos.create', <?php echo $_GET["nombre"]; ?>) }}">Guardar</a>
                         </div>
                     </div>
                 </div>

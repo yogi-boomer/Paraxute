@@ -41,7 +41,7 @@
                     <span class="badge badge-sm bg-gradient-danger">Vencido</span>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="{{ route('recibos.index') }}" class="text-secondary font-weight-bold text-sm" >
+                    <a href="{{ route('recibos.create') }}" class="text-secondary font-weight-bold text-sm" >
                       Generar Recibo
                     </a>
                   </td>
@@ -232,7 +232,7 @@
                   </td>
                   @csrf
                   <td class="align-middle text-center">
-                    <a href="{{ route('recibos.index',  ['nombre' => $dato->nombre, 'apellidop' =>$dato->apellido_P, 'apellidom' => $dato->apellido_M]) }}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="{{ route('recibos.create',  ['nombre' => $dato->nombre, 'apellidop' =>$dato->apellido_P, 'apellidom' => $dato->apellido_M]) }}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
