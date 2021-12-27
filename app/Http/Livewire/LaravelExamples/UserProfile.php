@@ -12,6 +12,7 @@ use App\Models\domicilios;
 use App\Models\contacto;
 use App\Models\referencias;
 use App\Models\Programas;
+use App\Models\estado;
 
 class UserProfile extends Component
 {
@@ -114,8 +115,10 @@ class UserProfile extends Component
     }
     public function render()
     {
-        $progras = DB::select('SELECT id,tipo_programa FROM programas');
-        return view('livewire.laravel-examples.user-profile', compact('progras'));
+        $estadosOwO = DB::select('SELECT id,nombre FROM estados');
+       $progras = programas::pluck('tipo_programa', 'id');
+        $id_programas_=$progras; 
+        return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO'));
     }
 
     public function increaseStep() {
