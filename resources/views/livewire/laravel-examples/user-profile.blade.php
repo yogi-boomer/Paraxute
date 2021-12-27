@@ -414,7 +414,7 @@
         </div>        
         @endif
 
-        @if (($currentStep == 3) && ($edad >= 18))
+        @if (($currentStep == 3) /*&& ($edad >= 18)*/)
         {{-- STEP 3 --}}
         <div class="step-three">
             <div class="container-fluid py-4">
@@ -606,7 +606,7 @@
         @endif
 
         {{-- STEP 4 --}}
-        @if (($currentStep == 4) && ($edad < 18))
+        @if (($currentStep == 4) /*&& ($edad < 18)*/)
         <div class="step-four">
             <div class="container-fluid py-4">
                 <div class="card">
