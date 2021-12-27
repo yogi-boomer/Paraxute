@@ -36,13 +36,16 @@
                         @endif
                         <div class="row">
                             <div class="col-md-4">
-                            {!! Form::open(array('route' =>'user-profile', 'method' =>'POST', 'name'=>"id_programas_", 'id'=>'id_programas_')) !!}
-                                <div class= "form-group">
+                                <div class= "form-group">                               
                                     <label for="id_programas_">Selecciona un programa.</label>
-                                    {!! Form::select('programas_id', $progras, null, ['class' => 'form-control']) !!}
+                                    <select name="id_programas_" id="id_programas_" class="form-control" wire:model="id_programas_" required>
+                                    @foreach($progras as $progra)
+                                        <option value="{{$progra->id}}">{{$progra->tipo_programa}}</option>
+                                     @endforeach
+                                    </select>
+                                   
                                 </div>
                             </div>
-                            {!! Form::close() !!}
                             <div class="col-md-4">
                                 <div class= "form-group">
                                     <label for="selectedFormat">Selecciona un formato.</label>
@@ -89,8 +92,8 @@
                                 <label for="about">{{'Ubicación'}}</label>
                             </div>
                             <div class="col-md-4">
-                                <label for="estados">Estado.</label>
-                                <select class="form-control"  name="estados" id="estados" wire:model="estados" required>
+                                <label for="estado">Estado.</label>
+                                <select class="form-control"  name="estado" id="estado" wire:model="estado" required>
                                     <option value="" selected>Escoge estado</option>
                                     <option value="Aguascalientes">Aguascalientes</option>
                                     <option value="Baja California">Baja California</option>
@@ -125,7 +128,7 @@
                                     <option value="Yucatán">Yucatán</option>
                                     <option value="Zacatecas">Zacatecas</option>
                                 </select>
-                                <span class="text-danger">@error('estados'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('estado'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
@@ -724,7 +727,7 @@
                             <div class="col-md-4">
                                 <label for="ciudad4">{{'Ciudad'}}</label>
                                 <input class="form-control" type="text" placeholder="Ciudad" id="ciudad4" size="25" wire:model="ciudad4" required>
-                                <span class="text-danger">@error('ciudad'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('ciudad4'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">

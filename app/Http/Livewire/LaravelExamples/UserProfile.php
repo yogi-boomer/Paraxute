@@ -39,7 +39,7 @@ class UserProfile extends Component
     public $generoOtro;
     public $ultimo_Grado;
     public $escuela_Proc;
-    
+
     //step two
 /*     public $id_ficha_medica_; */
     public $tipo_sangre;
@@ -114,8 +114,7 @@ class UserProfile extends Component
     }
     public function render()
     {
-        $progras = programas::pluck('tipo_programa', 'id');
-        $id_programas_=$progras; 
+        $progras = DB::select('SELECT id,tipo_programa FROM programas');
         return view('livewire.laravel-examples.user-profile', compact('progras'));
     }
 
@@ -144,10 +143,11 @@ class UserProfile extends Component
                 'nombre'=>'required|string|max:25|min:3',
                 'apellido_P'=>'required|string|max:20|min:3',
                 'apellido_M'=>'required|string|max:20|min:3',
-                'estados'=>'required',
+                'estado'=>'required',
                 'ciudad'=>'required|string|max:25|min:3',
                 'municipio'=>'required|string|max:20|min:3',
                 'fecha_Nac'=>'required|date',
+                'dir_casa'=>'required|string|max:30|min:3',
                 'sexo'=>'required',
                 'generoOtro'=>' ',
                 'ultimo_Grado'=>'required',
@@ -205,6 +205,20 @@ class UserProfile extends Component
                 'celular3'=>'required|min:11|numeric'
             ]);
         }
+
+        $referenciasArray=array( //datos de referencias
+            "parentesco3"=>$this->parentesco3,
+            "nombre4"=>$this->nombre4,
+            "apellidoP4"=>$this->apellidoP4,
+            "apellidoM4"=>$this->apellidoM4,
+            "estados4"=>$this->estados4,
+            "ciudad4"=>$this->ciudad4,
+            "municipio4"=>$this->municipio4,
+            "telefono3"=>$this->telefono3,
+            "celular3"=>$this->celular3,
+        );
+        referencias::insert($referenciasArray);
+        $idReferencias = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM referencias');
         //cambiar cuando se inserte la ficha medica
       
         $fichaVals=array(
@@ -221,24 +235,15 @@ class UserProfile extends Component
         Ficha_medica::insert($fichaVals); //insertar ficha
 
         $id_ficha_medica_ = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM ficha_medicas');
-       
 
-        $values = array(
-            "nombre"=>$this->nombre,
-            "apellido_P"=>$this->apellido_P,
-            "apellido_M"=>$this->apellido_M,
-            "fecha_Nac"=>$this->fecha_Nac,
-            "sexo"=>$this->sexo,
-            "escuela_Proc"=>$this->escuela_Proc,
-            "ultimo_Grado"=>$this->ultimo_Grado,
-            "id_programas_"=>$this->id_programas_,
-            "id_ficha_medicas_"=>$id_ficha_medica_[0]->AUTO_INCREMENT,
-            "id_domicilios_"=>$idDomicilios[0]->AUTO_INCREMENT,
-            "id_tutor1s_"=>$idTutor1_[0]->AUTO_INCREMENT,
-            "id_referencias_"=>$idReferencias_[0]->AUTO_INCREMENT,
+        $domAlumnoArray=array( //datos del domicilio del estudiante 1
+            "dir_casa"=>$this->dir_casa,
+            "estado"=>$this->estado,
+            "municipioP"=>$this->municipio,
+            "ciudad"=>$this->ciudad,
         );
-        Estudiante::insert($values);//insertar estudiantes
-
+        domicilios::insert($domAlumnoArray);//insertar datos del estudiante 1
+        $idDomicilios = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM domicilios');  
 
         $domTutorArray=array( //datos del domicilio del tutor 1
             "dir_casa"=>$this->dir_casap,
@@ -247,7 +252,7 @@ class UserProfile extends Component
             "ciudad"=>$this->ciudadP,
         );
         domicilios::insert($domTutorArray);//insertar datos del domicilio del tutor 1
-
+        $idDomicilios = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM domicilios');
 
         $conTutor1Array=array( //datos del contacto del tutor 1
 
@@ -256,10 +261,9 @@ class UserProfile extends Component
             "correo"=>$this->correo,
             "tel_trabajo"=>$this->tel_trabajo,
         );
-        contacto::insert($conTutor1Array);//insertar datos del domicilio del tutor 1
+        contacto::insert($conTutor1Array);//insertar datos del contacto del tutor 1
        
-        $idDomicilios = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM domicilios');
-        $idTutor1 = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM tutor1s');
+       
         $idContacto = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM contactos');
         $tutor1Array=array( //datos del tutor 1 
             "parentesco"=>$this->parentesco,
@@ -272,25 +276,28 @@ class UserProfile extends Component
             "nom_trabajo"=>$this->nom_trabajo,
             "id_contacto_"=>$idContacto[0]->AUTO_INCREMENT,
             "id_domicilio_"=>$idDomicilios[0]->AUTO_INCREMENT,
-
+            
         );
         tutor1::insert($tutor1Array);
+        $idTutor1 = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM tutor1s');
 
-        $idReferencias = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM referencias');
-        $referenciasArray=array( //datos de referencias
-            "parentesco3"=>$this->parentesco3,
-            "nombre4"=>$this->nombre4,
-            "apellidoP4"=>$this->apellidoP4,
-            "apellidoM4"=>$this->apellidoM4,
-            "estados4"=>$this->estados4,
-            "ciudad4"=>$this->ciudad4,
-            "municipio4"=>$this->municipio4,
-            "telefono3"=>$this->telefono3,
-            "celular3"=>$this->celular3,
+        $values = array(
+            "nombre"=>$this->nombre,
+            "apellido_P"=>$this->apellido_P,
+            "apellido_M"=>$this->apellido_M,
+            "fecha_Nac"=>$this->fecha_Nac,
+            "sexo"=>$this->sexo,
+            "escuela_Proc"=>$this->escuela_Proc,
+            "ultimo_Grado"=>$this->ultimo_Grado,
+            "id_programas_"=>$this->id_programas_,
+            "id_ficha_medicas_"=>$id_ficha_medica_[0]->AUTO_INCREMENT,
+            "id_domicilios_"=>$idDomicilios[0]->AUTO_INCREMENT,
+            "id_tutor1s_"=>$idTutor1[0]->AUTO_INCREMENT,
+            "id_referencias_"=>$idReferencias[0]->AUTO_INCREMENT,
         );
-        referencias::insert($referenciasArray);
-        
-    
+        Estudiante::insert($values);//insertar estudiantes
+
+   
         $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' '];
         return redirect()->route('tables', $datas);
 
