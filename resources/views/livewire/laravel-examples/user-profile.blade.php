@@ -518,7 +518,7 @@
                                 <label for="estados">Estado.</label>
                                 <select class="form-control"  name="estados" id="estado" wire:model="estado" required>
                                     <option value="" selected>Selecciona un estado</option>
-                                    @foreach ($estadosTutor as $estadose)
+                                    @foreach ($estadosOwO as $estadose)
                                     <option value="{{$estadose->id}}" >{{$estadose->nombre}}</option>
                                    @endforeach
                                 </select>
@@ -531,7 +531,7 @@
                                    
                                     <option value="" >Selecciona una ciudad</option>
                                     @if (!is_null($estado))
-                                        @foreach ($ciudadesTutor as $ciudade )
+                                        @foreach ($ciudadesBase as $ciudade )
                                             <option value="{{$ciudade->id}}" >{{$ciudade->nombre}}</option>
                                         @endforeach
                                     @endif
@@ -544,7 +544,7 @@
                                 <select class="form-control"  name="municipioP" id="municipioP" wire:model="municipioP" required >
                                     <option value="" >Selecciona un municipio</option>
                                     @if (!is_null($ciudadP))
-                                    @foreach ($localidadesTutor as $locale )
+                                    @foreach ($localidadesBase as $locale )
                                     <option value="{{$locale->id}}" >{{$locale->nombre}}</option>
                                     @endforeach
                                     @endif
@@ -679,7 +679,7 @@
                                 <select class="form-control"  name="ciudad4" id="ciudad4" wire:model="ciudad4" required >
                                    
                                     <option value="" >Selecciona una ciudad</option>
-                                    @if (!is_null($estados))
+                                    @if (!is_null($estados4))
                                         @foreach ($ciudadesBase as $ciudades )
                                             <option value="{{$ciudades->id}}" >{{$ciudades->nombre}}</option>
                                         @endforeach
@@ -692,7 +692,7 @@
                                 <label for="municipio4">Municipio.</label>
                                 <select class="form-control"  name="municipio4" id="municipio4" wire:model="municipio4" required >
                                     <option value="" >Selecciona un municipio</option>
-                                    @if (!is_null($ciudad))
+                                    @if (!is_null($ciudad4))
                                     @foreach ($localidadesBase as $local )
                                     <option value="{{$local->id}}" >{{$local->nombre}}</option>
                                     @endforeach

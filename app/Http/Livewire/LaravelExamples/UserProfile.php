@@ -98,8 +98,6 @@ class UserProfile extends Component
     public $estadoSel=NULL;
     public $localidadesBase;
 
-    public $ciudadesTutor;
-    public $localidadesTutor;
     use WithFileUploads; //Agregado
 
     protected $rules = [
@@ -115,8 +113,7 @@ class UserProfile extends Component
         $this->currentStep = 1;
         $this->ciudadesBase = collect();
         $this->localidadesBase = collect();
-        $this->ciudadesTutor = collect();
-        $this->localidadesTutor = collect();
+
     }
 
     public function save() {
@@ -133,25 +130,47 @@ class UserProfile extends Component
     public function render()
     { 
         $estadosOwO = DB::select('SELECT id,nombre FROM estados');
-        $estadosTutor = DB::select('SELECT id,nombre FROM estados');
 /*         $estadosReferencias = DB::select('SELECT id,nombre FROM estados'); */
         $progras = DB::select('SELECT id,tipo_programa FROM programas');
-        return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO','estadosTutor'));
+        return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO'));
     }
     public function updatedEstados($estadoid){
     /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
             $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
-            $this->ciudadesTutor=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
-       
+
     }
+    
     public function updatedCiudad($ciudadid){
-     if(!is_null($ciudadid)){
-        $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
-     }
-     if(!is_null($ciudadid)){
-        $this->localidadesTutor=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
-     }
-    }
+        if(!is_null($ciudadid)){
+           $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
+        }
+       }
+
+    /* step 3 */
+    public function updatedEstado($estadoid){
+        /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
+                $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
+                
+        }
+        public function updatedCiudadP($ciudadid){
+            if(!is_null($ciudadid)){
+               $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
+            }
+           }
+
+          /* step 4 */ 
+        public function updatedEstados4($estadoid){
+            /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
+                    $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
+                    
+        }
+        public function updatedCiudad4($ciudadid){
+                if(!is_null($ciudadid)){
+                   $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
+                }
+        }
+
+
     public function increaseStep() {
         $this->resetErrorBag();
         $this->validateData();
