@@ -116,8 +116,7 @@ class UserProfile extends Component
     public function render()
     {
         $estadosOwO = DB::select('SELECT id,nombre FROM estados');
-       $progras = programas::pluck('tipo_programa', 'id');
-        $id_programas_=$progras; 
+        $progras = DB::select('SELECT id,tipo_programa FROM programas');
         return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO'));
     }
 
