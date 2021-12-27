@@ -6,7 +6,7 @@
         </div>
     </div>
 
-    <form wire:submit.prevent="save" action="#" method="POST" role="form text-left"> {{-- wire:submit.prevent="save" action="#" method="POST" role="form text-left" --}}
+    <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
 
         {{-- STEP 1 --}}
         @if ($currentStep == 1)
@@ -96,7 +96,7 @@
                             
                             <div class="col-md-4">
                                 <label for="estados">Estado.</label>
-                                <select class="form-control"  name="estados" id="estados" wire:model="estados" required>
+                                <select class="form-control" name="estados" id="estados" wire:model="estados" required>
                                     <option value="" >Selecciona un estado</option>   
                                     @foreach ($estadosOwO as $estadosa)
                                     <option value="{{$estadosa->id}}" >{{$estadosa->nombre}}</option>
@@ -107,8 +107,7 @@
                            
                             <div class="col-md-4">
                                 <label for="ciudad">Ciudad.</label>
-                                <select class="form-control"  name="ciudad" id="ciudad" wire:model="ciudad" required >
-                                   
+                                <select class="form-control" name="ciudad" id="ciudad" wire:model="ciudad" required>
                                     <option value="" >Selecciona una ciudad</option>
                                     @if (!is_null($estados))
                                         @foreach ($ciudadesBase as $ciudades )
@@ -163,11 +162,13 @@
                                 </div>
                             </div>
 
+                            {{-- 
                             <div class="col-md-4">
                                 <label for="generoOtro" class="form-control-label">Especifique.</label>
                                 <input class="form-control" type="text" id="generoOtro" size="20" disabled="disabled" wire:model="generoOtro">
                                 <span class="text-danger">@error('generoOtro'){{ $message }}@enderror</span>
                             </div>
+                             --}}
                         </div>
     
                         <div class="row">
@@ -413,7 +414,7 @@
         </div>        
         @endif
 
-        @if ($currentStep == 3)
+        @if (($currentStep == 3) && ($edad >= 18))
         {{-- STEP 3 --}}
         <div class="step-three">
             <div class="container-fluid py-4">
@@ -516,7 +517,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="estados">Estado.</label>
-                                <select class="form-control"  name="estados" id="estado" wire:model="estado" required>
+                                <select class="form-control" name="estados" id="estado" wire:model="estado" required>
                                     <option value="" selected>Selecciona un estado</option>
                                     @foreach ($estadosOwO as $estadose)
                                     <option value="{{$estadose->id}}" >{{$estadose->nombre}}</option>
@@ -527,7 +528,7 @@
 
                             <div class="col-md-4">
                                 <label for="ciudadP">Ciudad.</label>
-                                <select class="form-control"  name="ciudadP" id="ciudadP" wire:model="ciudadP" required >
+                                <select class="form-control" name="ciudadP" id="ciudadP" wire:model="ciudadP" required>
                                    
                                     <option value="" >Selecciona una ciudad</option>
                                     @if (!is_null($estado))
@@ -541,7 +542,7 @@
 
                             <div class="col-md-4">
                                 <label for="municipioP">Municipio.</label>
-                                <select class="form-control"  name="municipioP" id="municipioP" wire:model="municipioP" required >
+                                <select class="form-control" name="municipioP" id="municipioP" wire:model="municipioP" required>
                                     <option value="" >Selecciona un municipio</option>
                                     @if (!is_null($ciudadP))
                                     @foreach ($localidadesBase as $locale )
@@ -565,7 +566,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="telefono" class="form-control-label">{{ __('Telefono.') }}</label>
+                                <label for="telefono" class="form-control-label">{{ __('Teléfono.') }}</label>
                                 <input class="form-control" type="tel" size="25"placeholder="Teléfono" id="telefono" wire:model="telefono" required>
                                 <span class="text-danger">@error('telefono'){{ $message }}@enderror</span>
                             </div>
@@ -587,12 +588,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="nom_trabajo" class="form-control-label">Nombre del lugar donde labora.</label>
-                                <input class="form-control" id="nom_trabajo" type="text" size="50" wire:model="nom_trabajo"  placeholder="Nombre del lugar donde labora" required>
+                                <input class="form-control" id="nom_trabajo" type="text" size="50" wire:model="nom_trabajo" placeholder="Nombre del lugar donde labora" required>
                                 <span class="text-danger">@error('nom_trabajo'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-6">
-                                <label for="tel_trabajo" class="form-control-label">{{ __('Telefono de oficina o celular de la empresa.') }}</label>
+                                <label for="tel_trabajo" class="form-control-label">{{ __('Teléfono de oficina o celular de la empresa.') }}</label>
                                 <input class="form-control" type="tel" size="10" placeholder="Teléfono" id="tel_trabajo" wire:model="tel_trabajo" required>
                                 <span class="text-danger">@error('tel_trabajo'){{ $message }}@enderror</span>
                             </div>
@@ -605,7 +606,7 @@
         @endif
 
         {{-- STEP 4 --}}
-        @if ($currentStep == 4)
+        @if (($currentStep == 4) && ($edad < 18))
         <div class="step-four">
             <div class="container-fluid py-4">
                 <div class="card">
@@ -635,7 +636,7 @@
                             <div class="col-md-4">
                                 <label for="parentesco3" class="form-control-label">Parentesco.</label>
                                 <input type="text" name="parentesco3" class="form-control" id="parentesco3" size="20" placeholder ="Parentesco" wire:model="parentesco3">
-                                <span class="text-danger">@error('parentesco'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('parentesco3'){{ $message }}@enderror</span>
                             </div>
                         </div>
 
@@ -643,7 +644,7 @@
                             <div class="col-md-4">
                                 <label for="nombre4" class="form-control-label">{{ __('Nombre.') }}</label>
                                 <input class="form-control" type="text" size="25" placeholder="Nombre" id="nombre4" wire:model="nombre4" required>
-                                <span class="text-danger">@error('nombre'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('nombre4'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
@@ -671,7 +672,7 @@
                                     <option value="{{$estadosa->id}}" >{{$estadosa->nombre}}</option>
                                    @endforeach
                                 </select>
-                                <span class="text-danger">@error('estado'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('estado4'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
@@ -685,7 +686,7 @@
                                         @endforeach
                                     @endif
                                 </select>
-                                <span class="text-danger">@error('ciudad'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('ciudad4'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
@@ -699,7 +700,7 @@
                                     @endif
                                 </select>
 
-                                <span class="text-danger">@error('municipio'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('municipio4'){{ $message }}@enderror</span>
                             </div>
 
                         <div class="row">
@@ -707,7 +708,7 @@
                                 <label for="about">{{'Contacto'}}</label>
                             </div>
                             <div class="col-md-6">
-                                <label for="telefono3" class="form-control-label">{{ __('Telefono.') }}</label>
+                                <label for="telefono3" class="form-control-label">{{ __('Teléfono.') }}</label>
                                 <input class="form-control" type="tel" size="15" placeholder="Teléfono" id="telefono3" wire:model="telefono3" required>
                                 <span class="text-danger">@error('telefono3'){{ $message }}@enderror</span>
                             </div>
@@ -749,3 +750,17 @@
     </form>   
 </div>
 
+{{-- 
+<script type = "text/javascript">
+    $(function(){
+        $(".opA").click(function(){
+            if($(this).val()=="No"){
+                $("#alergiaO").removeAttr('disabled');
+                $("#alergiaO").focus();
+            }else{
+                $("#alergiaO").attr('disabled', 'disabled');
+            }
+        })
+    })
+</script>
+ --}}

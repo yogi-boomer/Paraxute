@@ -5,6 +5,7 @@ namespace App\Http\Livewire\LaravelExamples;
 use App\Models\Estudiante;
 use Livewire\Component;
 use Livewire\WithFileUploads; //Agregado
+use Carbon\Carbon; // Agregado
 use Illuminate\Support\Facades\DB;
 use App\Models\Ficha_medica;
 use App\Models\tutor1;
@@ -92,6 +93,10 @@ class UserProfile extends Component
     public $totalSteps = 4;
     public $currentStep = 1;
 
+    // Calcular edad
+    public $edad = 0;
+    //public $edad = Carbon::parse($fecha_Nac)->age;
+    //public $edad=\Carbon\Carbon::parse($this->fecha_Nac->age); 
 
     public $estadosbase;
     public $ciudadesBase;
@@ -199,8 +204,8 @@ class UserProfile extends Component
                 'estados'=>'required',
                 'ciudad'=>'required',
                 'municipio'=>'required',
-                'fecha_Nac'=>'required|date',
-                'dir_casa'=>'required|string|max:30|min:3',
+                'dir_casa'=>'required|string|max:40|min:3',
+                'fecha_Nac'=>'required|date|before_or_equal:today',
                 'sexo'=>'required',
                 'generoOtro'=>' ',
                 'ultimo_Grado'=>'required',
@@ -224,7 +229,7 @@ class UserProfile extends Component
         elseif($this->currentStep == 3){
             $this->validate([
                 'parentesco'=>'required|string|max:20|min:3',
-                'fecha_nac'=>'required|date',
+                'fecha_nac'=>'required|date|before_or_equal:today',
                 'estado_civil'=>'required',
                 'nombrep'=>'required|string|max:25|min:3',
                 'apellido_p'=>'required|string|max:20|min:3',
@@ -234,6 +239,7 @@ class UserProfile extends Component
                 'estado'=>'required',
                 'ciudadP'=>'required',
                 'municipioP'=>'required',
+                'dir_casap'=>'required|string|max:40|min:3',
                 'telefono'=>'required|min:11|numeric',
                 'celular'=>'required|min:11|numeric',
                 'correo'=>'required|max:50|min:3',
@@ -242,6 +248,30 @@ class UserProfile extends Component
             ]);
         }
     }
+
+    /*public function index(Request $request)
+    {
+        $fecha_Nac = '1997-08-15';
+        $years = Carbon::parse($fecha_Nac)->age;
+        dd($years);
+    }*/
+
+    public function getAgeAttribute(){
+        // $edad = \Carbon\Carbon::parse($this->fecha_Nac)->diff(\Carbon\Carbon::now())->format('%y');
+         $edad = Carbon::parse($this->fecha_Nac)->age;
+         
+         dd($edad);
+     }
+ 
+     /*public function getAgeAttribute(){
+         return Carbon::parse($this->attributes['fecha_Nac'])->age;
+         if($this->age >= 18){
+             $this->currentStep = 3;
+         }
+         elseif($this->age < 18){
+             $this->currentStep = 4;
+         }
+     }*/
 
     public function register(){
         $this->resetErrorBag();
