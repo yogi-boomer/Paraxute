@@ -9,11 +9,14 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Ficha_medica;
 use App\Models\tutor1;
 use App\Models\domicilios;
-use App\Models\contacto;
+use App\Models\contactos;
 use App\Models\referencias;
 use App\Models\Programas;
 use App\Models\estado;
-
+use Validator;
+use Response;
+use Redirect;
+use App\Models\{ localidade, municipio};
 class UserProfile extends Component
 {
 
@@ -31,8 +34,8 @@ class UserProfile extends Component
     public $nombre;
     public $apellido_P;
     public $apellido_M;
-    public $estados;
-    public $ciudad;
+    public $estados=NULL;
+    public $ciudad=NULL;
     public $municipio;
     public $dir_casa;
     public $fecha_Nac;
@@ -70,8 +73,8 @@ class UserProfile extends Component
     public $tel_trabajo;
         //Domicilio
     public $dir_casap;
-    public $estado; 
-    public $municipioP;
+    public $estado=NULL;
+    public $municipioP=NULL;
     public $ciudadP;
 
     //step four
@@ -79,8 +82,8 @@ class UserProfile extends Component
     public $nombre4;
     public $apellidoP4;
     public $apellidoM4;
-    public $estados4;
-    public $ciudad4;
+    public $estados4=NULL;
+    public $ciudad4=NULL;
     public $municipio4;
     public $telefono3;
     public $celular3;
@@ -89,6 +92,14 @@ class UserProfile extends Component
     public $totalSteps = 4;
     public $currentStep = 1;
 
+
+    public $estadosbase;
+    public $ciudadesBase;
+    public $estadoSel=NULL;
+    public $localidadesBase;
+
+    public $ciudadesTutor;
+    public $localidadesTutor;
     use WithFileUploads; //Agregado
 
     protected $rules = [
@@ -102,6 +113,10 @@ class UserProfile extends Component
     public function mount() { 
         //$this->user = auth()->user();
         $this->currentStep = 1;
+        $this->ciudadesBase = collect();
+        $this->localidadesBase = collect();
+        $this->ciudadesTutor = collect();
+        $this->localidadesTutor = collect();
     }
 
     public function save() {
@@ -113,13 +128,30 @@ class UserProfile extends Component
             $this->showSuccesNotification = true;
         }
     }
-    public function render()
-    {
-        $estadosOwO = DB::select('SELECT id,nombre FROM estados');
-        $progras = DB::select('SELECT id,tipo_programa FROM programas');
-        return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO'));
-    }
+   
 
+    public function render()
+    { 
+        $estadosOwO = DB::select('SELECT id,nombre FROM estados');
+        $estadosTutor = DB::select('SELECT id,nombre FROM estados');
+/*         $estadosReferencias = DB::select('SELECT id,nombre FROM estados'); */
+        $progras = DB::select('SELECT id,tipo_programa FROM programas');
+        return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO','estadosTutor'));
+    }
+    public function updatedEstados($estadoid){
+    /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
+            $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
+            $this->ciudadesTutor=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
+       
+    }
+    public function updatedCiudad($ciudadid){
+     if(!is_null($ciudadid)){
+        $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
+     }
+     if(!is_null($ciudadid)){
+        $this->localidadesTutor=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
+     }
+    }
     public function increaseStep() {
         $this->resetErrorBag();
         $this->validateData();
@@ -145,9 +177,9 @@ class UserProfile extends Component
                 'nombre'=>'required|string|max:25|min:3',
                 'apellido_P'=>'required|string|max:20|min:3',
                 'apellido_M'=>'required|string|max:20|min:3',
-                'estado'=>'required',
-                'ciudad'=>'required|string|max:25|min:3',
-                'municipio'=>'required|string|max:20|min:3',
+                'estados'=>'required',
+                'ciudad'=>'required',
+                'municipio'=>'required',
                 'fecha_Nac'=>'required|date',
                 'dir_casa'=>'required|string|max:30|min:3',
                 'sexo'=>'required',
@@ -181,8 +213,8 @@ class UserProfile extends Component
                 'ultimo_grado'=>'required',
                 'nombre_escuela'=>'required|max:50|min:3',
                 'estado'=>'required',
-                'ciudadP'=>'required|string|max:25|min:3',
-                'municipioP'=>'required|string|max:20|min:3',
+                'ciudadP'=>'required',
+                'municipioP'=>'required',
                 'telefono'=>'required|min:11|numeric',
                 'celular'=>'required|min:11|numeric',
                 'correo'=>'required|max:50|min:3',
@@ -201,8 +233,8 @@ class UserProfile extends Component
                 'apellidoP4'=>'required|string|max:20|min:3',
                 'apellidoM4'=>'required|string|max:20|min:3',
                 'estados4'=>'required',
-                'ciudad4'=>'required|string|max:25|min:3',
-                'municipio4'=>'required|string|max:20|min:3',
+                'ciudad4'=>'required',
+                'municipio4'=>'required',
                 'telefono3'=>'required|min:11|numeric',
                 'celular3'=>'required|min:11|numeric'
             ]);
@@ -263,7 +295,7 @@ class UserProfile extends Component
             "correo"=>$this->correo,
             "tel_trabajo"=>$this->tel_trabajo,
         );
-        contacto::insert($conTutor1Array);//insertar datos del contacto del tutor 1
+        contactos::insert($conTutor1Array);//insertar datos del contacto del tutor 1
        
        
         $idContacto = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM contactos');
@@ -276,8 +308,8 @@ class UserProfile extends Component
             "ultimo_grado"=>$this->ultimo_grado,
             "estado_civil"=>$this->estado_civil,
             "nom_trabajo"=>$this->nom_trabajo,
-            "id_contacto_"=>$idContacto[0]->AUTO_INCREMENT,
-            "id_domicilio_"=>$idDomicilios[0]->AUTO_INCREMENT,
+            "id_contactos_"=>$idContacto[0]->AUTO_INCREMENT,
+            "id_domicilios_"=>$idDomicilios[0]->AUTO_INCREMENT,
             
         );
         tutor1::insert($tutor1Array);
@@ -290,6 +322,7 @@ class UserProfile extends Component
             "fecha_Nac"=>$this->fecha_Nac,
             "sexo"=>$this->sexo,
             "escuela_Proc"=>$this->escuela_Proc,
+            "dateRegister"=>$this->dateRegister,
             "ultimo_Grado"=>$this->ultimo_Grado,
             "id_programas_"=>$this->id_programas_,
             "id_ficha_medicas_"=>$id_ficha_medica_[0]->AUTO_INCREMENT,

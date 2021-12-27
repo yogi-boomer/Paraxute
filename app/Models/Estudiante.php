@@ -16,6 +16,7 @@ class Estudiante extends Model
         'nombre',
         'apellido_P',
         'apellido_M',
+        'dateRegister',
         'sexo',
         'escuela_Proc',
         'ultimo_Grado',

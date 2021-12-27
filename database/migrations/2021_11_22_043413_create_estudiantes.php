@@ -53,8 +53,8 @@ class CreateEstudiantes extends Migration
             $table->string('ultimo_grado');
             $table->string('estado_civil');
             $table->string('nom_trabajo');
-            $table->foreignId('id_contacto_')->contrained('contactos');
-            $table->foreignId('id_domicilio_')->contrained('domicilios');
+            $table->foreignId('id_contactos_')->contrained('contactos');
+            $table->foreignId('id_domicilios_')->contrained('domicilios');
 
         });
         Schema::create('tutor2s', function (Blueprint $table) {
@@ -67,12 +67,12 @@ class CreateEstudiantes extends Migration
             $table->string('ultimo_grado');
             $table->string('estado_civil');
             $table->string('nom_trabajo');
-            $table->foreignId('id_contacto_')->contrained('contactos');
-            $table->foreignId('id_domicilio_')->contrained('domicilios');
+            $table->foreignId('id_contactos_')->contrained('contactos');
+            $table->foreignId('id_domicilios_')->contrained('domicilios');
 
         });
       
-        Schema::create('formato', function (Blueprint $table) {
+        Schema::create('formatos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_formato');  
         });
@@ -84,7 +84,7 @@ class CreateEstudiantes extends Migration
             $table->string('codigo_Prog');
             $table->string('num_sesiones_mes');
             $table->string('costo_mensual');
-            $table->foreignId('id_formato_')->contrained('formato');                
+            $table->foreignId('id_formatos_')->contrained('formatos');                
         });
 
         Schema::create('referencias', function (Blueprint $table){
@@ -109,6 +109,7 @@ class CreateEstudiantes extends Migration
             $table->string('escuela_Proc');
             $table->string('ultimo_Grado');
             $table->timestamp('fecha_Nac');
+            $table->timestamp('dateRegister');
             $table->foreignId('id_programas_')->constrained('programas');
             $table->foreignId('id_ficha_medicas_')->constrained('ficha_medicas');
             $table->foreignId('id_domicilios_')->constrained('domicilios');
@@ -129,7 +130,7 @@ class CreateEstudiantes extends Migration
             $table->string('forma_pago');
             $table->string('total');
             $table->foreignId('id_programas_')->constrained('programas');
-            $table->foreignId('id_estudiante_')->constrained('estudiantes');
+            $table->foreignId('id_estudiantes_')->constrained('estudiantes');
         });
     }
 

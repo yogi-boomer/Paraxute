@@ -97,22 +97,41 @@
                             <div class="col-md-4">
                                 <label for="estados">Estado.</label>
                                 <select class="form-control"  name="estados" id="estados" wire:model="estados" required>
-                                   @foreach ($estadosOwO as $estados)
-                                   <option value="{{$estados->id}}" >{{$estados->nombre}}</option>
+                                    <option value="" >Selecciona un estado</option>   
+                                    @foreach ($estadosOwO as $estadosa)
+                                    <option value="{{$estadosa->id}}" >{{$estadosa->nombre}}</option>
                                    @endforeach
                                 </select>
-                                <span class="text-danger">@error('estado'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('estados'){{ $message }}@enderror</span>
                             </div>
-
+                           
                             <div class="col-md-4">
-                                <label for="estados">Ciudad.</label>
-                                <input class="form-control" type="text" placeholder="Ciudad" id="ciudad" size="25" wire:model="ciudad" required>
+                                <label for="ciudad">Ciudad.</label>
+                                <select class="form-control"  name="ciudad" id="ciudad" wire:model="ciudad" required >
+                                   
+                                    <option value="" >Selecciona una ciudad</option>
+                                    @if (!is_null($estados))
+                                        @foreach ($ciudadesBase as $ciudades )
+                                            <option value="{{$ciudades->id}}" >{{$ciudades->nombre}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                                 <span class="text-danger">@error('ciudad'){{ $message }}@enderror</span>
                             </div>
+ 
+                            
 
                             <div class="col-md-4">
-                                <label for="estados">Municipio.</label>
-                                <input class="form-control" type="text" placeholder="Municipio" id="municipio" size="20" wire:model="municipio" required>
+                                <label for="municipio">Municipio.</label>
+                                <select class="form-control"  name="municipio" id="municipio" wire:model="municipio" required >
+                                    <option value="" >Selecciona un municipio</option>
+                                    @if (!is_null($ciudad))
+                                    @foreach ($localidadesBase as $local )
+                                    <option value="{{$local->id}}" >{{$local->nombre}}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+
                                 <span class="text-danger">@error('municipio'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -498,52 +517,39 @@
                             <div class="col-md-4">
                                 <label for="estados">Estado.</label>
                                 <select class="form-control"  name="estados" id="estado" wire:model="estado" required>
-                                    <option value="" selected>Escoge estado</option>
-                                    <option value="Aguascalientes">Aguascalientes</option>
-                                    <option value="Baja California">Baja California</option>
-                                    <option value="Baja California Sur">Baja California Sur</option>
-                                    <option value="Campeche">Campeche</option>
-                                    <option value="Chiapas">Chiapas</option>
-                                    <option value="Chihuahua">Chihuahua</option>
-                                    <option value="Ciudad de México">Ciudad de México</option>
-                                    <option value="Coahuila">Coahuila</option>
-                                    <option value="Colima">Colima</option>
-                                    <option value="Durango">Durango</option>
-                                    <option value="Estado de México">Estado de México</option>
-                                    <option value="Guanajuato">Guanajuato</option>
-                                    <option value="Guerrero">Guerrero</option>
-                                    <option value="Hidalgo">Hidalgo</option>
-                                    <option value="Jalisco">Jalisco</option>
-                                    <option value="Michoacán">Michoacán</option>
-                                    <option value="Morelos">Morelos</option>
-                                    <option value="Nayarit">Nayarit</option>
-                                    <option value="Nuevo León">Nuevo León</option>
-                                    <option value="Oaxaca">Oaxaca</option>
-                                    <option value="Puebla">Puebla</option>
-                                    <option value="Querétaro">Querétaro</option>
-                                    <option value="Quintana Roo">Quintana Roo</option>
-                                    <option value="San Luis Potosí">San Luis Potosí</option>
-                                    <option value="Sinaloa">Sinaloa</option>
-                                    <option value="Sonora">Sonora</option>
-                                    <option value="Tabasco">Tabasco</option>
-                                    <option value="Tamaulipas">Tamaluipas</option>
-                                    <option value="Tlaxcala">Tlaxcala</option>
-                                    <option value="Veracruz">Veracruz</option>
-                                    <option value="Yucatán">Yucatán</option>
-                                    <option value="Zacatecas">Zacatecas</option>
+                                    <option value="" selected>Selecciona un estado</option>
+                                    @foreach ($estadosTutor as $estadose)
+                                    <option value="{{$estadose->id}}" >{{$estadose->nombre}}</option>
+                                   @endforeach
                                 </select>
                                 <span class="text-danger">@error('estado'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
-                                <label for="estados">Ciudad.</label>
-                                <input class="form-control" type="text" placeholder="Ciudad" id="ciudadP" size="25" wire:model="ciudadP" required>
+                                <label for="ciudadP">Ciudad.</label>
+                                <select class="form-control"  name="ciudadP" id="ciudadP" wire:model="ciudadP" required >
+                                   
+                                    <option value="" >Selecciona una ciudad</option>
+                                    @if (!is_null($estado))
+                                        @foreach ($ciudadesTutor as $ciudade )
+                                            <option value="{{$ciudade->id}}" >{{$ciudade->nombre}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                                 <span class="text-danger">@error('ciudadP'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
-                                <label for="estados">Municipio.</label>
-                                <input class="form-control" type="text" placeholder="Municipio" id="municipioP" size="20" wire:model="municipioP" required>
+                                <label for="municipioP">Municipio.</label>
+                                <select class="form-control"  name="municipioP" id="municipioP" wire:model="municipioP" required >
+                                    <option value="" >Selecciona un municipio</option>
+                                    @if (!is_null($ciudadP))
+                                    @foreach ($localidadesTutor as $locale )
+                                    <option value="{{$locale->id}}" >{{$locale->nombre}}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+
                                 <span class="text-danger">@error('municipioP'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -658,57 +664,43 @@
                                 <label for="about">{{'Ubicación'}}</label>
                             </div>
                             <div class="col-md-4">
-                                <label for="estados4">{{'Estado'}}</label>
-                                <select class="form-control"  name="estados4" id="estados4" wire:model="estados4" required>
-                                    <option value="" selected>Escoge estado</option>
-                                    <option value="Aguascalientes">Aguascalientes</option>
-                                    <option value="Baja California">Baja California</option>
-                                    <option value="Baja California Sur">Baja California Sur</option>
-                                    <option value="Campeche">Campeche</option>
-                                    <option value="Chiapas">Chiapas</option>
-                                    <option value="Chihuahua">Chihuahua</option>
-                                    <option value="Ciudad de México">Ciudad de México</option>
-                                    <option value="Coahuila">Coahuila</option>
-                                    <option value="Colima">Colima</option>
-                                    <option value="Durango">Durango</option>
-                                    <option value="Estado de México">Estado de México</option>
-                                    <option value="Guanajuato">Guanajuato</option>
-                                    <option value="Guerrero">Guerrero</option>
-                                    <option value="Hidalgo">Hidalgo</option>
-                                    <option value="Jalisco">Jalisco</option>
-                                    <option value="Michoacán">Michoacán</option>
-                                    <option value="Morelos">Morelos</option>
-                                    <option value="Nayarit">Nayarit</option>
-                                    <option value="Nuevo León">Nuevo León</option>
-                                    <option value="Oaxaca">Oaxaca</option>
-                                    <option value="Puebla">Puebla</option>
-                                    <option value="Querétaro">Querétaro</option>
-                                    <option value="Quintana Roo">Quintana Roo</option>
-                                    <option value="San Luis Potosí">San Luis Potosí</option>
-                                    <option value="Sinaloa">Sinaloa</option>
-                                    <option value="Sonora">Sonora</option>
-                                    <option value="Tabasco">Tabasco</option>
-                                    <option value="Tamaulipas">Tamaluipas</option>
-                                    <option value="Tlaxcala">Tlaxcala</option>
-                                    <option value="Veracruz">Veracruz</option>
-                                    <option value="Yucatán">Yucatán</option>
-                                    <option value="Zacatecas">Zacatecas</option>
+                                <label for="estados4">Estado.</label>
+                                <select class="form-control"  name="estados" id="estados4" wire:model="estados4" required>
+                                    <option value="" selected>Selecciona un estado</option>
+                                    @foreach ($estadosOwO as $estadosa)
+                                    <option value="{{$estadosa->id}}" >{{$estadosa->nombre}}</option>
+                                   @endforeach
                                 </select>
-                                <span class="text-danger">@error('estados4'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('estado'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
-                                <label for="ciudad4">{{'Ciudad'}}</label>
-                                <input class="form-control" type="text" placeholder="Ciudad" id="ciudad4" size="25" wire:model="ciudad4" required>
-                                <span class="text-danger">@error('ciudad4'){{ $message }}@enderror</span>
+                                <label for="ciudad4">Ciudad.</label>
+                                <select class="form-control"  name="ciudad4" id="ciudad4" wire:model="ciudad4" required >
+                                   
+                                    <option value="" >Selecciona una ciudad</option>
+                                    @if (!is_null($estados))
+                                        @foreach ($ciudadesBase as $ciudades )
+                                            <option value="{{$ciudades->id}}" >{{$ciudades->nombre}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                                <span class="text-danger">@error('ciudad'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-4">
-                                <label for="municipio4">{{'Municipio'}}</label>
-                                <input class="form-control" type="text" placeholder="Municipio" id="municipio4" size="20" wire:model="municipio4" required>
-                                <span class="text-danger">@error('municipio4'){{ $message }}@enderror</span>
+                                <label for="municipio4">Municipio.</label>
+                                <select class="form-control"  name="municipio4" id="municipio4" wire:model="municipio4" required >
+                                    <option value="" >Selecciona un municipio</option>
+                                    @if (!is_null($ciudad))
+                                    @foreach ($localidadesBase as $local )
+                                    <option value="{{$local->id}}" >{{$local->nombre}}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+
+                                <span class="text-danger">@error('municipio'){{ $message }}@enderror</span>
                             </div>
-                        </div>
 
                         <div class="row">
                             <div class="mt-3">
@@ -756,3 +748,4 @@
 
     </form>   
 </div>
+
