@@ -36,17 +36,13 @@
                         @endif
                         <div class="row">
                             <div class="col-md-4">
+                            {!! Form::open(array('route' =>'user-profile', 'method' =>'POST', 'name'=>"id_programas_", 'id'=>'id_programas_')) !!}
                                 <div class= "form-group">
-                                    <label for="id_programas">Selecciona un programa.</label>
-                                    <select name="id_programas" class="form-control">
-                                    @foreach($progras as $progra)
-                                    <option value ="1">{{$progra->tipo_programa}}</option>
-                                    @endforeach
-                                    </select>
-                                    <span class="text-danger">@error('id_programas'){{ $message }}@enderror</span>
+                                    <label for="id_programas_">Selecciona un programa.</label>
+                                    {!! Form::select('programas_id', $progras, null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
-                            
+                            {!! Form::close() !!}
                             <div class="col-md-4">
                                 <div class= "form-group">
                                     <label for="selectedFormat">Selecciona un formato.</label>
