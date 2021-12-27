@@ -209,7 +209,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($datos as $dato)
+                @foreach($datos as $dato)
                 <tr>
                   <td>
                     <div class="d-flex px-2 py-1">
