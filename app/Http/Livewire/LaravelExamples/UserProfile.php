@@ -13,7 +13,10 @@ use App\Models\contacto;
 use App\Models\referencias;
 use App\Models\Programas;
 use App\Models\estado;
-
+use Validator;
+use Response;
+use Redirect;
+use App\Models\{ localidade, municipio};
 class UserProfile extends Component
 {
 
@@ -31,8 +34,8 @@ class UserProfile extends Component
     public $nombre;
     public $apellido_P;
     public $apellido_M;
-    public $estados;
-    public $ciudad;
+    public $estados=NULL;
+    public $ciudad=NULL;
     public $municipio;
     public $dir_casa;
     public $fecha_Nac;
@@ -89,6 +92,12 @@ class UserProfile extends Component
     public $totalSteps = 4;
     public $currentStep = 1;
 
+
+    public $estadosbase;
+    public $ciudadesBase;
+    public $estadoSel=NULL;
+    public $localidadesBase;
+
     use WithFileUploads; //Agregado
 
     protected $rules = [
@@ -102,6 +111,8 @@ class UserProfile extends Component
     public function mount() { 
         //$this->user = auth()->user();
         $this->currentStep = 1;
+        $this->ciudadesBase = collect();
+        $this->localidadesBase = collect();
     }
 
     public function save() {
@@ -113,14 +124,28 @@ class UserProfile extends Component
             $this->showSuccesNotification = true;
         }
     }
+   
+
     public function render()
     {
+        
         $estadosOwO = DB::select('SELECT id,nombre FROM estados');
-       $progras = programas::pluck('tipo_programa', 'id');
+     
+        $progras = programas::pluck('tipo_programa', 'id');
         $id_programas_=$progras; 
         return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO'));
     }
+    public function updatedEstados($estadoid){
+    /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
+            $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
 
+       
+    }
+    public function updatedCiudad($ciudadid){
+     if(!is_null($ciudadid)){
+        $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
+     }
+    }
     public function increaseStep() {
         $this->resetErrorBag();
         $this->validateData();

@@ -97,22 +97,41 @@
                             <div class="col-md-4">
                                 <label for="estados">Estado.</label>
                                 <select class="form-control"  name="estados" id="estados" wire:model="estados" required>
-                                   @foreach ($estadosOwO as $estados)
-                                   <option value="{{$estados->id}}" >{{$estados->nombre}}</option>
+                                    <option value="" >Selecciona un estado</option>   
+                                    @foreach ($estadosOwO as $estadosa)
+                                    <option value="{{$estadosa->id}}" >{{$estadosa->nombre}}</option>
                                    @endforeach
                                 </select>
-                                <span class="text-danger">@error('estado'){{ $message }}@enderror</span>
+                                <span class="text-danger">@error('estados'){{ $message }}@enderror</span>
                             </div>
-
+                           
                             <div class="col-md-4">
-                                <label for="estados">Ciudad.</label>
-                                <input class="form-control" type="text" placeholder="Ciudad" id="ciudad" size="25" wire:model="ciudad" required>
+                                <label for="ciudad">Ciudad.</label>
+                                <select class="form-control"  name="ciudad" id="ciudad" wire:model="ciudad" required >
+                                   
+                                    <option value="" >seleccionar ciudad</option>
+                                    @if (!is_null($estados))
+                                        @foreach ($ciudadesBase as $ciudades )
+                                            <option value="{{$ciudades->id}}" >{{$ciudades->nombre}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                                 <span class="text-danger">@error('ciudad'){{ $message }}@enderror</span>
                             </div>
+ 
+                            
 
                             <div class="col-md-4">
-                                <label for="estados">Municipio.</label>
-                                <input class="form-control" type="text" placeholder="Municipio" id="municipio" size="20" wire:model="municipio" required>
+                                <label for="municipio">Municipio.</label>
+                                <select class="form-control"  name="municipio" id="municipio" wire:model="municipio" required >
+                                    <option value="" >Seleccionar municipio</option>
+                                    @if (!is_null($ciudad))
+                                    @foreach ($localidadesBase as $local )
+                                    <option value="{{$local->id}}" >{{$local->nombre}}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+
                                 <span class="text-danger">@error('municipio'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -756,3 +775,4 @@
 
     </form>   
 </div>
+

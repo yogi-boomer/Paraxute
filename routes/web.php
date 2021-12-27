@@ -57,7 +57,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
-    
+
+
 });
 
 
