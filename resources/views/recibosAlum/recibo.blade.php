@@ -62,8 +62,7 @@
 <html lang="es">
 <body>
     <div class="container-fluid">
-       <form action="">
-       <div class="step-one">
+        {!! Form::open(array('route' =>'recibos.store', 'method' =>'POST')) !!}       <div class="step-one">
             <div class="container-fluid py-4">
                 <div class="card">
                     <div class="card-header pb-0 px-3">
@@ -75,7 +74,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="nombre" class="form-control-label">{{ __('Nombre.') }}</label>
-                                <input class="form-control" type="text" size="25" placeholder="Nombre(s)" id="nombre" name="nombre" wire:model="nombre" value='<?php echo $_GET["nombre"]; ?> <?php echo $_GET["apellidop"]; ?> <?php echo $_GET["apellidom"]; ?>' required> 
+                                {!! Form::text('nombre', $nombre, array('class' =>'form-control')) !!}
                                 
                                 <span class="text-danger">@error('nombre'){{ $message }}@enderror</span>
                             </div>
@@ -83,12 +82,8 @@
                             <div class="col-md-6">
                                 <div class= "form-group">
                                     <label for="selectedPago">Selecciona tipo de pago.</label>
-                                    <select name="selectedPago" id="selectedPago" class="form-control" wire:model="selectedPago" required>
-                                        <option value="" selected>Escoge tu tipo de pago</option>
-                                        <option value="1">Contado</option>
-                                        <option value="2">Crédito</option>
-                                        <option value="3">Cheque</option>
-                                    </select>
+                                    {!! Form::select('selectedPago', array('Contado' => 'Contado', 'Crédito'=> 'Crédito','Cheque' => 'Cheque' ),'Contado',array('class' => 'form-control')) !!}
+                                  
                                     <span class="text-danger">@error('selectedFormat'){{ $message }}@enderror</span>
                                 </div>
                             </div>
@@ -99,19 +94,18 @@
                         <div class="col-md-6">
                                 <div class= "form-group">
                                     <label for="selectedProgram">Selecciona un programa.</label>
-                                    <select name="selectedProgram" id="selectedProgram" class="form-control" wire:model="selectedProgram" required>
-                                    <option value="<?php echo $_GET["prog"]; ?>" selected><?php echo $_GET["prog"]; ?></option>
-                                        @foreach($programas as $progg)
-                                        <option value="{{$progg->tipo_programa}}">{{$progg->tipo_programa}}</option>
-                                        @endforeach
-                                     </select>
+                                   
+                                    {!! Form::select('selectedProgram', $programas,--$idprog,array('class' => 'form-control')) !!}
+                                    
                                     <span class="text-danger">@error('selectedProgram'){{ $message }}@enderror</span>
                                 </div>
                             </div>
                             
                             <div class="col-md-6">
                                 <label for="dateRegister" class="form-control-label">Fecha de registro.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="dateRegister" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="dateRegister" required>
+
+                                {!! Form::date('dateRegister',date('Y-m-d'),array('class' => 'form-control')) !!}
+
                                 <span class="text-danger">@error('dateRegister'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -119,28 +113,24 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <label for="Concepto" class="form-control-label">Concepto.</label>
-                                <select name="Concepto" id="Concepto" class="form-control" wire:model="Concepto" required>
-                                <option value="" selected>Escoge Concepto</option>
-                                        @foreach($programas as $progg)
-                                        <option value="{{$progg->tipo_programa}}">{{$progg->tipo_programa}}</option>
-                                        @endforeach
-                                </select>
+                                {!! Form::select('Concepto', $programas,$idprog,array('class' => 'form-control')) !!}
                                 <span class="text-danger">@error('Concepto'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-3">
                                 <label for="Cantidad" class="form-control-label">Cantidad.</label>
-                                <input class="form-control" id="Cantidad" type="number" size="50" wire:model="Cantidad" value='<?php echo $_GET["costo"]; ?>' required>
+                                {!! Form::text('Cantidad', $costo, array('class' =>'form-control')) !!}
+
                                 <span class="text-danger">@error('Cantidad'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-3">
                                 <label for="Codigo" class="form-control-label">Código.</label>
-                                <input class="form-control" id="Codigo" type="text" size="50" wire:model="Codigo" value='<?php echo $_GET["codigo"]; ?>' required>
+                                {!! Form::text('codigo', $codigo, array('class' =>'form-control')) !!}
                                 <span class="text-danger">@error('Codigo'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-3">
                                 <label for="Total" class="form-control-label">Total.</label>
-                                <input class="form-control" id="Total" type="number" size="50" wire:model="Total" value='<?php echo $_GET["costo"]; ?>' required>
+                                {!! Form::text('total', $costo, array('class' =>'form-control')) !!}
                                 <span class="text-danger">@error('Total'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -148,14 +138,16 @@
                     </div>
                     <div class="card-footer">
                         <div class="action-buttons d-grid gap-2 d-sm-flex justify-content-sm-end mt-1">
-                        <a type="button" class="btn btn-sm mb-0 btn-success" href="{{ route('recibosRe.pdf') }}">Guardar</a>
-                        </div>
+                            <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Generar recibo</button>
+                        
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
+        {!! Form::hidden('idest', $idest, array('style' =>'form-control')) !!}  
 
-       </form>
+      {!! Form::close() !!}  
     
     </div>
     

@@ -14,7 +14,7 @@ class Tables extends Component
         $datos = Estudiante::all();
         /* $programas = DB::select('SELECT estudiantes.id_programas_ , programas.tipo_programa FROM estudiantes LEFT JOIN programas ON usuarios.id_programas_= programas.tipo_programa'); */
         $programas = Estudiante::join('programas', 'programas.id', '=', 'estudiantes.id_programas_')
-        ->select('tipo_programa','nombre','apellido_M', 'apellido_P','costo_mensual','codigo_Prog')
+        ->select('tipo_programa','nombre','apellido_M', 'apellido_P','costo_mensual','codigo_Prog','id_programas_','estudiantes.id')
         ->get();
         return view('livewire.tables', compact('datos','programas'));
     }

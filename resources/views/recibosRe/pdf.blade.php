@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,10 +15,10 @@
             <div class="row ">
                 <div style="clear:both; position:relative;padding-top: 8em;">
                     <div style="position:absolute; left:50pt; width:192pt;">
-                        <p></p>
+                        {{$recibioInfo->nombre.' '.$recibioInfo->apellido_P.' '.$recibioInfo->apellido_M}}
                     </div>
                     <div style="margin-left:350pt;">
-                        <p>Credito</p>
+                        <p>{{$recibioInfo->forma_pago}}</p>
                     </div>
                 </div>
             </div>
@@ -24,10 +26,10 @@
             <div class="row">
                 <div style="clear:both; position:relative;margin-top: -20px;">
                     <div style="position:absolute; left:50pt; width:192pt;">
-                        <p>Violin</p>
+                        <p>{{$recibioInfo->tipo_programa}}</p>
                      </div>
                     <div style="margin-left:350pt;">
-                        <p>12/12/2021</p>
+                        <p>{{$recibioInfo->fecha}}</p>
                     </div>
                 </div>
             </div>
@@ -35,11 +37,12 @@
             <div class="row">
                 <div style="clear:both; position:relative; padding-top: 2.5em;">
                     <div style="position:absolute; left:50pt; width:192pt; ">
-                        <p>Violin</p>
+                        <p>{{$recibioInfo->tipo_programa}}</p>
                      </div>
                      
                     <div style="margin-left:200pt;width:52pt;">
-                        <p>12/12/2021</p>    
+                        <p>1
+                        </p>    
                     </div>
                 </div>
                 
@@ -48,11 +51,11 @@
             <div class="row">
                 <div style="clear:both; position:relative; margin-top: -50px;left:150pt;">
                     <div style="position:absolute; left:180pt; width:192pt; ">
-                        <p>Vasdin</p>
+                        <p>{{$recibioInfo->codigo_Prog}}</p>
                      </div>
                      
                     <div style="margin-left:250pt;width:52pt;">
-                        <p>1234567</p>    
+                        <p>{{$recibioInfo->total}}</p>    
                     </div>
                 </div>
             </div>
@@ -62,10 +65,10 @@
             <div class="row ">
                 <div style="clear:both; position:relative;padding-top: 20em;">
                     <div style="position:absolute; left:50pt; width:192pt;">
-                        <p>Luis Fernando Vazquez Ceballos</p>
+                        {{$recibioInfo->nombre.' '.$recibioInfo->apellido_P.' '.$recibioInfo->apellido_M}}
                     </div>
                     <div style="margin-left:350pt;">
-                        <p>Credito</p>
+                        <p>{{$recibioInfo->forma_pago}}</p>
                     </div>
                 </div>
             </div>
@@ -73,10 +76,10 @@
             <div class="row">
                 <div style="clear:both; position:relative;margin-top: -20px;">
                     <div style="position:absolute; left:50pt; width:192pt;">
-                        <p>Violin</p>
+                        <p>{{$recibioInfo->tipo_programa}}</p>
                      </div>
                     <div style="margin-left:350pt;">
-                        <p>12/12/2021</p>
+                        <p>{{$recibioInfo->fecha}}</p>
                     </div>
                 </div>
             </div>
@@ -84,11 +87,11 @@
             <div class="row">
                 <div style="clear:both; position:relative; padding-top: 2.5em;">
                     <div style="position:absolute; left:50pt; width:192pt; ">
-                        <p>Violin</p>
+                        <p>{{$recibioInfo->tipo_programa}}</p>
                      </div>
                      
                     <div style="margin-left:200pt;width:52pt;">
-                        <p>12/12/2021</p>    
+                        <p>1</p>    
                     </div>
                 </div>
                 
@@ -97,11 +100,11 @@
             <div class="row">
                 <div style="clear:both; position:relative; margin-top: -50px;left:150pt;">
                     <div style="position:absolute; left:180pt; width:192pt; ">
-                        <p>Vasdin</p>
+                        <p>{{$recibioInfo->codigo_Prog}}</p>
                      </div>
                      
                     <div style="margin-left:250pt;width:52pt;">
-                        <p>1234567</p>    
+                        <p>{{$recibioInfo->total}}</p>    
                     </div>
                 </div>
             </div>

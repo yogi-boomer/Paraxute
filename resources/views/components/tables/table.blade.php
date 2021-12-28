@@ -41,7 +41,7 @@
                   </td>
                   @csrf
                   <td class="align-middle text-center">
-                    <a href="{{ route('recibos.index',  ['nombre' => $progra->nombre, 'apellidop' =>$progra->apellido_P, 'apellidom' => $progra->apellido_M, 'costo'=> $progra->costo_mensual, 'codigo'=> $progra->codigo_Prog, 'prog'=> $progra->tipo_programa]) }}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="{{ route('recibos.index',  ['nombre' => $progra->nombre, 'apellidop' =>$progra->apellido_P, 'apellidom' => $progra->apellido_M, 'costo'=> $progra->costo_mensual, 'codigo'=> $progra->codigo_Prog, 'prog'=> $progra->tipo_programa, 'idprog'=>$progra->id_programas_,'idest'=>$progra->id]) }}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>
