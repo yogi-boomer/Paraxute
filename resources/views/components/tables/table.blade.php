@@ -19,7 +19,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($datos as $dato)
+                @foreach($programas as $progra)
                 <tr>
                   <td>
                     <div class="d-flex px-2 py-1">
@@ -28,20 +28,20 @@
                         <img src="../assets/img/profile2.png" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 id="nombre",class="mb-0 text-sm">{{$dato->nombre}} {{$dato->apellido_P}} {{$dato->apellido_M}}</h6>
+                        <h6 id="nombre",class="mb-0 text-sm">{{$progra->nombre}} {{$progra->apellido_P}} {{$progra->apellido_M}}</h6>
                         <p class="text-xs text-secondary mb-0"></p>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <h6 id="programa",class="mb-0 text-sm">{{$dato->id_programas_}}</h6>
+                    <h6 id="programa",class="mb-0 text-sm">{{$progra->tipo_programa}}</h6>
                   </td>
                   <td class="align-middle text-center text-sm">
                     <span class="badge badge-sm bg-gradient-success">       </span>
                   </td>
                   @csrf
                   <td class="align-middle text-center">
-                    <a href="{{ route('recibos.create',  ['nombre' => $dato->nombre, 'apellidop' =>$dato->apellido_P, 'apellidom' => $dato->apellido_M]) }}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
+                    <a href="{{ route('recibos.index',  ['nombre' => $progra->nombre, 'apellidop' =>$progra->apellido_P, 'apellidom' => $progra->apellido_M, 'costo'=> $progra->costo_mensual, 'codigo'=> $progra->codigo_Prog, 'prog'=> $progra->tipo_programa]) }}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Generar recibo">
                       Generar Recibo
                     </a>
                   </td>

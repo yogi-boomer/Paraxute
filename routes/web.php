@@ -50,6 +50,7 @@ Route::group(['middleware' => ['auth']], function(){
 });
 
 Route::get('recibosAlum/pdf', [App\Http\Controllers\AlumnoController::class, 'pdf'] )->name('recibosAlum.pdf');
+Route::get('recibosRe/pdf', [App\Http\Controllers\ReciboRiController::class, 'pdf'] )->name('recibosRe.pdf');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');

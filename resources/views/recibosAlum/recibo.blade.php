@@ -100,27 +100,15 @@
                                 <div class= "form-group">
                                     <label for="selectedProgram">Selecciona un programa.</label>
                                     <select name="selectedProgram" id="selectedProgram" class="form-control" wire:model="selectedProgram" required>
-                                        <option value="" selected>Escoge programa</option>
-                                        <option value="Batería">Batería</option>
-                                        <option value="Bajo Eléctrico">Bajo Eléctrico</option>
-                                        <option value="Clase Muestra">Clase Muestra</option>
-                                        <option value="Estimulación Musical">Estimulación Musical</option>
-                                        <option value="Estimulación Musical Temprana">Estimulación Musical Temprana</option>
-                                        <option value="Guitarra Acústica">Guitarra Acústica</option>
-                                        <option value="Guitarra Eléctrica">Guitarra Eléctrica</option>
-                                        <option value="Iniciación Musical 1">Iniciación Musical 1</option>
-                                        <option value="Iniciación Musical 2">Iniciación Musical 2</option>
-                                        <option value="Piano">Piano</option>
-                                        <option value="Violín">Violín</option>
-                                    </select>
+                                    <option value="<?php echo $_GET["prog"]; ?>" selected><?php echo $_GET["prog"]; ?></option>
+                                        @foreach($programas as $progg)
+                                        <option value="{{$progg->tipo_programa}}">{{$progg->tipo_programa}}</option>
+                                        @endforeach
+                                     </select>
                                     <span class="text-danger">@error('selectedProgram'){{ $message }}@enderror</span>
                                 </div>
                             </div>
-
                             
-
-                          
-
                             <div class="col-md-6">
                                 <label for="dateRegister" class="form-control-label">Fecha de registro.</label>
                                 <input class="form-control" type="date" value="2021-01-01" id="dateRegister" wire:model="dateRegister" required>
@@ -132,35 +120,27 @@
                             <div class="col-md-3">
                                 <label for="Concepto" class="form-control-label">Concepto.</label>
                                 <select name="Concepto" id="Concepto" class="form-control" wire:model="Concepto" required>
-                                <option value="" selected>Escoge programa</option>
-                                        <option value="Batería">Batería</option>
-                                        <option value="Bajo Eléctrico">Bajo Eléctrico</option>
-                                        <option value="Clase Muestra">Clase Muestra</option>
-                                        <option value="Estimulación Musical">Estimulación Musical</option>
-                                        <option value="Estimulación Musical Temprana">Estimulación Musical Temprana</option>
-                                        <option value="Guitarra Acústica">Guitarra Acústica</option>
-                                        <option value="Guitarra Eléctrica">Guitarra Eléctrica</option>
-                                        <option value="Iniciación Musical 1">Iniciación Musical 1</option>
-                                        <option value="Iniciación Musical 2">Iniciación Musical 2</option>
-                                        <option value="Piano">Piano</option>
-                                        <option value="Violín">Violín</option>
+                                <option value="" selected>Escoge Concepto</option>
+                                        @foreach($programas as $progg)
+                                        <option value="{{$progg->tipo_programa}}">{{$progg->tipo_programa}}</option>
+                                        @endforeach
                                 </select>
                                 <span class="text-danger">@error('Concepto'){{ $message }}@enderror</span>
                             </div>
 
                             <div class="col-md-3">
                                 <label for="Cantidad" class="form-control-label">Cantidad.</label>
-                                <input class="form-control" id="Cantidad" type="number" size="50" wire:model="Cantidad" required>
+                                <input class="form-control" id="Cantidad" type="number" size="50" wire:model="Cantidad" value='<?php echo $_GET["costo"]; ?>' required>
                                 <span class="text-danger">@error('Cantidad'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-3">
                                 <label for="Codigo" class="form-control-label">Código.</label>
-                                <input class="form-control" id="Codigo" type="text" size="50" wire:model="Codigo" required>
+                                <input class="form-control" id="Codigo" type="text" size="50" wire:model="Codigo" value='<?php echo $_GET["codigo"]; ?>' required>
                                 <span class="text-danger">@error('Codigo'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-3">
                                 <label for="Total" class="form-control-label">Total.</label>
-                                <input class="form-control" id="Total" type="number" size="50" wire:model="Total" required>
+                                <input class="form-control" id="Total" type="number" size="50" wire:model="Total" value='<?php echo $_GET["costo"]; ?>' required>
                                 <span class="text-danger">@error('Total'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -168,7 +148,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="action-buttons d-grid gap-2 d-sm-flex justify-content-sm-end mt-1">
-                        <a type="button" class="btn btn-sm mb-0 btn-success" href="{{ route('recibos.create', <?php echo $_GET["nombre"]; ?>) }}">Guardar</a>
+                        <a type="button" class="btn btn-sm mb-0 btn-success" href="{{ route('recibosRe.pdf') }}">Guardar</a>
                         </div>
                     </div>
                 </div>
