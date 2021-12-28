@@ -111,7 +111,7 @@
                             
                             <div class="col-md-6">
                                 <label for="dateRegister" class="form-control-label">Fecha de registro.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="dateRegister" wire:model="dateRegister" required>
+                                <input class="form-control" type="date" value="2021-01-01" id="dateRegister" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="dateRegister" required>
                                 <span class="text-danger">@error('dateRegister'){{ $message }}@enderror</span>
                             </div>
                         </div>

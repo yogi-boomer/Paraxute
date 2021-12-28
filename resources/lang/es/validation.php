@@ -154,8 +154,8 @@ return [
         'apellido_P' => 'apellido paterno',
         'apellido_M' => 'apellido materno',
         'estados' => 'estado',
-        'ciudad' => 'ciudad',
-        'municipio' => 'municipio',
+        'ciudad' => 'municipio', //Campo invertido
+        'municipio' => 'ciudad', //Campo invertido
         'dir_casa' => 'dirección de casa',
         'fecha_Nac' => 'fecha de nacimiento',
         'sexo' => 'género',
@@ -190,8 +190,8 @@ return [
         'tel_trabajo' => 'teléfono de oficina o celular de la empresa',
         'dir_casap' => 'dirección de casa',
         'estado' => 'estado',
-        'municipioP' => 'municipio',
-        'ciudadP' => 'ciudad',
+        'municipioP' => 'ciudad', //Campo invertido
+        'ciudadP' => 'municipio', //Campo invertido
 
         //step four
         'parentesco3' => 'parentesco',
@@ -199,8 +199,8 @@ return [
         'apellidoP4' => 'apellido paterno',
         'apellidoM4' => 'apellido materno',
         'estados4' => 'estado',
-        'ciudad4' => 'ciudad',
-        'municipio4' => 'municipio',
+        'ciudad4' => 'municipio', //Campo invertido
+        'municipio4' => 'ciudad', //Campo invertido
         'telefono3' => 'teléfono',
         'celular3' => 'celular'
     ],

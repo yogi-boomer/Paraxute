@@ -62,7 +62,7 @@
 
                             <div class="col-md-4">
                                 <label for="dateRegister" class="form-control-label">Fecha de registro.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="dateRegister" wire:model="dateRegister" required>
+                                <input class="form-control" type="date" value="2021-01-01" id="dateRegister" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="dateRegister" required>
                                 <span class="text-danger">@error('dateRegister'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -106,9 +106,9 @@
                             </div>
                            
                             <div class="col-md-4">
-                                <label for="ciudad">Ciudad.</label>
+                                <label for="ciudad">Municipio.</label>
                                 <select class="form-control" name="ciudad" id="ciudad" wire:model="ciudad" required>
-                                    <option value="" >Selecciona una ciudad</option>
+                                    <option value="" >Selecciona un municipio</option>
                                     @if (!is_null($estados))
                                         @foreach ($ciudadesBase as $ciudades )
                                             <option value="{{$ciudades->id}}" >{{$ciudades->nombre}}</option>
@@ -121,9 +121,9 @@
                             
 
                             <div class="col-md-4">
-                                <label for="municipio">Municipio.</label>
+                                <label for="municipio">Ciudad.</label>
                                 <select class="form-control"  name="municipio" id="municipio" wire:model="municipio" required >
-                                    <option value="" >Selecciona un municipio</option>
+                                    <option value="" >Selecciona una ciudad</option>
                                     @if (!is_null($ciudad))
                                     @foreach ($localidadesBase as $local )
                                     <option value="{{$local->id}}" >{{$local->nombre}}</option>
@@ -145,7 +145,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="fecha_Nac" class="form-control-label">Fecha de nacimiento.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="fecha_Nac" wire:model="fecha_Nac" required>
+                                <input class="form-control" type="date" value="2021-01-01" id="fecha_Nac" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="fecha_Nac" required>
                                 <span class="text-danger">@error('fecha_Nac'){{ $message }}@enderror</span>
                             </div>
 
@@ -444,12 +444,38 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="parentesco" class="form-control-label">Parentesco.</label>
-                                <input type="text" name="parentesco" class="form-control" size="20" placeholder="Parentesco" id="parentesco" wire:model="parentesco">
+                                <select name="parentesco" id="parentesco" class="form-control" wire:model="parentesco" required>
+                                    <option value="" selected>Escoge tu parentesco</option>
+                                    <option value="Padre">Padre</option>
+                                    <option value="Madre">Madre</option>
+                                    <option value="Hijo">Hijo</option>
+                                    <option value="Hija">Hija</option>
+                                    <option value="Abuelo">Abuelo</option>
+                                    <option value="Abuela">Abuela</option>
+                                    <option value="Nieto">Nieto</option>
+                                    <option value="Nieta">Nieta</option>
+                                    <option value="Bisabuelo">Bisabuelo</option>
+                                    <option value="Bisabuela">Bisabuela</option>
+                                    <option value="Bisnieto">Bisnieto</option>
+                                    <option value="Bisnieta">Bisnieta</option>
+                                    <option value="Hermano">Hermano</option>
+                                    <option value="Hermana">Hermana</option>
+                                    <option value="Tío">Tío</option>
+                                    <option value="Tía">Tía</option>
+                                    <option value="Primo">Primo</option>
+                                    <option value="Prima">Prima</option>
+                                    <option value="Sobrino">Sobrino</option>
+                                    <option value="Sobrina">Sobrina</option>
+                                    <option value="Esposo">Esposo</option>
+                                    <option value="Esposa">Esposa</option>
+                                    <option value="Amigo">Amigo</option>
+                                    <option value="Amiga">Amiga</option>
+                                </select>
                                 <span class="text-danger">@error('parentesco'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-4">
                                 <label for="fecha_nac" class="form-control-label">Fecha de nacimiento.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="fecha_nac" wire:model="fecha_nac" required>
+                                <input class="form-control" type="date" value="2021-01-01" id="fecha_nac" wire:model="fecha_nac" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
                                 <span class="text-danger">@error('fecha_nac'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-4">
@@ -527,10 +553,10 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="ciudadP">Ciudad.</label>
+                                <label for="ciudadP">Municipio.</label>
                                 <select class="form-control" name="ciudadP" id="ciudadP" wire:model="ciudadP" required>
                                    
-                                    <option value="" >Selecciona una ciudad</option>
+                                    <option value="" >Selecciona un municipio</option>
                                     @if (!is_null($estado))
                                         @foreach ($ciudadesBase as $ciudade )
                                             <option value="{{$ciudade->id}}" >{{$ciudade->nombre}}</option>
@@ -541,9 +567,9 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="municipioP">Municipio.</label>
+                                <label for="municipioP">Ciudad.</label>
                                 <select class="form-control" name="municipioP" id="municipioP" wire:model="municipioP" required>
-                                    <option value="" >Selecciona un municipio</option>
+                                    <option value="" >Selecciona una ciudad</option>
                                     @if (!is_null($ciudadP))
                                     @foreach ($localidadesBase as $locale )
                                     <option value="{{$locale->id}}" >{{$locale->nombre}}</option>
@@ -635,7 +661,33 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="parentesco3" class="form-control-label">Parentesco.</label>
-                                <input type="text" name="parentesco3" class="form-control" id="parentesco3" size="20" placeholder ="Parentesco" wire:model="parentesco3">
+                                <select name="parentesco3" id="parentesco3" class="form-control" wire:model="parentesco3" required>
+                                    <option value="" selected>Escoge tu parentesco</option>
+                                    <option value="Padre">Padre</option>
+                                    <option value="Madre">Madre</option>
+                                    <option value="Hijo">Hijo</option>
+                                    <option value="Hija">Hija</option>
+                                    <option value="Abuelo">Abuelo</option>
+                                    <option value="Abuela">Abuela</option>
+                                    <option value="Nieto">Nieto</option>
+                                    <option value="Nieta">Nieta</option>
+                                    <option value="Bisabuelo">Bisabuelo</option>
+                                    <option value="Bisabuela">Bisabuela</option>
+                                    <option value="Bisnieto">Bisnieto</option>
+                                    <option value="Bisnieta">Bisnieta</option>
+                                    <option value="Hermano">Hermano</option>
+                                    <option value="Hermana">Hermana</option>
+                                    <option value="Tío">Tío</option>
+                                    <option value="Tía">Tía</option>
+                                    <option value="Primo">Primo</option>
+                                    <option value="Prima">Prima</option>
+                                    <option value="Sobrino">Sobrino</option>
+                                    <option value="Sobrina">Sobrina</option>
+                                    <option value="Esposo">Esposo</option>
+                                    <option value="Esposa">Esposa</option>
+                                    <option value="Amigo">Amigo</option>
+                                    <option value="Amiga">Amiga</option>
+                                </select>
                                 <span class="text-danger">@error('parentesco3'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -676,10 +728,10 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="ciudad4">Ciudad.</label>
-                                <select class="form-control"  name="ciudad4" id="ciudad4" wire:model="ciudad4" required >
+                                <label for="ciudad4">Municipio.</label>
+                                <select class="form-control" name="ciudad4" id="ciudad4" wire:model="ciudad4" required >
                                    
-                                    <option value="" >Selecciona una ciudad</option>
+                                    <option value="" >Selecciona un municipio</option>
                                     @if (!is_null($estados4))
                                         @foreach ($ciudadesBase as $ciudades )
                                             <option value="{{$ciudades->id}}" >{{$ciudades->nombre}}</option>
@@ -690,9 +742,9 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="municipio4">Municipio.</label>
+                                <label for="municipio4">Ciudad.</label>
                                 <select class="form-control"  name="municipio4" id="municipio4" wire:model="municipio4" required >
-                                    <option value="" >Selecciona un municipio</option>
+                                    <option value="" >Selecciona una ciudad</option>
                                     @if (!is_null($ciudad4))
                                     @foreach ($localidadesBase as $local )
                                     <option value="{{$local->id}}" >{{$local->nombre}}</option>

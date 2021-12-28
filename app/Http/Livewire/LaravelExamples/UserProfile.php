@@ -36,8 +36,8 @@ class UserProfile extends Component
     public $apellido_P;
     public $apellido_M;
     public $estados=NULL;
-    public $ciudad=NULL;
-    public $municipio;
+    public $municipio=NULL;
+    public $ciudad;
     public $dir_casa;
     public $fecha_Nac;
     public $sexo;
@@ -46,7 +46,7 @@ class UserProfile extends Component
     public $escuela_Proc;
 
     //step two
-/*     public $id_ficha_medica_; */
+    /*public $id_ficha_medica_; */
     public $tipo_sangre;
     public $alergia;
     public $problemaVis;
@@ -84,8 +84,8 @@ class UserProfile extends Component
     public $apellidoP4;
     public $apellidoM4;
     public $estados4=NULL;
-    public $ciudad4=NULL;
-    public $municipio4;
+    public $municipio4=NULL;
+    public $ciudad4;
     public $telefono3;
     public $celular3;
 
@@ -132,48 +132,48 @@ class UserProfile extends Component
     }
    
 
-    public function render()
-    { 
+    public function render(){ 
         $estadosOwO = DB::select('SELECT id,nombre FROM estados');
-/*         $estadosReferencias = DB::select('SELECT id,nombre FROM estados'); */
+        /*$estadosReferencias = DB::select('SELECT id,nombre FROM estados'); */
         $progras = DB::select('SELECT id,tipo_programa FROM programas');
         return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO'));
     }
-    public function updatedEstados($estadoid){
-    /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
-            $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
 
+    /* step 1 */
+    public function updatedEstados($estadoid){
+        /*$this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
+        $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
     }
     
     public function updatedCiudad($ciudadid){
         if(!is_null($ciudadid)){
            $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
         }
-       }
+    }
 
     /* step 3 */
     public function updatedEstado($estadoid){
-        /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
-                $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
+        /*$this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
+        $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
                 
+    }
+    public function updatedCiudadP($ciudadid){
+        if(!is_null($ciudadid)){
+            $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
         }
-        public function updatedCiudadP($ciudadid){
-            if(!is_null($ciudadid)){
-               $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
-            }
-           }
+    }
 
-          /* step 4 */ 
-        public function updatedEstados4($estadoid){
-            /*     $this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
-                    $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
+    /* step 4 */ 
+    public function updatedEstados4($estadoid){
+        /*$this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
+        $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
                     
+    }
+    public function updatedCiudad4($ciudadid){
+        if(!is_null($ciudadid)){
+            $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
         }
-        public function updatedCiudad4($ciudadid){
-                if(!is_null($ciudadid)){
-                   $this->localidadesBase=localidade::where('municipio_id',$ciudadid)->orderBy('nombre')->get();
-                }
-        }
+    }
 
 
     public function increaseStep() {
@@ -228,7 +228,7 @@ class UserProfile extends Component
 
         elseif($this->currentStep == 3){
             $this->validate([
-                'parentesco'=>'required|string|max:20|min:3',
+                'parentesco'=>'required',
                 'fecha_nac'=>'required|date|before_or_equal:today',
                 'estado_civil'=>'required',
                 'nombrep'=>'required|string|max:25|min:3',
@@ -240,11 +240,11 @@ class UserProfile extends Component
                 'ciudadP'=>'required',
                 'municipioP'=>'required',
                 'dir_casap'=>'required|string|max:40|min:3',
-                'telefono'=>'required|min:11|numeric',
-                'celular'=>'required|min:11|numeric',
-                'correo'=>'required|max:50|min:3',
+                'telefono'=>'required|numeric|min:10|regex:/^([0-9\s\-\+\(\)]*)$/',
+                'celular'=>'required|numeric|min:10',
+                'correo'=>'required|email:rfc,dns|max:50|min:3',
                 'nom_trabajo'=>'required|max:50|min:3',
-                'tel_trabajo'=>'required|min:11|numeric'
+                'tel_trabajo'=>'required|numeric|min:10'
             ]);
         }
     }
@@ -277,15 +277,15 @@ class UserProfile extends Component
         $this->resetErrorBag();
         if($this->currentStep == 4){
             $this->validate([
-                'parentesco3'=>'required|string|max:20|min:3',
+                'parentesco3'=>'required',
                 'nombre4'=>'required|string|max:25|min:3',
                 'apellidoP4'=>'required|string|max:20|min:3',
                 'apellidoM4'=>'required|string|max:20|min:3',
                 'estados4'=>'required',
                 'ciudad4'=>'required',
                 'municipio4'=>'required',
-                'telefono3'=>'required|min:11|numeric',
-                'celular3'=>'required|min:11|numeric'
+                'telefono3'=>'required|numeric|min:10',
+                'celular3'=>'required|numeric|min:10'
             ]);
         }
 
@@ -320,19 +320,19 @@ class UserProfile extends Component
         $id_ficha_medica_ = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM ficha_medicas');
 
         $domAlumnoArray=array( //datos del domicilio del estudiante 1
-            "dir_casa"=>$this->dir_casa,
             "estado"=>$this->estado,
             "municipioP"=>$this->municipio,
             "ciudad"=>$this->ciudad,
+            "dir_casa"=>$this->dir_casa,
         );
         domicilios::insert($domAlumnoArray);//insertar datos del estudiante 1
         $idDomicilios = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM domicilios');  
 
         $domTutorArray=array( //datos del domicilio del tutor 1
-            "dir_casa"=>$this->dir_casap,
             "estado"=>$this->estado,
             "municipioP"=>$this->municipioP,
             "ciudad"=>$this->ciudadP,
+            "dir_casa"=>$this->dir_casap,
         );
         domicilios::insert($domTutorArray);//insertar datos del domicilio del tutor 1
         $idDomicilios = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM domicilios');
