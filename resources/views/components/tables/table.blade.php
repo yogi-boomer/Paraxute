@@ -46,7 +46,7 @@
                     </a>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="javascript:;" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="{{route('pagos.index', ['nombre' => $progra->nombre, 'apellidop' =>$progra->apellido_P, 'apellidom' => $progra->apellido_M, 'idEst' => $progra->id])}}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver Pagos
                     </a>
                   </td>

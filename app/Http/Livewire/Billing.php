@@ -15,7 +15,7 @@ class Billing extends Component
        $infoRecibos = DB::table('estudiantes')
        ->join('programas', 'programas.id', '=', 'estudiantes.id_programas_')
        ->join('recibos', 'recibos.id_estudiantes_', '=', 'estudiantes.id' )
-       ->select('tipo_programa','nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id')
+       ->select('tipo_programa','nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id','recibos.fecha','forma_pago','total','codigo_Prog')
        ->get();
         return view('livewire.billing', compact('infoRecibos'));
     }

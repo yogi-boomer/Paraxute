@@ -21,6 +21,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ReciboRiController;
+use App\Http\Controllers\PagosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +48,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('usuarios', UsuarioController::class);
     Route::resource('alumnos', AlumnoController::class);
     Route::resource('recibos', ReciboRiController::class);
+    Route::resource('pagos', PagosController::class);
 });
 
 Route::get('recibosAlum/pdf', [App\Http\Controllers\AlumnoController::class, 'pdf'] )->name('recibosAlum.pdf');
