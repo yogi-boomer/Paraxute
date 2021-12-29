@@ -4,15 +4,17 @@
                                         <div class="card-header pb-0 px-3">
                                                 <h6 class="mb-0">Recibos</h6>
                                                 <div class="ms-md-3 pe-md-3 d-flex align-items-center">
-                                                        <div class="input-group">
-                                                                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                                                                <input type="text" class="form-control" placeholder="">
-                                                        </div>
+                                                        <form action="{{route('billing')}}" method="get">
+                                                                <div class="input-group">
+                                                                        <input class="btn btn-primary" type="submit" ></input>
+                                                                        <input type="text" class="form-control" name="busqueda" id="busqueda"></input>
+                                                                </div>
+                                                        </form>
+                                                       
                                                 </div>
                                         </div>
                                        
                                         <div class="card-body pt-4 p-2">
-                                        
                                                 <ul class="list-group">
                                                 @foreach($infoRecibos as $infoRecibo)
                                                                 <li class="list-group-item border-2 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg"> 
@@ -38,7 +40,8 @@
                                                                         @endforeach                                                                   
                                                                 </div>                                                                                                                
                                                         </li>                                                      
-                                                </ul>                                               
+                                                </ul>     
+                                                                       
                                         </div>
                                 </div>
                         </div>
