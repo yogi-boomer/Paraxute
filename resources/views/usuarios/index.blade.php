@@ -64,7 +64,7 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Usuarios en Paraxute</h5>
+                            <h3 class="mb-0">Usuarios en Paraxute</h3>
                         </div>
                         <div>
                         @can('crear-rol')

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,8 +39,7 @@
                      </div>
                      
                     <div style="margin-left:200pt;width:52pt;">
-                        <p>1
-                        </p>    
+                        <p>1</p>    
                     </div>
                 </div>
                 
@@ -63,7 +60,7 @@
         
 
             <div class="row ">
-                <div style="clear:both; position:relative;padding-top: 20em;">
+                <div style="clear:both; position:relative;padding-top: 19.8em;">
                     <div style="position:absolute; left:50pt; width:192pt;">
                         {{$recibioInfo->nombre.' '.$recibioInfo->apellido_P.' '.$recibioInfo->apellido_M}}
                     </div>
