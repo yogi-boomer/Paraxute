@@ -197,7 +197,18 @@ class UserProfile extends Component
     public function increaseStep() {
         $this->resetErrorBag();
         $this->validateData();
-        $this->currentStep++;
+
+        //Aquí va lo del salto de incremento?
+        if($this->currentStep == 2){
+            if($this->edad >= 18){
+                $this->currentStep = 4;
+            }elseif($this->edad < 18){
+                $this->currentStep = 3;
+            }
+        }else{
+            $this->currentStep++;
+        }
+
         if($this->currentStep > $this->totalSteps){
             $this->currentStep = $this->totalSteps;
         }
@@ -205,7 +216,13 @@ class UserProfile extends Component
 
     public function decreaseStep() {
         $this->resetErrorBag();
-        $this->currentStep--;
+        //Salto de decremento?
+        if(($this->currentStep == 4)){
+            $this->currentStep = 2;
+        }else{
+            $this->currentStep--;
+        }
+
         if($this->currentStep < 1){
             $this->currentStep = 1;
         }
@@ -231,6 +248,7 @@ class UserProfile extends Component
             ]);
             $edad = Carbon::parse($this->fecha_Nac)->age;
          
+            //dd($edad);
         }
         elseif($this->currentStep == 2){
             $this->validate([
@@ -267,11 +285,8 @@ class UserProfile extends Component
                 'tel_trabajo'=>'required|numeric|min:10'
             ]);
         }
-    }
 
-    public function register(){
-        $this->resetErrorBag();
-        if($this->currentStep == 4){
+        elseif(($this->currentStep == 4) && ($this->edad >= 18)){
             $this->validate([
                 'parentesco3'=>'required',
                 'nombre4'=>'required|string|max:25|min:3',
@@ -284,6 +299,10 @@ class UserProfile extends Component
                 'celular3'=>'required|numeric|min:10'
             ]);
         }
+    }
+
+    public function register(){
+        $this->resetErrorBag();
 
         $referenciasArray=array( //datos de referencias
             "parentesco3"=>$this->parentesco3,
