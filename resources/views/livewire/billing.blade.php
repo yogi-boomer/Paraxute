@@ -6,7 +6,7 @@
                                                 <div class="ms-md-3 pe-md-3 d-flex align-items-center">
                                                         <form action="{{route('billing')}}" method="get">
                                                                 <div class="input-group">
-                                                                        <input class="btn btn-primary" type="submit" ></input>
+                                                                        <span class="btn btn-primary" type="submit" ></span>
                                                                         <input type="text" class="form-control" name="busqueda" id="busqueda"></input>
                                                                 </div>
                                                         </form>
