@@ -794,7 +794,6 @@
                 @endif
 
                 @if($currentStep == 3 && $edad < 18)
-                <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
                 @endif
 
