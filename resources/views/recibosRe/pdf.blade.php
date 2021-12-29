@@ -91,7 +91,7 @@
                      </div>
                      
                     <div style="margin-left:200pt;width:52pt;">
-                        <p>1</p>    
+                        <p>{{$recibioInfo->total}}</p>    
                     </div>
                 </div>
                 
