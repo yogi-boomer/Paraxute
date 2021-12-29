@@ -19,7 +19,7 @@
                         <p><?php echo $_GET["nombre"]; ?> <?php echo $_GET["apellidop"]; ?><?php echo $_GET["apellidom"]; ?></p>
                     </div>
                     <div style="margin-left:350pt;">
-                        <p>Credito</p>
+                        <p>Crédito</p>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                         <p><?php echo $_GET["nombre"]; ?> <?php echo $_GET["apellidop"]; ?><?php echo $_GET["apellidom"]; ?></p>
                     </div>
                     <div style="margin-left:350pt;">
-                        <p>Credito</p>
+                        <p>Crédito</p>
                     </div>
                 </div>
             </div>

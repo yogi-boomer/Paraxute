@@ -131,6 +131,29 @@ class UserProfile extends Component
         }
     }
    
+    /*public function index(Request $request)
+    {
+        $fecha_Nac = '1997-08-15';
+        $years = Carbon::parse($fecha_Nac)->age;
+        dd($years);
+    }*/
+
+    public function getAgeAttribute(){
+        // $edad = \Carbon\Carbon::parse($this->fecha_Nac)->diff(\Carbon\Carbon::now())->format('%y');
+        $edad = Carbon::parse($this->fecha_Nac)->age;
+         
+        dd($edad);
+    }
+ 
+    /*public function getAgeAttribute(){
+        return Carbon::parse($this->attributes['fecha_Nac'])->age;
+        if($this->age >= 18){
+            $this->currentStep = 3;
+        }
+        elseif($this->age < 18){
+            $this->currentStep = 4;
+        }
+    }*/
 
     public function render(){ 
         $estadosOwO = DB::select('SELECT id,nombre FROM estados');
@@ -211,6 +234,9 @@ class UserProfile extends Component
                 'ultimo_Grado'=>'required',
                 'escuela_Proc'=>'string|max:50|min:3'
             ]);
+            $edad = Carbon::parse($this->fecha_Nac)->age;
+         
+            //dd($edad);
         }
         elseif($this->currentStep == 2){
             $this->validate([
@@ -224,9 +250,15 @@ class UserProfile extends Component
                 'medicamentos'=>'required',
                 'conducta'=>'required'
             ]);
+            /* if($this->edad < 18){
+                $currentStep  = 3;
+            }
+            elseif($this->edad >= 18){
+                $currentStep  = 4;
+            } */
         }
 
-        elseif($this->currentStep == 3){
+        elseif(($this->currentStep == 3) && ($this->edad < 18)){
             $this->validate([
                 'parentesco'=>'required',
                 'fecha_nac'=>'required|date|before_or_equal:today',
@@ -248,30 +280,6 @@ class UserProfile extends Component
             ]);
         }
     }
-
-    /*public function index(Request $request)
-    {
-        $fecha_Nac = '1997-08-15';
-        $years = Carbon::parse($fecha_Nac)->age;
-        dd($years);
-    }*/
-
-    public function getAgeAttribute(){
-        // $edad = \Carbon\Carbon::parse($this->fecha_Nac)->diff(\Carbon\Carbon::now())->format('%y');
-         $edad = Carbon::parse($this->fecha_Nac)->age;
-         
-         dd($edad);
-     }
- 
-     /*public function getAgeAttribute(){
-         return Carbon::parse($this->attributes['fecha_Nac'])->age;
-         if($this->age >= 18){
-             $this->currentStep = 3;
-         }
-         elseif($this->age < 18){
-             $this->currentStep = 4;
-         }
-     }*/
 
     public function register(){
         $this->resetErrorBag();

@@ -1,3 +1,15 @@
+<head>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Datepicker Files -->
+    <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-datepicker3.css')}}">
+    <link rel="stylesheet" href="{{asset('datePicker/css/bootstrap-standalone.css')}}">
+    <script src="{{asset('datePicker/js/bootstrap-datepicker.js')}}"></script>
+    <!-- Language -->
+    <script src="{{asset('datePicker/locales/bootstrap-datepicker.es.min.js')}}"></script>
+</head>
 <div>
     <div class="container-fluid">
         <div class="page-header min-height-250 border-radius-xl mt-4"
@@ -62,7 +74,7 @@
 
                             <div class="col-md-4">
                                 <label for="dateRegister" class="form-control-label">Fecha de registro.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="dateRegister" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="dateRegister" required>
+                                <input class="form-control datepicker" type="date" value="2022-01-01" id="dateRegister" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="dateRegister" required>
                                 <span class="text-danger">@error('dateRegister'){{ $message }}@enderror</span>
                             </div>
                         </div>
@@ -145,7 +157,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="fecha_Nac" class="form-control-label">Fecha de nacimiento.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="fecha_Nac" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="fecha_Nac" required>
+                                <input class="form-control datepicker" type="date" value="2022-01-01" id="fecha_Nac" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" wire:model="fecha_Nac" required>
                                 <span class="text-danger">@error('fecha_Nac'){{ $message }}@enderror</span>
                             </div>
 
@@ -414,7 +426,7 @@
         </div>        
         @endif
 
-        @if (($currentStep == 3) /*&& ($edad >= 18)*/)
+        @if (($currentStep == 3) /*&& ($edad < 18)*/)
         {{-- STEP 3 --}}
         <div class="step-three">
             <div class="container-fluid py-4">
@@ -475,7 +487,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="fecha_nac" class="form-control-label">Fecha de nacimiento.</label>
-                                <input class="form-control" type="date" value="2021-01-01" id="fecha_nac" wire:model="fecha_nac" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+                                <input class="form-control datepicker" type="date" value="2022-01-01" id="fecha_nac" wire:model="fecha_nac" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
                                 <span class="text-danger">@error('fecha_nac'){{ $message }}@enderror</span>
                             </div>
                             <div class="col-md-4">
@@ -632,7 +644,7 @@
         @endif
 
         {{-- STEP 4 --}}
-        @if (($currentStep == 4) /*&& ($edad < 18)*/)
+        @if (($currentStep == 4) /*&& ($edad >= 18)*/)
         <div class="step-four">
             <div class="container-fluid py-4">
                 <div class="card">
@@ -816,3 +828,10 @@
     })
 </script>
  --}}
+ <script>
+    $('.datepicker').datepicker({
+        format: "dd/mm/yyyy",
+        language: "es",
+        autoclose: true
+    });
+</script>
