@@ -61,12 +61,12 @@
 <main>
         <div class="container-fluid py-5">
         <div class="card mb-4">
-                                        <div class="card-header pb-0 px-3">
-                                                <h6 class="mb-0">Recibos</h6>
-                                                <div class="ms-md-3 pe-md-3 d-flex align-items-center">
+                                        <div class="card-header pb-0 px-2">
+                                                <h6 class="mb-2">Recibos</h6>
+                                                <div class="ms-md-1 pe-md-3 d-flex align-items-center">
                                                 <form action="{{route('pagos.index')}}" method="get">
                                                                 <div class="input-group">
-                                                                        <input class="btn btn-primary" type="submit" ></input>
+                                                                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
                                                                         <input type="text" class="form-control" name="busqueda" id="busqueda"></input>
                                                                 </div>
                                                         </form>
@@ -84,10 +84,9 @@
                                                                         <span class="mb-2 text-xs">Programa: <span
                                                                         class="text-dark font-weight-bold ms-2">{{$infoRecibo->tipo_programa}}</span></span>
                                                                         <span class="mb-2 text-xs">Formato: <span
-                                                                        class="text-dark ms-2 font-weight-bold">{{$infoRecibo->id_formatos_}}</span></span>
-                                                                       
+                                                                        class="text-dark ms-2 font-weight-bold">{{$infoRecibo->id_formatos_}}</span></span>                                                                     
                                                                         <span class="text-xs">No. Folio: <span
-                                                                        class="text-dark ms-2 font-weight-bold">{{$infoRecibo->id}}</span></span>
+                                                                        class="text-dark ms-2 font-weight-bold" id="idRe">{{$infoRecibo->id}}</span></span>
                                                                         
                                                                 </div>
                                                                 

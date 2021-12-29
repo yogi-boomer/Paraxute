@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
 use App\Http\Livewire\LaravelExamples\UserProfile;
+use Illuminate\Pagination\Paginator;
 
 class UsuarioController extends Controller
 {
@@ -21,7 +22,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = User::paginate(1);
         return view('usuarios.index', compact('usuarios'));
     }
 
