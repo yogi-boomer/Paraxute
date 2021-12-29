@@ -789,15 +789,15 @@
                     <button type="button" class="btn btn-sm mb-0 btn-danger" wire:click="decreaseStep()">Regresar</button>
                 @endif
                 
-                @if ($currentStep == 1 || $currentStep == 2 || $currentStep == 3)
+                @if ($currentStep == 1 || $currentStep == 2)
                     <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
                 @endif
 
-                <!-- @if($currentStep == 3 && $edad < 18)
+                @if($currentStep == 3 && $edad < 18)
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
-                @endif -->
+                @endif
 
-                @if ($currentStep == 4)
+                @if ($currentStep == 4 && $edad >= 18)
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
                 @endif      
             </div>

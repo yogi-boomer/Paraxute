@@ -95,8 +95,6 @@ class UserProfile extends Component
 
     // Calcular edad
     public $edad = 0;
-    //public $edad = Carbon::parse($fecha_Nac)->age;
-    //public $edad=\Carbon\Carbon::parse($this->fecha_Nac->age); 
 
     public $estadosbase;
     public $ciudadesBase;
@@ -129,30 +127,12 @@ class UserProfile extends Component
             $this->showSuccesNotification = true;
         }
     }
-   
-    /*public function index(Request $request)
-    {
-        $fecha_Nac = '1997-08-15';
-        $years = Carbon::parse($fecha_Nac)->age;
-        dd($years);
-    }*/
 
     public function getAgeAttribute(){
-        // $edad = \Carbon\Carbon::parse($this->fecha_Nac)->diff(\Carbon\Carbon::now())->format('%y');
         $edad = Carbon::parse($this->fecha_Nac)->age;
          
         dd($edad);
     }
- 
-    /*public function getAgeAttribute(){
-        return Carbon::parse($this->attributes['fecha_Nac'])->age;
-        if($this->age >= 18){
-            $this->currentStep = 3;
-        }
-        elseif($this->age < 18){
-            $this->currentStep = 4;
-        }
-    }*/
 
     public function render(){ 
         $estadosOwO = DB::select('SELECT id,nombre FROM estados');
@@ -198,13 +178,11 @@ class UserProfile extends Component
         $this->resetErrorBag();
         $this->validateData();
 
+        $this->edad = Carbon::parse($this->fecha_Nac)->age;
+
         //Aquí va lo del salto de incremento?
-        if($this->currentStep == 2){
-            if($this->edad >= 18){
-                $this->currentStep = 4;
-            }elseif($this->edad < 18){
-                $this->currentStep = 3;
-            }
+        if(($this->currentStep == 2) && ($this->edad >= 18)){
+            $this->currentStep = 4;
         }else{
             $this->currentStep++;
         }
@@ -216,7 +194,7 @@ class UserProfile extends Component
 
     public function decreaseStep() {
         $this->resetErrorBag();
-        //Salto de decremento?
+        //Salto de decremento
         if(($this->currentStep == 4)){
             $this->currentStep = 2;
         }else{
@@ -246,9 +224,6 @@ class UserProfile extends Component
                 'ultimo_Grado'=>'required',
                 'escuela_Proc'=>'string|max:50|min:3'
             ]);
-            $edad = Carbon::parse($this->fecha_Nac)->age;
-         
-            //dd($edad);
         }
         elseif($this->currentStep == 2){
             $this->validate([
