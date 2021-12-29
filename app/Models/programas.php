@@ -16,6 +16,6 @@ class Programas extends Model
     'codigo_Prog',
     'num_sesiones_mes',
     'costo_mensual',
-    'id_formato_'
+    'id_formatos_'
     ];
 }

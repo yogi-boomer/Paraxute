@@ -802,7 +802,7 @@
     </form>   
 </div>
 
-{{-- 
+<!-- {{-- 
 <script type = "text/javascript">
     $(function(){
         $(".opA").click(function(){
@@ -823,4 +823,4 @@
         language: "es",
         autoclose: true
      });  
-</script> 
+</script>  -->

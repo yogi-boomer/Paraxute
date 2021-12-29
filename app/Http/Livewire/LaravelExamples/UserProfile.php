@@ -114,7 +114,6 @@ class UserProfile extends Component
     ];
 
     public function mount() { 
-        //$this->user = auth()->user();
         $this->currentStep = 1;
         $this->ciudadesBase = collect();
         $this->localidadesBase = collect();
@@ -157,14 +156,12 @@ class UserProfile extends Component
 
     public function render(){ 
         $estadosOwO = DB::select('SELECT id,nombre FROM estados');
-        /*$estadosReferencias = DB::select('SELECT id,nombre FROM estados'); */
         $progras = DB::select('SELECT id,tipo_programa FROM programas');
         return view('livewire.laravel-examples.user-profile', compact('progras','estadosOwO'));
     }
 
     /* step 1 */
     public function updatedEstados($estadoid){
-        /*$this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
         $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
     }
     
@@ -176,7 +173,6 @@ class UserProfile extends Component
 
     /* step 3 */
     public function updatedEstado($estadoid){
-        /*$this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
         $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
                 
     }
@@ -188,7 +184,6 @@ class UserProfile extends Component
 
     /* step 4 */ 
     public function updatedEstados4($estadoid){
-        /*$this->ciudadesBase=DB::table('municipios')->select('nombre','id')->where('estado_id',$estadoid)->orderBy('nombre')->get(); */
         $this->ciudadesBase=municipio::where('estado_id',$estadoid)->select('nombre','id')->orderBy('nombre')->get();
                     
     }
@@ -236,7 +231,6 @@ class UserProfile extends Component
             ]);
             $edad = Carbon::parse($this->fecha_Nac)->age;
          
-            //dd($edad);
         }
         elseif($this->currentStep == 2){
             $this->validate([
@@ -250,12 +244,6 @@ class UserProfile extends Component
                 'medicamentos'=>'required',
                 'conducta'=>'required'
             ]);
-            /* if($this->edad < 18){
-                $currentStep  = 3;
-            }
-            elseif($this->edad >= 18){
-                $currentStep  = 4;
-            } */
         }
 
         elseif(($this->currentStep == 3) && ($this->edad < 18)){

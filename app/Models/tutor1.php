@@ -20,7 +20,7 @@ class tutor1 extends Model
         'ultimo_grado',
         'estado_civil',
         'nom_trabajo',
-        'id_contacto_',
-        'id_domicilio_',
+        'id_contactos_',
+        'id_domicilios_',
     ];
 }
