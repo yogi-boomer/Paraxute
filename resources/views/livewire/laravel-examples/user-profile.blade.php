@@ -789,6 +789,20 @@
                     <button type="button" class="btn btn-sm mb-0 btn-danger" wire:click="decreaseStep()">Regresar</button>
                 @endif
                 
+                {{-- Botones que abarcan los cuatro pasos --}}
+                {{-- INICIO --}}
+                @if ($currentStep == 1 || $currentStep == 2 || $currentStep == 3)
+                    <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
+                @endif
+
+                @if ($currentStep == 4)
+                    <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
+                @endif
+                {{-- FIN --}}
+
+
+                {{-- Botones correctos para el formulario de acuerdo a la edad --}}
+                {{-- 
                 @if ($currentStep == 1 || $currentStep == 2)
                     <button type="button" class="btn btn-sm mb-0 btn-info" wire:click="increaseStep()">Siguiente</button>
                 @endif
@@ -799,7 +813,8 @@
 
                 @if ($currentStep == 4 && $edad >= 18)
                     <button type="button" class="btn btn-sm mb-0 btn-success" wire:click="register()">Enviar</button>
-                @endif      
+                @endif
+                --}}
             </div>
         </div>  
 
