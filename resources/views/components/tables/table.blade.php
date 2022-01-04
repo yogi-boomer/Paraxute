@@ -37,12 +37,18 @@
                     <h6 id="programa",class="mb-0 text-sm">{{$progra->tipo_programa}}</h6>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    
-                    @if ($mytime->lessThan($progra->fecha))
+                    @php
+                    $time = strtotime($progra->fecha."+ 30 days");
+                  $newformat = date('Y-m-d',$time);
+                    $time = strtotime($progra->fecha."+ 25 days");
+                  $newformat2 = date('Y-m-d',$time);
+
+                    @endphp
+                    @if ($mytime->greaterThan($newformat))
                     <span class="badge badge-sm bg-gradient-danger ">       </span>
-                    @elseif ($mytimeP->lessThan($progra->fecha) && $mytime->greaterThan($progra->fecha))
+                    @elseif ($mytime->greaterThan($newformat2)&& $mytime->lessThan($newformat))
                     <span class="badge badge-sm bg-gradient-warning ">       </span>
-                    @elseif ($mytime->greaterThan($progra->fecha))
+                    @elseif ($mytime->lessThan($newformat))
                     <span class="badge badge-sm bg-gradient-success">       </span>
                     
                     @endif

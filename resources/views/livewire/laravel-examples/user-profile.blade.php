@@ -86,7 +86,18 @@
                                 <span class="text-danger">@error('apellido_M'){{ $message }}@enderror</span>
                             </div>
                         </div>
-
+                        <div class="col-md-4">
+                            <div class= "form-group">
+                                <label for="formaPago">Selecciona una forma de pago</label>
+                                <select name="formaPago" id="formaPago" class="form-control" wire:model="formaPago" required>
+                                    <option value="" selected>Forma de pago</option>
+                                    <option value="Contado">Contado</option>
+                                    <option value="Credito">Credito</option>
+                                    <option value="Cheque">Cheque</option>
+                                </select>
+                                <span class="text-danger">@error('formaPago'){{ $message }}@enderror</span>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="mt-3">
                                 <label for="about">{{'Ubicación'}}</label>

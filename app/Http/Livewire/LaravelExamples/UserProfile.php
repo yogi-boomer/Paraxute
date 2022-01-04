@@ -14,6 +14,7 @@ use App\Models\contactos;
 use App\Models\referencias;
 use App\Models\Programas;
 use App\Models\estado;
+use App\Models\recibo;
 use Validator;
 use Response;
 use Redirect;
@@ -44,6 +45,7 @@ class UserProfile extends Component
     public $generoOtro;
     public $ultimo_Grado;
     public $escuela_Proc;
+    public $formaPago;
 
     //step two
     /*public $id_ficha_medica_; */
@@ -224,6 +226,7 @@ class UserProfile extends Component
         if($this->currentStep == 1){
             $this->validate([
                 'selectedFormat'=>'required',
+                'formaPago'=>'required',
                 'dateRegister'=>'required|date',
                 'nombre'=>'required|string|max:25|min:3',
                 'apellido_P'=>'required|string|max:20|min:3',
@@ -237,6 +240,7 @@ class UserProfile extends Component
                 'generoOtro'=>' ',
                 'ultimo_Grado'=>'required',
                 'escuela_Proc'=>'string|max:50|min:3'
+                
             ]);
         }
         elseif($this->currentStep == 2){
@@ -584,7 +588,20 @@ class UserProfile extends Component
             "id_referencias_"=>$idReferencias[0]->AUTO_INCREMENT,
         );
         Estudiante::insert($values);//insertar estudiantes
+        $idEstud = DB::select('SELECT MAX(id) as AUTO_INCREMENT FROM estudiantes');
 
+        $total =  DB::select('SELECT costo_mensual as AUTO_INCREMENT FROM programas WHERE id='.$this->id_programas_);
+
+
+        $valuesRecibo = array( //generacion primer recibo
+            "fecha"=>$this->dateRegister,
+            "forma_pago"=>$this->formaPago,
+            "total"=>(int)$total[0]->AUTO_INCREMENT,
+            "id_programas_"=>$this->id_programas_,
+            "id_estudiantes_"=>$idEstud[0]->AUTO_INCREMENT
+           
+        );
+        recibo::insert($valuesRecibo);//insertar recibo
    
         $datas = ['nombre'=>$this->nombre.' '.$this->apellido_P.' '.$this->apellido_M.' '];
         return redirect()->route('tables', $datas);

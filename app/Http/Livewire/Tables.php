@@ -29,14 +29,13 @@ $programas = Estudiante::leftJoin('programas', 'estudiantes.id_programas_', '=',
 ->select('tipo_programa','nombre','apellido_M', 'apellido_P','costo_mensual','codigo_Prog','estudiantes.id_programas_','estudiantes.id',DB::raw('MAX(fecha) as fecha'))
 ->groupBy('id_estudiantes_')
 ->paginate(8);
-        $mytime = Carbon::now();
-
-        $mytime->addDays(30);
+         $mytime = Carbon::now();
+       
+          $mytime->toDateString();
 
         
         $mytimeP = Carbon::now();
-
-        $mytimeP->addDays(25);
+        $mytimeP->toDateString();
         return view('livewire.tables', compact('datos','programas','mytime','mytimeP'));
     }
     public function setPage($url)

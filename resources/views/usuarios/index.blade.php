@@ -151,7 +151,6 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                 {!!$usuarios->links() !!}
                 </div>
             </div>
         </div>
