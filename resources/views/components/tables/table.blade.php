@@ -37,7 +37,16 @@
                     <h6 id="programa",class="mb-0 text-sm">{{$progra->tipo_programa}}</h6>
                   </td>
                   <td class="align-middle text-center text-sm">
+                    
+                    @if ($mytime->lessThan($progra->fecha))
+                    <span class="badge badge-sm bg-gradient-danger ">       </span>
+                    @elseif ($mytimeP->lessThan($progra->fecha) && $mytime->greaterThan($progra->fecha))
+                    <span class="badge badge-sm bg-gradient-warning ">       </span>
+                    @elseif ($mytime->greaterThan($progra->fecha))
                     <span class="badge badge-sm bg-gradient-success">       </span>
+                    
+                    @endif
+                   
                   </td>
                   @csrf
                   <td class="align-middle text-center">
@@ -46,7 +55,7 @@
                     </a>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="{{route('pagos.index', ['nombre' => $progra->nombre, 'apellidop' =>$progra->apellido_P, 'apellidom' => $progra->apellido_M, 'idEst' => $progra->id])}}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
+                    <a href="{{route('billing', ['nombre' => $progra->nombre, 'apellidop' =>$progra->apellido_P, 'apellidom' => $progra->apellido_M, 'idEst' => $progra->id])}}" class="text-secondary font-weight-bold text-sm" data-toggle="tooltip" data-original-title="Ver pagos">
                       Ver Pagos
                     </a>
                   </td>
@@ -57,7 +66,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-center">
-         {!!$programas->links() !!}
+         {{$programas->links('vendor.pagination.bootstrap-4') }}
          </div>
       </div>
     </div>

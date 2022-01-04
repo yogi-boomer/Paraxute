@@ -4,12 +4,12 @@
                                         <div class="card-header pb-0 px-2">
                                                 <h6 class="mb-2">Recibos</h6>
                                                 <div class="ms-md-1 pe-md-3 d-flex align-items-center">
-                                                        <form action="{{route('billing')}}" method="get">
+                                  
                                                                 <div class="input-group">
                                                                         <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                                                                        <input type="text" class="form-control" name="busqueda" id="busqueda"></input>
+                                                                        <input type="text" class="form-control" name="busqueda" id="busqueda" wire:model="busqueda">
                                                                 </div>
-                                                        </form>
+                                         
                                                        
                                                 </div>
                                         </div>
@@ -46,8 +46,9 @@
                                 </div>
                         </div>
                         <div class="d-flex justify-content-center">
-                        {!!$infoRecibos->links() !!}
+                        {{$infoRecibos->links('vendor.pagination.bootstrap-4') }}
                         </div>
+               
                 </div>
         </div>
 </main>
