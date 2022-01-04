@@ -8,8 +8,6 @@
 <body>
     <div style="background-image: url({{ public_path('assets/img/recibo.png') }});  background-repeat: no-repeat; background-size: contain;  background-position: center center; height: 920px; widht: 1000px;">
         <div class="container">
-
-           
             <div class="row ">
                 <div style="clear:both; position:relative;padding-top: 8em;">
                     <div style="position:absolute; left:100pt; width:192pt; margin-top: -55px">

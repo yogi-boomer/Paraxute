@@ -88,11 +88,11 @@
                         </div>
                         <div class="col-md-4">
                             <div class= "form-group">
-                                <label for="formaPago">Selecciona una forma de pago</label>
+                                <label for="formaPago">Selecciona una forma de pago.</label>
                                 <select name="formaPago" id="formaPago" class="form-control" wire:model="formaPago" required>
-                                    <option value="" selected>Forma de pago</option>
+                                    <option value="" selected>Selecciona forma de pago</option>
                                     <option value="Contado">Contado</option>
-                                    <option value="Credito">Credito</option>
+                                    <option value="Credito">Crédito</option>
                                     <option value="Cheque">Cheque</option>
                                 </select>
                                 <span class="text-danger">@error('formaPago'){{ $message }}@enderror</span>

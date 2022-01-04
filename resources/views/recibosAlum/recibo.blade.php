@@ -69,8 +69,7 @@
                         <h3 class="mb-0">{{ __('Recibo de estudiante') }}</h3>
                     </div>
                     
-                    <div class="card-body pt-4 p-3">
-                        
+                    <div class="card-body pt-4 p-3">  
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="nombre" class="form-control-label">{{ __('Nombre.') }}</label>
@@ -87,11 +86,10 @@
                                     <span class="text-danger">@error('selectedFormat'){{ $message }}@enderror</span>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="row">
-                        <div class="col-md-6">
+                            <div class="col-md-6">
                                 <div class= "form-group">
                                     <label for="selectedProgram">Selecciona un programa.</label>
                                    
@@ -139,17 +137,13 @@
                     <div class="card-footer">
                         <div class="action-buttons d-grid gap-2 d-sm-flex justify-content-sm-end mt-1">
                             <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Generar recibo</button>
-                        
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         {!! Form::hidden('idest', $idest, array('style' =>'form-control')) !!}  
-
-      {!! Form::close() !!}  
-    
-    </div>
-    
+        {!! Form::close() !!}  
+    </div>  
 </body>
 </html>
