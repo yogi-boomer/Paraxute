@@ -29,7 +29,7 @@ class Billing extends Component
                 $infoRecibos = DB::table('recibos')
                  ->join('programas', 'programas.id', '=', 'recibos.id_programas_')
                  ->join('estudiantes', 'estudiantes.id', '=', 'recibos.id_estudiantes_' )
-                ->select('tipo_programa','estudiantes.nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id','recibos.fecha','forma_pago','total','codigo_Prog','recibos.id_estudiantes_')
+                ->select('tipo_programa','estudiantes.nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id','recibos.fecha','recibos.forma_pago','total','codigo_Prog','recibos.id_estudiantes_')
                 ->where('recibos.id_estudiantes_', 'LIKE', '%'.$this->busqueda.'%')
                 ->paginate(3);
             
@@ -38,7 +38,7 @@ class Billing extends Component
                 $infoRecibos = DB::table('recibos')
                  ->join('programas', 'programas.id', '=', 'recibos.id_programas_')
                  ->join('estudiantes', 'estudiantes.id', '=', 'recibos.id_estudiantes_' )
-                ->select('tipo_programa','estudiantes.nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id','recibos.fecha','forma_pago','total','codigo_Prog','id_estudiantes_')
+                ->select('tipo_programa','estudiantes.nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id','recibos.fecha','recibos.forma_pago','total','codigo_Prog','id_estudiantes_')
                 ->where('nombre', 'LIKE', '%'.$this->busqueda.'%')
                 ->orWhere('apellido_M', 'LIKE', '%'.$this->busqueda.'%')
                 ->orWhere('apellido_P', 'LIKE', '%'.$this->busqueda.'%')
@@ -49,7 +49,7 @@ class Billing extends Component
                  $infoRecibos = DB::table('recibos')
                  ->join('programas', 'programas.id', '=', 'recibos.id_programas_')
                  ->join('estudiantes', 'estudiantes.id', '=', 'recibos.id_estudiantes_' )
-                 ->select('tipo_programa','estudiantes.nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id','recibos.fecha','forma_pago','total','codigo_Prog','id_estudiantes_')
+                 ->select('tipo_programa','estudiantes.nombre','apellido_M', 'apellido_P', 'id_formatos_', 'recibos.id','recibos.fecha','recibos.forma_pago','total','codigo_Prog','id_estudiantes_')
                  ->paginate(3);
              }
              

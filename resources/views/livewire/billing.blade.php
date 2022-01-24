@@ -32,7 +32,7 @@
                                                         <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;">
                                                                 <i class="far fa-trash-alt me-2"></i>Eliminar
                                                         </a> 
-                                                        <a href="{{ route('recibosAlum.pdf', ['nombre' => $infoRecibo->nombre, 'apellidop' =>$infoRecibo->apellido_P, 'apellidom' => $infoRecibo->apellido_M, 'prog'=> $infoRecibo->tipo_programa, 'fecha'=> $infoRecibo->fecha, 'total'=>$infoRecibo->total, 'codigo' => $infoRecibo->codigo_Prog, 'idInfo' => $infoRecibo->id]) }}" class="btn btn-link text-dark text-sm mb-0 px-0 ms-4">
+                                                        <a href="{{ route('recibosAlum.pdf', ['nombre' => $infoRecibo->nombre, 'apellidop' =>$infoRecibo->apellido_P, 'apellidom' => $infoRecibo->apellido_M, 'prog'=> $infoRecibo->tipo_programa, 'fecha'=> $infoRecibo->fecha, 'total'=>$infoRecibo->total, 'codigo' => $infoRecibo->codigo_Prog, 'idInfo' => $infoRecibo->id, 'forma' => $infoRecibo->forma_pago]) }}" class="btn btn-link text-dark text-sm mb-0 px-0 ms-4">
                                                                 <i class="fas fa-file-pdf text-lg me-1"></i> PDF
                                                         </a>    
                                         @endforeach                                                                   

@@ -42,6 +42,7 @@ class ReciboRiController extends Controller
         $recibioInfo=DB::table('recibos')
         ->join('programas','recibos.id_programas_','=','programas.id')
         ->join('estudiantes','recibos.id_estudiantes_','=','estudiantes.id')
+        ->select('tipo_programa','nombre','apellido_M', 'apellido_P', 'id_formatos_','estudiantes.id', 'recibos.id','recibos.fecha','forma_pago','total','codigo_Prog')
         ->orderBy('recibos.id', 'DESC')->first();
    
 
